@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex6 - Calculo de renda</title>
+</head>
+<body>
+    Qual a renda familiar? <input type="text" id="renda" placeholder="Insira um valor" autofocus><br>
+    Qual o valor da prestação? <input type="text" id="prestacao" placeholder="Insira um valor"><br>
+    <button onclick="calculate()">Verificar financiamento</button><br>
+    <div id="exibir"></div><br>
+    <div id="exibir2" style="color:blue;"></div>
+</body>
+</html>
+<script>
+    function calculate(){
+        var Renda = Number(renda.value)
+        var Prestacao = Number(prestacao.value)
+        var percentual = Prestacao / Renda * 100
+        exibir.innerHTML = `a prestação corresponde a ${(percentual).toFixed(1)}% da renda familiar`
+        // Decisão
+        if (percentual > 30){
+            exibir2.innerHTML = `<b>Será necessário complementar a renda familiar</b>`
+        }
+    }
+</script>

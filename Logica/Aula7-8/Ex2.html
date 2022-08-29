@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex2 - Contabilidade</title>
+</head>
+<body>
+    <h1>Contabilidade balança</h1>
+    Saldo anterior: <input type="text" id="saldo_ant" placeholder="Inserir valor" autofocus><br>
+    Valor de débito: <input type="text" id="deb" placeholder="Inserir valor"><br>
+    Valor de crédito: <input type="text" id="cred" placeholder="Inserir valor"><br>
+    <button onclick="calculate()">Calcular</button><br>
+    <div id="exibir"></div><br>
+</body>
+</html>
+<script>
+    function calculate(){
+        saldo_anterior = Number(saldo_ant.value)
+        debito = Number(deb.value)
+        credito = Number(cred.value)
+        movimentacao = credito - debito
+        saldo_final = saldo_anterior + credito - debito
+        diferenca = saldo_anterior - saldo_final
+        proporcao = (saldo_final/saldo_anterior) * 100
+        exibir.innerHTML = `O saldo anterior de R$${saldo_anterior}
+         teve a movimentação de R$${(movimentacao).toFixed(1)}
+         , com saldo final de R$${(saldo_final).toFixed(1)} sendo a diferença de R$${(diferenca).toFixed(1)}
+          entre saldo final e saldo anterior que reprensenta uma propoção de ${(proporcao).toFixed(1)}%`
+        saldo_ant.value = ''
+        deb.value = ''
+        cred.value = ''
+    }
+</script>

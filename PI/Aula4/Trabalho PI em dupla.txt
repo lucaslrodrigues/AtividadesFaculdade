@@ -1,0 +1,10 @@
+Funcionalidades:
+Monitorar a umidade do ar
+Enviar dados do monitoramento ao servidor via API
+Enviar dados para o site via APi
+Vizualização dos dados via web
+Avisar ao usuário caso esteja com nívies elevados de umidade
+
+
+Diagrama:
+-Sensor > Laboratório > envia os dados para o servidor > dados enviados para o site > vizualização do cliente final

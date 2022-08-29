@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex8 - Peso médio em um elevador</title>
+</head>
+<body>
+    <h1>Calcular peso médio em um elevador</h1>
+    Quantidade de homens que entram no elevador: <input type="text" id="homem_peso" placeholder="Insira um valor" autofocus><br>
+    Quantidade de mulheres que entram no elevador: <input type="text" id="mulher_peso" placeholder="Insira um valor"><br>
+    <button onclick="calculate()">Análizar peso</button>
+    <span id="exibir"></span>
+    <span id="exibir2" style="color: blue"></span>
+</body>
+</html>
+<script>
+    function calculate(){
+        var homem = Number(homem_peso.value) * 80
+        var mulher = Number(mulher_peso.value) * 60
+        var total = homem + mulher
+        exibir.innerHTML = `Este elevador suporta 800kg e o peso estimado desta lotação é de ${(total).toFixed(0)}kg`
+        // Decisão
+        if (total > 800){
+            exibir2.innerHTML = `Será necessário descer alguém para que o elevador se movimente`
+        }
+    }
+</script>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex-1 Sr. Manoel</title>
+</head>
+<body>
+    <h1>Preços de mercadoria</h1>
+    Nome do produto: <input type="text" id="nome" placeholder="Inserir valor" autofocus><br>
+    Quantidade: <input type="text" id="quantidade" placeholder="Inserir valor"><br>
+    Preço únitario: <input type="text" id="preco" placeholder="Inserir valor"><br>
+    <button onclick="calculate()">Calcular preço e margem de venda</button><br>
+    <div id="exibir"></div>
+</body>
+</html>
+<script>
+    function calculate(){
+        quantidade_v = Number(quantidade.value)
+        preco_v = Number(preco.value)
+        lucro_uni = preco_v * 0.22
+        preco_uni = preco_v + lucro_uni
+        total_value = preco_uni * quantidade_v
+        lucro_total = lucro_uni * quantidade_v
+        exibir.innerHTML = `O produto ${nome.value} tem ${quantidade.value} unidades,
+        cada uma delas com o preço unitário de R$${(preco_v).toFixed(2)} a R$${(preco_uni).toFixed(2)} em  preço de venda. 
+        O valor total de venda será de R$${(total_value).toFixed(2)} com o lucro total de R$${(lucro_total).toFixed(2)}
+        sendo o valor unitário tributado de R$${(preco_uni + 1.25).toFixed(2)}.
+        `
+        // exibir.innerHTML += `<br>Quantidade ${quantidade.value}`
+        // exibir.innerHTML += `<br>Preço unitário de compra ${preco.value}`
+        // exibir.innerHTML += `<br>Preço unitário de venda ${(preco_uni).toFixed(1)}`
+        // exibir.innerHTML += `<br>Valor de venda total ${(total_value).toFixed(1)}`
+        // exibir.innerHTML += `<br>lucro total do produto ${(lucro_total).toFixed(1)}`
+        // exibir.innerHTML += `<br>Preço unitário tributado ${(preco_uni + 1.25).toFixed(1)}`
+    }
+</script>

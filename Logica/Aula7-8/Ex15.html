@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex16 - Preço do sorvete</title>
+</head>
+<body>
+    <h1>Calcular valor do sorvete</h1>
+    Valor de referencia por grama do sorvete: <input type="text" id="valor_grama" placeholder="Insira um valor" autofocus><br>
+    Peso do sorvete: <input type="text" id="peso_sorvete" placeholder="Insira um valor"><br>
+    tipo de cobertura: <input type="text" id="cobertura_tipo" placeholder="Insira um valor"><br>
+    tipo de sorvete: <input type="text" id="sorvete_tipo" placeholder="Insira um valor"><br>
+    <button onclick="calculate()">Calcular valor do sorvete</button><br>
+    <span id="exibir"></span>
+</body>
+</html>
+<script>
+    function calculate(){
+        var valor_g = Number(valor_grama.value)
+        var peso = Number(peso_sorvete.value)
+        var cobertura = cobertura_tipo.value
+        var sorvete = sorvete_tipo.value
+        // Definiondo o valor caso seja gourmet ou não
+        if (sorvete == "G"){
+            var valor = valor_g * 1.11 
+        }else{
+            var valor = valor_g * 0.9
+        }
+        // Caso seja chocolate
+        if (cobertura != "C"){
+            valor += 0.01
+        }
+        // Custo do sorvete
+        var custo = valor * peso
+        if (custo > 10){
+            exibir.innerHTML = `O seu sorvete vai custar R$${(custo).toFixed(2)} e vai comprometer a mesada`
+        }else{
+            exibir.innerHTML = `Hoje você está manerando, gastou somente R$${(custo).toFixed(2)}`
+        }
+    }
+</script>
