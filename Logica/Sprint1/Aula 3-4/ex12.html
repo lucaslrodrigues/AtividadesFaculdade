@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex11 - Descontos salário</title>
+</head>
+<body>
+    <h1>Desconto salário</h1>
+    <input type="text" id='salario'>
+    <button onclick='calculate()'>Calcular</button>
+</body>
+</html>
+<script>
+    function calculate(){
+        // var inss = Number(salario.value) *  0.1
+        // var irpf = Number(salario.value) * 0.2
+        // var sind = Number(salario.value) * (1/30)
+        // var desc = inss + irpf + sind
+        
+        alert('O valor liquido do salario sera de ' + (salario.value - (Number(salario.value) * (1/30) + Number(salario.value) * 0.2 + Number(salario.value) *  0.1)))
+    }
+</script>

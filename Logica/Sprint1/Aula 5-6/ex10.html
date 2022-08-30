@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex10 - valor passagens</title>
+</head>
+<body>
+    <h1>Quantidade de passagens</h1>
+    <button onclick="p8()">8 passagens</button>
+    <button onclick="p20()">20 passagens</button>
+    <button onclick="p50()">50 passagens</button>
+    <div id="exibir"></div>
+</body>
+</html>
+<script>
+    var pass_value = 4.4
+    function p8(){
+        tot = 35.2
+        var pass_tot = 32.45
+        var pass_sobra = tot - pass_tot
+        var pass_percent = ((4.4/4.06 -1) * 100).toFixed(1)
+        exibir.innerHTML = `Ao comprar 8 passagens, você pagou ${pass_percent}% a menos. É como se tivesse ganhado ${(pass_sobra/pass_value).toFixed(1)} passagens de "bônus".`
+    }
+    function p20(){
+        tot = 88
+        var pass_tot = 78.65
+        var pass_sobra = tot - pass_tot
+        var pass_percent = ((pass_value / 3.93 -1) * 100).toFixed(1)
+        exibir.innerHTML = `Ao comprar 8 passagens, você pagou ${pass_percent}% a menos. É como se tivesse ganhado ${(pass_sobra/pass_value).toFixed(1)} passagens de "bônus".`
+    }
+    function p50(){
+        var tot = 220
+        var pass_tot = 191.41
+        var pass_sobra = 220 - 191.41
+        var pass_percent = ((pass_value / 3.83 - 1) * 100).toFixed(1)
+        exibir.innerHTML = `Ao comprar 8 passagens, você pagou ${pass_percent}% a menos. É como se tivesse ganhado ${(pass_sobra/pass_value).toFixed(1)} passagens de "bônus".`
+    }
+</script>

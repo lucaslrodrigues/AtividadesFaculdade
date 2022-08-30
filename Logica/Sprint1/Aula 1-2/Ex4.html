@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex4 - nota</title>
+    <style>
+        button{
+            font: normal 8pt space;
+            color: white;
+            width: 80px;
+            height: 20px;
+            text-align: center;
+            background-color: rgb(0, 81, 255);
+        }
+    </style>
+</head>
+<body>
+    <p>📝 Informe sua nota: <input type='text' id='nota'></p>
+    <button onclick="grama()">opnião da avó</button>
+    <button onclick="mother()">opnião da mãe</button>
+</body>
+</html>
+<script>
+    function grama(){
+        alert('Muito bem, que neto inteligente, porque tirou '+ nota.value)
+    }
+    function mother(){
+        alert('Não fez mais que tua obrigação com essa nota '+ nota.value)
+    }
+</script>

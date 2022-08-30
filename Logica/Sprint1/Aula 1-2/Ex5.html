@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex5 - PPS</title>
+    <style>
+        button{
+            font: normal 10pt space;
+            color: white;
+            width: 50px;
+            height: 20px;
+            text-align: center;
+        }
+        #stop{
+            background-color:red;
+        }
+        #think{
+            background-color: rgb(255, 217, 0);
+        }
+        #lets{
+            background-color: green;
+        }
+    </style>
+</head>
+<body>
+    <p><button onclick="stop()" id="stop">Pare</button></p>
+    <p><button onclick="think()" id="think">Pense</button></p>
+    <p><button onclick="go()" id="lets">Siga</button></p>
+</body>
+</html>
+<script>
+    function stop(){
+        alert('Pare e aguarde!')
+    }
+    function think(){
+        alert('Pense se pode seguir ou se deve parar!')
+    }
+    function go(){
+        alert('Pode seguir adiante :)')
+    }
+</script>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex15 - </title>
+</head>
+<body>
+    <h1>Tamanho dos catetos</h1>
+    <input type="text" id="ca" placeholder="Cateto A">
+    <input type="text" id="cb" placeholder="Cateto B">
+    <button onclick="calculate()">Calcular</button>
+    <div id="exibir"></div>
+</body>
+</html>
+<script>
+    function calculate(){
+        hipotenusa = (Number(ca.value) ** 2) + (Number(cb.value) ** 2)
+        exibir.innerHTML = `O quadrado da hipotenusa com catetos ${ca.value} e ${cb.value} é ${(hipotenusa ** (1/2)).toFixed(1)}`
+    }
+</script>

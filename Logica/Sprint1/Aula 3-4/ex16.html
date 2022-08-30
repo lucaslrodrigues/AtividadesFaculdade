@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex16 - Moedas</title>
+</head>
+<body>
+    Moedas depositadas pelo Luizinho: <input type="text" id="luizinho"><br>
+    Moedas depositadas pelo Zezinho: <input type="text" id="zezinho"><br>
+    Moedas depositadas pelo Huguinho: <input type="text" id="huguinho"><br>
+    <button onclick = 'moedas()'>Bora calcular</button>
+    <div id="exibir_moedas"></div>
+</body>
+</html>
+<script>
+    function moedas(){
+        exibir_moedas.innerHTML = 'O Luizinho economizou R$' + (Number(luizinho.value) * 0.5) + ' pois fez ' + luizinho.value +  ' depósitos<br>'
+        exibir_moedas.innerHTML += 'O Zezinho economizou R$' + (Number(zezinho.value) * 0.5) + ' pois fez ' + zezinho.value +  ' depósitos<br>'
+        exibir_moedas.innerHTML += 'O Huguinho economizou R$' + (Number(huguinho.value) * 0.5) + ' pois fez ' + huguinho.value +  ' depósitos<br>'
+    }
+</script>

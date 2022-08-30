@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex19</title>
+</head>
+<body>
+    Quantos meses levara a reforma? <input type="text" id="meses" placeholder="Inserir valor"><br>
+    <button onclick="semanal()">Ver projeção semanal</button><br>
+    <button onclick="mensal()">Ver projeção mensal</button><br>
+    <button onclick="total()">Ver projeção total</button><br>
+    <div id="exibir"></div>
+</body>
+</html>
+<script>
+    function semanal(){
+
+        exibir.innerHTML = `Valor gasto em uma semana é ${(380 * 7)}`
+    }
+    function mensal(){
+        exibir.innerHTML = `Valor gasto em um mês é ${(380 * 30)}`
+    }
+    function total(){
+        var tot = Number(meses.value)
+        var tot_value = (tot * 30) * 380
+        exibir.innerHTML = `Valor gasto total é ${(380 * 30) * Number(meses.value)}`
+    }
+</script>

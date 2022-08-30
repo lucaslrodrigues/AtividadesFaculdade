@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex12 - Calorias</title>
+</head>
+<body>
+    <h1>Perda e ganhos de caliorias</h1>
+    Quantos pães você comeu hoje?       <input type="text" id="paes"><br>
+    Quantas casquinhas você comeu hoje? <input type="text" id="casquinhas"><br>
+    Quantos minutos de caminhada?       <input type="text" id="caminhada"><br>
+    Quantos minutos de musculação?      <input type="text" id="musculação"><br>
+    <button onclick="calculate()">Calcular</button>
+    <div id="show_calc"></div>
+</body>
+</html>
+<script>
+    function calculate(){
+        show_calc.innerHTML = 'Entre calorias que ganhou e perdeu, seu saldo de calorias no dia é de ' + 
+        (((Number(paes.value) * 100) + (Number(casquinhas.value) * 300)) - ((Number(caminhada.value) * 50) + (Number(musculação.value) * 30)))
+    }
+</script>

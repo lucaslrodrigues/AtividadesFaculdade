@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex9</title>
+</head>
+<body>
+    <h1>Virus skol</h1>
+    Quantidade de pessoas infectadas: <input type="text" id='qtdpessoas'>
+    <button onclick="qtdontem()">Quantas pessoas infectadas ontem</button>
+    <button onclick='qtdamanha()'>Quantidade de pessoa infectadas amanhã</button>
+    <button onclick="qtdmes()">Quantidade de pessoas infectadas daqui 1 mês</button>
+    <div id='frase'></div>
+</body>
+</html>
+<script>
+
+    function qtdinfec(){
+        var ontem = Number(qtdpessoas.value) - 35
+        frase.innerHTML = `Ontem haviam ${ontem} pessoas infectadas`
+    }
+    function qtdamanha(){
+        var amanha = Number(qtdpessoas.value) + 35
+        frase.innerHTML = `Amanhâ haveram ${amanha} pessoas infectadas`
+    }
+    function qtdmes(){
+        var mes = Number(qtdpessoas.value) + 1050
+        frase.innerHTML = `Daqui a q mês haverão  ${mes} pessoas infectadas`
+    }
+</script>

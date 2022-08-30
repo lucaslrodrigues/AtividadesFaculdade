@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex20,5</title>
+</head>
+<body>
+    <h1>Valor ingresso</h1>
+    Qual o valor do ingresso? <input type="text" id="ing_value" placeholder="Insira um valor" autofocus><br>
+    Qual a quantidade de ingressos? <input type="text" id="ing_qtd" placeholder="Insira um valor"><br>
+    <button onclick="calcular()">Realizar compra</button><br>
+    <div id="exibir"></div>
+</body>
+</html>
+<script>
+    function calcular(){
+        ing = Number(ing_value.value) * Number(ing_qtd.value)
+        ing_adc = (Number(ing_qtd.value) - 1) * 2
+        percent = (ing_adc / ing) * 100
+        exibir.innerHTML = `Ao comprar ${Number(ing_qtd.value)} ingressos, você economizou R$${ing_adc},00 e pagou ${(percent).toFixed(1)}% a menos`
+    }
+</script>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Xaula03</title>
+</head>
+<body>
+    <h1>Comando alert 🚨</h1>
+    <br>
+    Entre com o seu nome: <input id="ipt_nome" type="text">
+    <br>
+    Entre com o seu sobrenome: <input id="ipt_sobrenome" type="text">
+    <br>
+    <button onclick="mostrarSeparado()">Separado</button>  
+    <button onclick="mostrarJunto()">Junto</button>
+</body>
+</html>
+<script>
+    function mostrarSeparado(){
+        alert("Primeiro nome é: " + ipt_nome.value)
+    alert("O sobre nome é: " + ipt_sobrenome.value)
+    }
+    function mostrarJunto() {
+        alert(ipt_nome.value +' '+ ipt_sobrenome.value)
+    }
+</script>

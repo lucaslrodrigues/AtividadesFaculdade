@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex20</title>
+</head>
+<body>
+    <h1>Valor de ingresso</h1>
+    <button onclick="ing4()">4 ingressos</button>
+    <button onclick="ing6()">6 ingressos</button>
+    <button onclick="ing8()">8 ingressos</button>
+    <div id="exibir"></div>
+</body>
+</html>
+<script>
+    function ing4(){
+        var percent = ((48 - 32) / 48 * 100).toFixed(1)
+        exibir.innerHTML = `Ao comprar 4 ingressos, você pagou ${percent}% a menos.`
+    }
+    function ing6(){
+        var percent = ((72 - 42) / 72 * 100).toFixed(1)
+        exibir.innerHTML = `Ao comprar 6 ingressos, você pagou ${percent}% a menos.`
+    }
+    function ing8(){
+        var percent = ((96 - 48) / 96 * 100).toFixed(1)
+        exibir.innerHTML = `Ao comprar 6 ingressos, você pagou ${percent}% a menos.`
+    }
+</script>
