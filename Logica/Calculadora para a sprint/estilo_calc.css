@@ -1,0 +1,30 @@
+body{
+    background-color: rgb(52, 52, 174);
+}
+#topo{
+    background-color: rgb(99, 187, 254);
+    height: 90px;
+}
+#corpo{
+    background-color: rgb(95, 166, 248);
+    color: white;
+    height:max-content;
+    width: 500px;
+    /* margin-top: 50px; */
+    border-radius: 10px;
+}
+#conteudo, #logo{
+    margin-top: 10px;
+    margin-left: 10px;
+}
+#botao{
+    background-color: rgb(74, 255, 237);
+    color: rgb(6, 4, 116);
+    /* margin-top: 10px; */
+}
+#logo{
+    width: 50px;
+}
+#qtd_capsula, #valor_capsula, #botao{
+    margin-bottom: 10px;
+}

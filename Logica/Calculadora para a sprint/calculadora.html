@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora Financeira</title>
+    <link rel="stylesheet" href="estilo_calc.css">
+</head>
+<body>
+    <div id="topo">
+        <img src="Logo_Fleming.png" alt="Logo_Fleming" id="logo">
+    </div>
+    <section id="corpo">
+        <div id="conteudo">
+            <h1>Calculadora financeira</h1>
+
+            <!-- Botões para inserir valores -->
+            <div id="inputs">
+                Quantidade de capsulas produzidas <br><input id="qtd_capsula" autofocus placeholder='"Quantidade"'><br>
+                Valor por capsula <br><input id="valor_capsula" placeholder='"Valor"'><br>
+            </div>
+            <button onclick="calculate()" id="botao">Calcular valor perdido</button><br>
+            <div id="exibir"></div>
+        </div>
+    </section>
+</body>
+</html>
+<script>
+    function calculate(){
+        var quantidade = Number(qtd_capsula.value);
+        var valor = Number(valor_capsula.value);
+        var tot_monetario = quantidade * valor;
+        var qtd_perdida = quantidade * 0.15;
+        var qtd_dinheiro =  tot_monetario * 0.15; var dinheiro_total = tot_monetario * 1.15;
+
+        //Script retornando os valores
+        if (quantidade > 0){
+        exibir.innerHTML = `<b>Perda em quantide</b> : ${(qtd_perdida).toFixed(1)}<br><b>Perda monetária</b>: R$${(qtd_dinheiro).toFixed(2)}<br>
+        Com nosso sistema de monitoramento via sensor de umidade você pode reduzir sua perda,
+        <br> faturando <b>R$${(dinheiro_total).toFixed(2)}</b> ao invez de <b>R$${(tot_monetario).toFixed(2)}</b>,
+         um acrecimo de <b>15%</b> no lucro.
+        `
+        }else{
+            alert('Insira um valor válido no campo "Quantidade"')
+        }
+    }
+</script>
