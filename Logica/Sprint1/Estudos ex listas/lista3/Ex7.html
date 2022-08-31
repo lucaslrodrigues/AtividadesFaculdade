@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex7 - Cheque especial</title>
+</head>
+<body>
+    <h1>Cheque especial banco <b>Itado</b></h1>
+    <p>Saldo da conta: <input id="saldo_conta" placeholder="R$..." autofocus></p>
+    <p>Valor em débito: <input id="saldo_deb" placeholder="R$..."></p>
+    <button onclick="calculate()">Analisar conta</button><br>
+    <span id="exibir"></span>
+    <span id="exibir2" style="color: red"></span>
+</body>
+</html>
+<script>
+    function calculate(){
+        var saldo = Number(saldo_conta.value)
+        var deb = Number(saldo_deb.value)
+        var valor = saldo - deb
+        if (valor < 0){
+            exibir.innerHTML = `O saldo da sua conta corrente é ${(valor).toFixed(2)}`
+        }else{
+            exibir2.innerHTML = `O saldo da sua conta corrente é ${(valor).toFixed(2)}`
+        }
+        
+    }
+</script>

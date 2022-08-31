@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex4 - Rachar uma pizza</title>
+</head>
+<body>
+    <h1>Valor unitario da pizza</h1>
+    <h3>Qual o valor da pizza?</h3> <input id="pizza_valor" placeholder="Insira um valor" autofocus>
+    <h3>Quantos amigos?</h3><input id="qtd_amigos" placeholder="Amigos..."><br>
+    <button onclick="calculate()">Rola pizza</button><br>
+    <span id="exibir"></span>
+</body>
+</html>
+<script>
+    function calculate(){
+        var valor = Number(pizza_valor.value)
+        var pessoas = Number(qtd_amigos.value)
+        var pagar = valor / pessoas
+        exibir.innerHTML = `Cada amigo vai pagar R$${(pagar).toFixed(2)} pela pizza`
+
+        if (pagar > 20){
+            exibir.innerHTML += `Deu ruim! Pizza muito cara!`
+        }
+    }
+</script>

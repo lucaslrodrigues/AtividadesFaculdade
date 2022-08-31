@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex6 - Renda familiar</title>
+</head>
+<body>
+    <h1>Renda familiar</h1>
+    Renda familiar: <input id="renda_fam" autofocus placeholder="R$..."><br>
+    Valor de prestação: <input id="prestacao" placeholder="?x"><br>
+    <button onclick="calculate()">Verificar financiamento</button><br>
+    <span id="exibir"></span>
+</body>
+</html>
+<script>
+    function calculate(){
+        var renda = Number(renda_fam.value)
+        var prest = Number(prestacao.value)
+        var percent = prest / renda * 100
+        exibir.innerHTML = `A pestação corresponde a ${(percent).toFixed(2)}% da renda familiar`
+        if (percent > 30){
+            exibir.innerHTML += `<br><b>Será necessário complementar a renda familiar</b>`
+        }
+    }
+</script>

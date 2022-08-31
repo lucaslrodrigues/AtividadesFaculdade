@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex1 - </title>
+</head>
+<body>
+    <h1>Idade para ir a festa</h1>
+    Qual a sua idade <input id="idade" autofocus placeholder="insira um valor"><br>
+    <button onclick="calculate()">Ir para a festa</button><br>
+    <span id="exibir" style="color: rgb(77, 0, 0);"></span>
+    <span id="exibir2"></span>
+</body>
+</html>
+<script>
+    function calculate(){
+        exibir.innerHTML = ''
+        var age = Number(idade.value)
+        if (age < 18){
+            exibir.innerHTML = `Pedir permissão pro responsável<br>`
+        }
+        exibir2.innerHTML = `#partiu festa`
+    }
+</script>

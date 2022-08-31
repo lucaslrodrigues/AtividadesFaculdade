@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex5 - Valor por KWh</title>
+</head>
+<body>
+    <h1>Valor por KWh</h1>
+    <p>Quantidade de KWh consumida por mês:<br><input id="qtd_kwh" autofocus placeholder="KWh"></p>
+    <button onclick="calculate()">Calcular conta de luz</button><br>
+    <span id="exibir"></span>
+</body>
+</html>
+<script>
+    function calculate(){
+        var kwh = Number(qtd_kwh.value) * 0.85
+        var mes = kwh * 30
+        var desc = mes * 0.9
+        if (mes < 100){
+            exibir.innerHTML = `Valor da conta: R$${(mes).toFixed(2)}`
+        }else{
+            exibir.innerHTML = `valor da conta: R$${(desc).toFixed(2)}`
+        }
+    }
+</script>

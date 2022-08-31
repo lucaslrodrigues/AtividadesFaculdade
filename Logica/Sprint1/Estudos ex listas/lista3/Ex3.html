@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex3 - Calcular notas</title>
+</head>
+<body>
+    <h1>Notas fora de série</h1>
+    <h2>informe três notas:<br></h2> 
+    <p>1° <input id="nota1" placeholder="Insira um valor"><br></p>
+    <p>2° <input id="nota2" placeholder="Insira um valor"><br></p>
+    <p>3° <input id="nota3" placeholder="Insira um valor"><br></p>
+    <button onclick="calculate()">Analisar desempenho</button>
+    <span id="exibir"></span>
+</body>
+</html>
+<script>
+    function calculate(){
+        var n1 = Number(nota1.value)
+        var n2 = Number(nota2.value)
+        var n3 = Number(nota3.value)
+        var media = (n1 + n2 + n3) / 3
+        exibir.innerHTML = `Sua média foi de ${(media).toFixed(1)}!`
+
+        if (media > 9.4){
+            exibir.innerHTML += `<br>Parabéns você é fora de série!!`
+        }
+    }
+</script>
