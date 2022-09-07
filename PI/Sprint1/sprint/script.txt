@@ -1,0 +1,12 @@
+dentro da industria farmaceutica temos no inicio da cadeia de produção,
+os comprimidos em capsula sendo manipulados nos laboratórios. Nesse momento
+do processo existe um grande probléma que asola os laboratorios, que são os problemas
+com niveis de umidade.
+	níveis de umidade do ar acima do definido pela anvisa com o limite de 60%, acabam
+danificando o comprido e prove a ploriferação de fungos e backterias. Estes além 
+fazer com que seja perdida toda uma produção (uma vez que os fungos se espelham incontrolavelmente)
+estes fungos podem ser ingeridos pelo consumidor futuro e causar problemas de saude.
+	Por conta disso se é necessario um monitoramento eficiente da umidade
+que pode causar uma perda de mais de 15% de toda a produção do laboratorio.
+	um dos medicamentos mais afetados são os da familia dos opioides que são a
+ oxicodona, hidromorfona e metadona, comprimidos muito sensiveis a niveis altos de umidade.
