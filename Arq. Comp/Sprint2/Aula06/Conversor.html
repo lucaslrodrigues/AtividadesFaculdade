@@ -29,14 +29,12 @@
             text-align: center;
             display: flex;
             flex-flow: column wrap;
-            align-content: center;
             background-color: #f8f0af;
             width: 150px;
             padding: 10px 15px 50px 15px;
             border-radius: 10px;
             box-shadow: 5px 10px 10px rgba(0, 0, 0, 0.327);
         }
-        
         .corpo{
             padding: 20px 0px;
             display: flex;
@@ -60,6 +58,8 @@
         }
         .txt{
             color: rgba(255, 0, 0, 0.797);
+            text-align: left;
+            padding-left: 25%;
         }
         .titulo{
             padding: 20px;
@@ -69,6 +69,13 @@
             margin: auto;
             color: white;
             border-bottom:solid 3px #000000;
+        }
+        .exibicao{
+            width: 80%; height: 80%;
+            overflow-wrap:break-word;
+        }
+        .caixa{
+            padding: 0px 15px;
         }
     </style>
 </head>
@@ -82,25 +89,34 @@
         <h3 style="font-family: 'Montserrat', sans-serif;">Insira um valor e aperte algum dos botões para realizar a conversão</h3>
     </div>
     <div class="corpo">
-        <div class="input" style="color: #0a5c5a; font-family: 'Lato', sans-serif;">
-            <b>Insira um valor</b> <input type="text" id="numero" placeholder="Insira um número" autofocus><br>
-        </div>
-        <div class="hexa">
-            <div class="txt">10 ➡ 16</div>
-            <button onclick="hex()" class="botao">Hexadecimal</button>
-            <span id="hexaRes"></span>
-        </div>
-        <div class="binario">
-            <div class="txt">10 ➡ 2</div>
-            <button onclick="bin()" class="botao">Binário</button>
-            <span id="binarioRes"></span>
-        </div>
-        <div class="octal">
-            <div class="txt">10 ➡ 8</div>
-            <button onclick="oct()" class="botao">Octal</button>
-            <span id="octaRes"></span>
+    <div class="caixa">
+            <div class="input" style="color: #0a5c5a; font-family: 'Lato', sans-serif;">
+                <b>Insira um valor</b> <input type="text" id="numero" placeholder="Insira um número" autofocus><br>
+                <button onclick="limpar()" class="botao">Limpar</button>
+            </div>
         </div>
 
+        <div class="caixa">
+            <div class="hexa">
+                <div class="txt">10 ➡ 16</div>
+                <button onclick="hex()" class="botao">Hexadecimal</button>
+                <span class="exibicao" id="hexaRes"></span>
+            </div>
+        </div>
+        <div class="caixa">
+            <div class="binario">
+                <div class="txt">10 ➡ 2</div>
+                <button onclick="bin()" class="botao">Binário</button>
+                <span class="exibicao" id="binarioRes"></span>
+            </div>
+        </div>
+        <div class="caixa">
+            <div class="octal">
+                <div class="txt">10 ➡ 8</div>
+                <button onclick="oct()" class="botao">Octal</button>
+                <span class="exibicao" id="octaRes"></span>
+            </div>
+        </div>
     </div>
 </body>
 </html>
@@ -119,5 +135,10 @@
         var decimal = Number(numero.value);
         var octal = decimal.toString(8);
         octaRes.innerHTML = `${octal}`
+    }
+    function limpar(){
+        hexaRes.innerHTML = ""
+        binarioRes.innerHTML = ""
+        octaRes.innerHTML = ""
     }
 </script>
