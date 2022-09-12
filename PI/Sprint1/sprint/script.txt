@@ -10,3 +10,31 @@ estes fungos podem ser ingeridos pelo consumidor futuro e causar problemas de sa
 que pode causar uma perda de mais de 15% de toda a produção do laboratorio.
 	um dos medicamentos mais afetados são os da familia dos opioides que são a
  oxicodona, hidromorfona e metadona, comprimidos muito sensiveis a niveis altos de umidade.
+
+
+Segmento
+estamos inseridos na industria farmaceutica,
+monitorando a umidade durante a produção nos laboratorios
+
+Contexto
+Industria > problemas (niveis altos na umidade do ar) > Mantido de 40% a 60% de umidade>
+ Rendimento da perda(problemas) 15% de perda > Concluir falando a solução
+
+
+
+	com nosas pesquisas identificamos que os laboratorios de produção de comprimidos
+existe um grande problema que são os niveis altos de umidade asr, isso ocorre
+quando a umidade do ar ultrapassa os 65%.
+	O excesso de umidade afeta diretamente a materia prima do comprimido, 
+causando fungos, mofo, bolores e alterações na composição química.
+	Para evitar que esses efeitos nocivos atinjam os medicamentos, é preciso
+conceber aos laboratorios a tecnologia que possa monitorar esses níveis de umidade ar,
+assim seram tomadas as devidas providencias regularizando os níveis.
+	Logo, uma solução especializada em monitoramento de umidade fará com que as perdas monetárias reduzam drasticamente.
+
+
+calculadora
+faturamento total
+quantidade de comprimidos pretendida tipo do produto (oxicodona, metadona)
+perda monetaria
+quantidade produzida efetivamente

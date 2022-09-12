@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>contador</title>
+</head>
+<body>
+    <button onclick="somar()">Somar</button><br>
+    <span id="exibir"></span>
+</body>
+</html>
+<script>
+    cont = 0
+    function somar(){
+        cont += 1
+        if (cont == 0){
+            exibir.innerHTML = `${cont} Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quam eius dolore dolorum ducimus perspiciatis nam aspernatur assumenda rem vitae, animi quidem! Iure eligendi earum quo animi sed esse neque. Hic!<br>`
+        }else{
+            exibir.innerHTML += `${cont} Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quam eius dolore dolorum ducimus perspiciatis nam aspernatur assumenda rem vitae, animi quidem! Iure eligendi earum quo animi sed esse neque. Hic!<br>`
+        }
+    }
+</script>
