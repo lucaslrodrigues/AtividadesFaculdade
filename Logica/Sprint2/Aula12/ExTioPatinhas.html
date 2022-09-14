@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex1 - Tio Patinhas</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+        .botao{
+            background-color: rgba(4, 4, 102, 0.856);
+            color: white;
+            border: none;
+            border-radius: 3px;
+        }
+        .cifrao{
+            color: yellow;
+        }
+        .header{
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            background-color: rgb(173, 173, 233);
+        }
+        body{
+            font-family: 'Poppins', sans-serif;
+            margin: 0px;
+        }
+        .score{
+            background-color: rgba(0, 128, 0, 0.829);
+            padding: 10px;
+            border-radius: 10px;
+        }
+        .val{
+            color: white;
+        }
+        .areaBotton{
+            display: flex;
+            padding-top: 10px; 
+            flex-wrap: wrap;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="corpo">
+        <div class="header">
+            <h1>Calcular moedas</h1>
+            <p class="score">Tio Patinhas Score: <b class="val">R$</b><b id="valor" class="val">0</b></p>
+        </div>
+        <div class="areaBotton">
+            <button class="botao" onclick="cent_10()"><b class="cifrao">$</b>0.10</button>
+            <button class="botao" onclick="cent_50()"><b class="cifrao">$</b>0.50</button>
+            <button class="botao" onclick="cent_1()"><b class="cifrao">$</b>1.00</button>
+        </div>
+    </div>
+</body>
+</html>
+<script>
+    var tot = 0;
+    function cent_10(){
+        tot += 0.1;
+        valor.innerHTML = `${(tot).toFixed(2)}`;
+    }
+    function cent_50(){
+        tot += 0.5;
+        valor.innerHTML = `${(tot).toFixed(2)}`;
+    }
+    function cent_1(){
+        tot ++;
+        mostrar(); // pode-se chamar uma função dentro de outra função
+    }
+    function mostrar(){
+        valor.innerHTML = `${(tot).toFixed(2)}`
+    }
+</script>
