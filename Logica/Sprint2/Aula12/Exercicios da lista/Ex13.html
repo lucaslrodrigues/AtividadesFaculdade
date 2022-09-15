@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex13 - Guardando dinheiro</title>
+    <style>
+        body{
+            font-family: sans-serif;
+        }
+        .ok{
+            color: Blue;
+        }
+        .perigo{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    Valor guardado: R$<b id="valor">0.00</b>
+    <button onclick="guardar()">Guardar R$5,00</button>
+    <button onclick="gastar()">Gastar R$10,00</button>
+    <span id="exibir"></span>
+    <span id="exibir2"></span>
+</body>
+</html>
+<script>
+    var saldo = 0;
+    function guardar(){
+        saldo += 5
+        show()
+    }
+    function gastar(){
+        saldo -= 10;
+        show()
+    }
+    function show(){
+        if (saldo > 0){
+            exibir.innerHTML = `<br><b class="ok">Finanças OK!</b>`
+            exibir2.innerHTML = ``
+        }
+
+        if (saldo < -20){
+            exibir2.innerHTML = `<br>Quase um Corinthians!`
+        }else if (saldo < 0){
+            exibir.innerHTML = `<br><b class="perigo">Finanças em perigo!</b>`
+        }else if (saldo > 100){
+            exibir2.innerHTML = `<br>#ostentação`
+        }
+    }
+</script>

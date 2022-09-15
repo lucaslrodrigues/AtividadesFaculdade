@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex14 - Notas</title>
+    <style>
+        .image{
+            width: 300px;
+        }
+    </style>
+</head>
+<body>
+    <button onclick="nota1()">Nota 1</button><br>
+    <button onclick="nota2()">Nota 2</button><br>
+    <button onclick="nota3()">Nota 3</button><br>
+    <button onclick="nota4()">Nota 4</button><br>
+    <button onclick="nota5()">Nota 5</button><br>
+    Sua Avaliação: <b id="exibir">0</b>
+</body>
+</html>
+<script>
+    var cont = 0;
+    var fig = '';
+    var media = 0;
+
+    function nota1(){
+        cont += 5;
+        show()
+    }
+    function nota2(){
+        cont += 7
+        show()
+    }
+    function nota3(){
+        cont += 5
+        show()
+    }
+    function nota4(){
+        cont += 10
+        show()
+    }
+    function nota5(){
+        cont += 8
+        show()
+    }
+
+    function show(){
+        media = cont / 5;
+
+        if (media <= 2){
+            fig = "https://i.pinimg.com/236x/99/d3/39/99d339e9d375633c41c6ec3907a547d5.jpg"
+        }else if (media <= 3){
+            fig = "https://i.pinimg.com/236x/d4/49/88/d44988170f77c0a8f01bfafa1611a378.jpg"
+        }else if (media <= 4.5){
+            fig = "https://i.pinimg.com/236x/ea/61/de/ea61def538ab902838cea708c923d024.jpg"
+        }else{
+            fig = "https://ciclovivo.com.br/wp-content/uploads/2016/01/iStock_000073701349_Small.jpg"
+        }
+            exibir.innerHTML = `${media.toFixed(1)}<br><img src=${fig} class="image"></b>`
+    }
+</script>

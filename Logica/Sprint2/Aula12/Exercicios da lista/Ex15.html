@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex15 - Desempenho do atacante</title>
+    <style>
+        .image{
+            width: 300px;
+        }
+    </style>
+</head>
+<body>
+    Quantas partidas já foram jogadas? <input type="text" id="pt_jogadas" placeholder="Insira um valor..." autofocus><br>
+    Quantos gols foram marcados? <input type="text" id="gols_marc" placeholder="Insira um valor..."><br>
+    <button onclick="estudar()">Estudar atacante</button><br>
+    <span id="exibir"></span>
+</body>
+</html>
+<script>
+    function estudar(){
+        var partidas = Number(pt_jogadas.value)
+        var gols = Number(gols_marc.value)
+        var media = gols / partidas
+        if (media < 0.2){
+            exibir.innerHTML = `Melhor mudar de posição!<br><img src="https://image-service.onefootball.com/transform?w=620&h=413&dpr=2&image=https%3A%2F%2Fwp-images.onefootball.com%2Fwp-content%2Fuploads%2Fsites%2F13%2F2019%2F12%2FCruzeiro-v-Gremio-Brasileirao-Series-A-2019-1576080815.jpg" class="image"><br>Sua média de gols/partida é de ${media.toFixed(1)}`
+        }else if (media < 0.6){
+            exibir.innerHTML = `Atacante mediano!<br><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSrdQoW2lqiKoC9gLyX5MaRO1LjgsfwyHi_zqvRQ8Wk2cbJp0TZ2SzX1t9lv8MCFvzjiE8&usqp=CAU" class="image"><br>Sua média de gols/partida é de ${media.toFixed(1)}`
+        }else{
+            exibir.innerHTML = `Atacante de futuro!<br><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSj-nGpKvSLTEwt2GPTCBvN9w66RtDiP-Ch9w&usqp=CAU" class="image"><br>Sua média de gols/partida é de ${media.toFixed(1)}`
+        }
+    }
+
+</script>

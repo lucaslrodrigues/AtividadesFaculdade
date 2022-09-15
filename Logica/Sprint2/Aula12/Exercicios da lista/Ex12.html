@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex12</title>
+</head>
+<body>
+    Você já clicou <b id="exibicao">0</b> vezes
+    <button onclick="contar()">clica neu!</button>
+    <span id="exibir2"></span>
+</body>
+</html>
+<script>
+    cont = 0;
+    function contar(){
+        cont ++;
+        if (cont <= 5){
+            exibir2.innerHTML = `<br>Dedo fraquinho, hein`
+        }else if (cont <= 10){
+            exibir2.innerHTML = `<br>Dedo bom, mano`
+        }else if (cont <= 15){
+            exibir2.innerHTML = `<br>Gosta de clicar, hein!`
+        }else{
+            exibir2.innerHTML = `<br>Eita dedo nervoso!`
+        }
+        somar()
+    }
+    function somar(){
+        exibicao.innerHTML = `${cont}`
+    }
+</script>
