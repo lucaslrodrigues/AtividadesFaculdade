@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex12 - Cofrinho</title>
+</head>
+<body>
+    <h1>Cofrinho</h1>
+    valor atual de moeda <select id="moedas_atuais" onchange="atualizar()">
+        <option value="">selecione</option>
+        <option value="10">10</option>
+        <option value="20">20</option>
+        <option value="30">30</option>
+        <option value="40">40</option>
+    </select><br>
+    <button onclick="depositar()">Depositar</button><br>
+    <button onclick="gastar()">Gastar grana</button><br>
+    <span id="exibir"></span>
+</body>
+</html>
+<script>
+    var atual = 0;
+    var saldo = 0;
+    var qtd = 0;
+    var media = 0;
+    exibir.innerHTML = `
+        O saldo do cofrinho é de: R$ ${saldo.toFixed(2)}<br>
+        A quantidade de operações foi: ${qtd.toFixed(2)}<br>
+        Média dos depósitos: R$ ${media.toFixed(2)}<br><br>
+        `
+    function atualizar(){
+        atual = moedas_atuais.value;
+        if (atual != ''){
+            atual = Number(moedas_atuais.value)
+        }
+    }
+    function depositar(){
+        saldo += atual
+        qtd ++
+        media = saldo / qtd;
+        exibir.innerHTML = `
+        O saldo do cofrinho é de: R$ ${(saldo).toFixed(2)}<br>
+        A quantidade de operações foi: ${qtd.toFixed(2)}<br>
+        Média dos depósitos: R$ ${media.toFixed(2)}<br><br>
+        `
+    }
+    function gastar(){
+        exibir.innerHTML = ``
+        saldo = 0;
+        qtd = 0;
+        media = 0;
+    }
+
+</script>

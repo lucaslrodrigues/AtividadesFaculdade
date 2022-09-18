@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex9 - Hobby</title>
+</head>
+<body>
+    <h1>Hobby</h1>
+    Qual Hobby praticar? <select id="selecao" onchange="atualizar()">
+        <option value="">selecionar</option>
+        <option value="https://cdn.shopify.com/s/files/1/1061/1924/files/Dancer_With_Red_Dress_Emoji_400x400.png">Dançar</option>
+        <option value="https://cdn.shopify.com/s/files/1/1061/1924/files/Virus_Emoji_400x400.png">Jogar video game</option>
+        <option value="https://cdn.shopify.com/s/files/1/1061/1924/files/Man_Bowing_Emoji_400x400.png">Assistir seriados</option>
+        <option value="https://cdn.shopify.com/s/files/1/1061/1924/files/Sign_of_the_Horns_Emoji_400x400.png">Ouvir rock</option>
+    </select>
+    Quantas vezes por semana você vai praticar? <select id="selecao2" onchange="atualizar()">
+        <option value="">selecionar</option>
+        <option value="50">1</option>
+        <option value="100">2</option>
+        <option value="140">3</option>
+        <option value="190">4</option>
+        <option value="260">5</option>
+        <option value="300">6</option>
+    </select>
+    <div id="exibir"></div>
+</body>
+</html>
+<script>
+    function atualizar(){
+        var select1 = selecao.value
+        var select2 = Number(selecao2.value)
+        if (select1 == ''){
+            exibir.innerHTML = ``
+        }else if (select2 != ''){
+            exibir.innerHTML = `<img src="${select1}" width="${select2}px;">`
+        }
+    }
+</script>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex14 - Valor da pizza</title>
+</head>
+<body>
+    <h1>Calcular valor da pizza</h1>
+    <input type="text" id="calcular" autofocus placeholder="Insira um valor">
+    <br>
+    <select id="sabor1">
+        <option value="37">Queijo</option>
+        <option value="40">Presunto</option>
+        <option value="42">Ovo</option>
+        <option value="42">Palmito</option>
+        <option value="40.5">Frango</option>
+        <option value="42">Catupiry</option>
+    </select>
+    <select id="sabor2">
+        <option value="37">Queijo</option>
+        <option value="40">Presunto</option>
+        <option value="42">Ovo</option>
+        <option value="42">Palmito</option>
+        <option value="40.5">Frango</option>
+        <option value="42">Catupiry</option>
+    </select>
+    <select id="sabor3">
+        <option value="37">Queijo</option>
+        <option value="40">Presunto</option>
+        <option value="42">Ovo</option>
+        <option value="42">Palmito</option>
+        <option value="40.5">Frango</option>
+        <option value="42">Catupiry</option>
+    </select>
+
+    <button onclick="calcular()">calcular preço da pizza</button>
+    <div id="exibir"></div>
+</body>
+</html>
+<script>
+    function calcular(){
+        var sab1 = Number(sabor1.value);
+        var sab2 = Number(sabor2.value);
+        var sab3 = Number(sabor3.value);
+        var total = sab1 + sab2 + sab3;
+        exibir.innerHTML = `A pizza de SABOR vai custar um total de R$${total.toFixed(2)}`
+    }
+</script>
