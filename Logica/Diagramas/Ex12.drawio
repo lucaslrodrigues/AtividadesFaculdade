@@ -1,1 +1,96 @@
-<mxfile host="app.diagrams.net" modified="2022-09-18T20:58:24.812Z" agent="5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36" version="20.3.2" etag="48By_KNR1KoJm1nouhnW" type="github"><diagram id="jWhK9bG5lx-gI_-J6XYj">UzV2zq1wL0osyPDNT0nNUTV2VTV2LsrPL4GwciucU3NyVI0MMlNUjV1UjYwMgFjVyA2HrCFY1qAgsSg1rwSLBiADYTaQg2Y1AA==</diagram></mxfile>
+<mxfile host="app.diagrams.net" modified="2022-09-19T01:14:17.242Z" agent="5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36" etag="ihNZMcA0nCGWcANek4Z_" version="20.3.2" type="github">
+  <diagram id="jWhK9bG5lx-gI_-J6XYj" name="Page-1">
+    <mxGraphModel dx="1200" dy="847" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="ScyLif_rZ-8QgZUrTTZf-13" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="ScyLif_rZ-8QgZUrTTZf-1" target="ScyLif_rZ-8QgZUrTTZf-7">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ScyLif_rZ-8QgZUrTTZf-1" value="" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="20" y="80" width="40" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="ScyLif_rZ-8QgZUrTTZf-2" value="Ex12" style="text;html=1;strokeColor=#d6b656;fillColor=#fff2cc;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="ScyLif_rZ-8QgZUrTTZf-18" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="ScyLif_rZ-8QgZUrTTZf-3" target="ScyLif_rZ-8QgZUrTTZf-5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ScyLif_rZ-8QgZUrTTZf-3" value="Select box recebe opções&lt;br&gt;[10] valor 10&lt;br&gt;[20] valor 20&lt;br&gt;[30] valor 30&lt;br&gt;[40] valor 40" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="600" y="52.5" width="160" height="95" as="geometry" />
+        </mxCell>
+        <mxCell id="ScyLif_rZ-8QgZUrTTZf-19" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="ScyLif_rZ-8QgZUrTTZf-5" target="ScyLif_rZ-8QgZUrTTZf-9">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ScyLif_rZ-8QgZUrTTZf-5" value="Botão Depositar = [depositar()]&lt;br&gt;Botão Gastar grana = [gastar()]" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="580" y="210" width="200" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="ScyLif_rZ-8QgZUrTTZf-16" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="ScyLif_rZ-8QgZUrTTZf-7" target="ScyLif_rZ-8QgZUrTTZf-11">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ScyLif_rZ-8QgZUrTTZf-7" value="&lt;div style=&quot;text-align: justify;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;[operações] = 0&lt;/span&gt;&lt;br&gt;&lt;/div&gt;&lt;div style=&quot;text-align: justify;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;[saldo] = 0&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: justify;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;[media] = 0&lt;/span&gt;&lt;/div&gt;" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="80" y="50" width="140" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="ScyLif_rZ-8QgZUrTTZf-32" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="ScyLif_rZ-8QgZUrTTZf-9" target="ScyLif_rZ-8QgZUrTTZf-22">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ScyLif_rZ-8QgZUrTTZf-9" value="função [atualizar()]&lt;br&gt;&lt;span style=&quot;text-align: justify;&quot;&gt;[moedas] = selectbox.value&lt;/span&gt;" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="340" y="210" width="180" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="ScyLif_rZ-8QgZUrTTZf-17" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="ScyLif_rZ-8QgZUrTTZf-11" target="ScyLif_rZ-8QgZUrTTZf-3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ScyLif_rZ-8QgZUrTTZf-11" value="Exibir&lt;br&gt;&quot;O saldo do cofrinho é de: R$ [saldo]”&lt;br&gt;A quantidade de operações foi: [operações]&lt;br&gt;Média dos depósitos: R$ [media]" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="288.5" y="52.5" width="250" height="95" as="geometry" />
+        </mxCell>
+        <mxCell id="ScyLif_rZ-8QgZUrTTZf-29" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;startArrow=none;" edge="1" parent="1" source="ScyLif_rZ-8QgZUrTTZf-30" target="ScyLif_rZ-8QgZUrTTZf-28">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ScyLif_rZ-8QgZUrTTZf-43" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="ScyLif_rZ-8QgZUrTTZf-22" target="ScyLif_rZ-8QgZUrTTZf-34">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ScyLif_rZ-8QgZUrTTZf-22" value="" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="188.5" y="220" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="ScyLif_rZ-8QgZUrTTZf-37" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="ScyLif_rZ-8QgZUrTTZf-28" target="ScyLif_rZ-8QgZUrTTZf-36">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ScyLif_rZ-8QgZUrTTZf-28" value="função [atualizar()]&lt;br&gt;[moedas] = Number(selectbox.value)" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="117.75" y="400" width="222.25" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ScyLif_rZ-8QgZUrTTZf-30" value="if moedas != &#39;&#39;" style="text;html=1;strokeColor=#d6b656;fillColor=#fff2cc;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="188.5" y="330" width="80" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="ScyLif_rZ-8QgZUrTTZf-31" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;" edge="1" parent="1" source="ScyLif_rZ-8QgZUrTTZf-22" target="ScyLif_rZ-8QgZUrTTZf-30">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="228.5" y="300" as="sourcePoint" />
+            <mxPoint x="228.5" y="390" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ScyLif_rZ-8QgZUrTTZf-34" value="" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="50" y="605" width="40" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="ScyLif_rZ-8QgZUrTTZf-39" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="ScyLif_rZ-8QgZUrTTZf-36" target="ScyLif_rZ-8QgZUrTTZf-38">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ScyLif_rZ-8QgZUrTTZf-36" value="função [depositar()]&lt;br&gt;[saldo] += [moedas]&lt;br&gt;[quantidade] += 1&lt;br&gt;[media] = [saldo] / [quantidade]" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="380" y="390" width="181.5" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="ScyLif_rZ-8QgZUrTTZf-41" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="ScyLif_rZ-8QgZUrTTZf-38" target="ScyLif_rZ-8QgZUrTTZf-40">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ScyLif_rZ-8QgZUrTTZf-38" value="&lt;div&gt;O saldo do cofrinho é de: R$ [saldo]&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; A quantidade de operações foi: [quantidade]&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; Média dos depósitos: R$ [media]&lt;/div&gt;" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="590" y="340" width="210" height="180" as="geometry" />
+        </mxCell>
+        <mxCell id="ScyLif_rZ-8QgZUrTTZf-44" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="ScyLif_rZ-8QgZUrTTZf-40" target="ScyLif_rZ-8QgZUrTTZf-34">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="100" y="625" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ScyLif_rZ-8QgZUrTTZf-40" value="função [gastar()]&lt;br&gt;Exibir = &#39;&#39;&lt;br&gt;[saldo] = 0&lt;br&gt;[quantidade] = 0" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="600" y="560" width="192.5" height="130" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
