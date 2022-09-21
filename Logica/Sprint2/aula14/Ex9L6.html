@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex9 lista 6 - Login e senha</title>
+</head>
+<body>
+    Login <input type="text" id="LOGIN" autofocus placeholder="Login"><br>
+    Senha <input type="password" id="SENHA" placeholder="Senha"><br>
+    Codigo de segurança <input type="text" id="CODIGO" placeholder="codigo"><br>
+    <button onclick="ATUALIZAR()">Entrar</button><br>
+</body>
+</html>
+<script>
+    function ATUALIZAR(){
+        var LOG = LOGIN.value
+        var SEN = SENHA.value
+        var COD = CODIGO.value
+        if (LOG == 'SPTech' && SEN == 'digital' && COD == '123'){
+            alert('Usuário autenticado com sucesso')
+        }else{
+            alert('Falha na autenticação')
+        }
+    }
+</script>
