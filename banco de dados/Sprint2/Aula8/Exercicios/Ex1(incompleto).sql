@@ -33,8 +33,8 @@ select * from pet;
 select * from cliente;
 select * from endereco;
 insert into cliente(nome, telFixo, telCel) values
-	('Lucas',1134567889,11912345678)
-	('',,)
-	('',,)
-	('',,)
-	('',,);
+	('José Lucas Donario',1134567889,11912345678),
+	('Marta Monsoni Veracruz',1134854896,11964587523),
+	('Domenico montela',1134585647,11931563185),
+	('Paulo arrentino de magalhães',1135456363,11914200344),
+	('Ivon von voith',1136471568,11934664584);
