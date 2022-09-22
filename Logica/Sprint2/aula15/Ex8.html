@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex8 lista8 - calculadora de cansaço</title>
+</head>
+<body>
+    <h1>Calculadora de cansaço aprimorada aluno SPTech</h1>
+    Meio de trasporte <select id="transporte">
+        <option value="1">Ônibus</option>
+        <option value="2">Metrô</option>
+        <option value="3">Carro</option>
+        <option value="4">Bicicleta</option>
+    </select>
+    <input type="text" id="km" placeholder="Distância da faculdade (KM)">
+    <button onclick="calcular()">Calcular cansaço</button>
+</body>
+</html>
+<script>
+    function calcular(){
+        KM = Number(km.value)
+        TRAN = transporte.value
+        if (KM <= 10){
+            if (TRAN == '1' || TRAN == '2' || TRAN == '3'){
+                alert("Tá tranks ...")
+            }else{
+                alert("É ... um pouco cansado ...")
+            }
+        }else{
+            if (TRAN == '3'){
+                alert("É ... um pouco cansado ...")
+            }else if (TRAN == '1' || TRAN == '2'){
+                alert("Bem cansado ...")
+            }else{
+                alert("Vish ... tá só o pó ...")
+            }
+        }
+    }
+</script>

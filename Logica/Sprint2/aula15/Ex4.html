@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex4 lista 6 - Modo de pagamento</title>
+</head>
+<body>
+    Modo de pagamento <select id="lista">
+        <option value="Din">Dinheiro</option>
+        <option value="Deb">Cartão de débito</option>
+        <option value="Cred">Cartão de crédito</option>
+        <option value="Bol">Boleto</option>
+    </select>
+    <button onclick="analizar()">Analisar compra</button>
+</body>
+</html>
+<script>
+    function analizar(){
+        list = lista.value
+        if (list == 'Deb' || list == 'Din'){
+            alert("Você terá que pagar a vista")
+        }else{
+            alert("Pagamento poderá ser parcelado")
+        }
+    }
+</script>

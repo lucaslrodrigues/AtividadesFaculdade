@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex2 lista 8 - Aprovação na faculdade</title>
+</head>
+<body>
+    Nota do enem: <input type="text" id="enem_nota">
+    Nota vestibular: <input type="text" id="vestibular_nota">
+    <button onclick="atualizar()">Avaliar</button>
+</body>
+</html>
+<script>
+    function atualizar(){
+        var enem = Number(enem_nota.value)
+        var vest = Number(vestibular_nota.value)
+        if (enem >= 800 || vest >= 700){
+            alert('Parabéns! Aprovado')
+        }else{
+            alert('Tente semestre que vem!')
+        }
+    }
+</script>
