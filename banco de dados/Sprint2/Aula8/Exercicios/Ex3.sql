@@ -3,25 +3,25 @@ use PraticaFuncionario;
 
 create table setor (
 idSetor int primary key auto_increment,
-nome varchar(20),
-andar decimal(12)
+nome varchar(20) not null,
+andar decimal(12) not null
 );
 
 create table funcionario (
 idFunc int primary key auto_increment,
-nome varchar(45),
-telefone decimal(12) unique,
-salario decimal(10,2),
+nome varchar(45) not null,
+telefone decimal(12) unique not null,
+salario decimal(10,2) not null,
 fkSetor int, constraint ctSetor foreign key (fkSetor) references setor(idSetor)
 );
-select * from acompanhante;
+
 create table acompanhante (
 idAcomp int,
-fkAcomp int, constraint ctAcomp foreign key (fkAcomp) references funcionario(idFunc),
-primary key (idAcomp, fkAcomp),
-nome varchar(40),
-relacao varchar(20),
-dtNasc date
+fkFuncionario int not null, constraint ctAcomp foreign key (fkFuncionario) references funcionario(idFunc),
+primary key (idAcomp, fkFuncionario),
+nome varchar(40) not null,
+relacao varchar(20) not null,
+dtNasc date not null
 );
 
 # Inserir dados nas tabelas, de forma que exista mais de um funcionário em cada setor cadastrado.
@@ -37,9 +37,9 @@ insert into funcionario(nome, telefone, salario, fkSetor) values
     ('Mariana Rios Grizoni',11933245678,4.99, 3),
     ('Leonardo de Cezar Filho',11956556823,2.99, 3);
 
-insert into acompanhante (nome, relacao, dtNasc, fkAcomp, idAcomp) values
+insert into acompanhante (nome, relacao, dtNasc, fkfuncionario, idAcomp) values
     ('Marcos Coelho de Oliveira','Amigo','1982-01-14', 1, 1),
-    ('Zander Ramalho Schedrick','Esposa','1990-07-23', 2, 2),
+    ('Zander Ramalho Schedrick','Esposa','1990-07-23', 1, 2),
     ('Zidelma Silva de Oliveira','Mãe','1960-04-25', 3, 3),
     ('Domenico de Alcantra Junior','Esposo','1987-12-01', 4, 4),
     ('Juliana Maria Queiroz','Esposa','1992-07-18', 5, 5);
@@ -51,16 +51,16 @@ select * from acompanhante;
 
 # Fazer os acertos da chave estrangeira, caso não tenha feito no momento da criação.
 # Exibir os dados dos setores e dos seus respectivos funcionários
-select s.*, f.* from setor as s join funcionario as f on f.fkFunc = s.idSetor;
+select s.*, f.* from setor as s join funcionario as f on f.fkSetor = s.idSetor;
 
 # Exibir os dados de um determinado setor (informar o nome do setor na consulta) e dos seus respectivos funcionários.
-select s.nome as 'Setor', f.* from setor as s join funcionario as f on f.fkSetor = s.idSetor;
+select s.*, f.* from setor as s join funcionario as f on f.fkSetor = s.idSetor where s.nome = 'Producao';
 
 # Exibir os dados dos funcionários e de seus acompanhantes.
-select f.*, a.* from funcionario as f join acompanhante as a on f.idFunc = a.fkAcomp;
+select f.*, a.* from funcionario as f join acompanhante as a on f.idFunc = a.fkFuncionario;
 
 # Exibir os dados de apenas um funcionário (informar o nome do funcionário) e os dados de seus acompanhantes
-select f.nome as 'Nome', a.* from funcionario as f join acompanhante as a on f.idFunc = a.fkAcomp;
+select f.*, a.* from funcionario as f join acompanhante as a on f.idFunc = a.fkFuncionario where f.nome = 'Mario Aiala Vergueiro';
 
 #  Exibir os dados dos funcionários, dos setores em que trabalham e dos seus acompanhantes.
-select f.*, s.*, a.* from funcionario as f join setor as s on fkSetor = idSetor join acompanhante as a on idFunc = fkAcomp;
+select f.*, s.*, a.* from funcionario as f join setor as s on f.fkSetor = s.idSetor join acompanhante as a on f.idFunc = a.fkFuncionario;

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulador Financeiro</title>
+</head>
+<body>
+    <h1>Simule aqui</h1>
+    Horas de funcionamento/dia
+    <br>
+    <input type="text" id="ipt_horasdia">
+    <br>
+    Preço p/ minuto
+    <br>
+    <input type="text" id="ipt_preco" placeholder="0.00">
+    <br>
+    Número de vagas ocupadas
+    <br>
+    <input type="text" id="ipt_vagasoc" placeholder="Nº médio de vagas ocupadas">
+    <br>
+    Número de vagas totais
+    <br>
+    <input type="text" id="ipt_vagastot">
+    <br>
+    <button onclick="simular()">Simular agora!</button>
+    <br>
+    <div id="div_msg"></div>
+</body>
+</html>
+<script>
+    function simular() {
+        // Conversão de horas de funcionamento por dia em minutos
+        var horasFuncionamento = Number(ipt_horasdia.value) * 60
+        // Cálculo do ganho total com as vagas ocupadas em um dia
+        var ganhoVoT = Number(ipt_vagasoc.value) * horasFuncionamento * Number(ipt_preco.value)
+        // Cálculo do ganho máximo possível em um dia
+        var ganhoTot = Number(ipt_vagastot.value) * horasFuncionamento * Number(ipt_preco.value)
+        // Cálculo da perda em um dia
+        var perdaDia = ganhoTot - ganhoVoT
+        // Cálculo do prejuízo em um mês (30 dias)
+        var prejuMes = perdaDia * 30
+        div_msg.innerHTML = `Em um dia com ${ipt_vagasoc.value} vagas ocupadas, funcionando ${ipt_horasdia.value}
+                             horas por dia, ao preço de R$${ipt_preco.value} reais por minuto,
+                             seu estacionamento perderá R$${perdaDia.toFixed(2)} reais em um dia e, ao mês, 
+                             terá a perda de aproximadamente R$${prejuMes.toFixed(2)} reais.`
+    }
+</script> 
