@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio booleano</title>
+    <style>
+        body{
+            margin: 0%;
+            background-color: #ebf7f8;
+        }
+        .container{
+            width: 50%;
+            height: 500px;
+            margin: auto;
+            border-radius: 10px;
+            background-color: #49708a;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+        .boxes{
+            flex-direction: column;
+        }
+        .box{
+            display: flex;
+            flex-direction: column;
+            padding: 10px;
+            justify-content: center;
+        }
+        span{
+            color: #ebf7f8;
+            font-size: 20px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: 1000;
+        }
+        input{
+            text-align: center;
+            height: 20px;
+            width: 200px;
+            border-radius: 10px;
+            border: 2px solid #caff42;
+        }
+        button{
+            background-color: #f07241;
+            color: white;
+            border: none;
+            width: 100px;
+            height: 30px;
+            border-radius: 5px;
+        }
+        select{
+            border:none;
+            height: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="corpo">
+        <div class = 'container'>
+            <div id="boxes">
+                <div class = 'box'>
+                    <span>Login</span>
+                    <input type="text" id="login_ipt">
+                </div>
+                <div class = 'box'>
+                    <span>Senha</span>
+                    <input type="text" id="senha_ipt">
+                </div>
+                <div class = 'box'>
+                    <span>Código</span>
+                    <input type="text" id="codigo_ipt">
+                </div>
+                <div class = 'box'>
+                    <span>Nacionalidade</span>
+                    <select id="nacionalidade">
+                        <option value="0">Selecionar</option>
+                        <option value="1">Brasil</option>
+                        <option value="0">Outros</option>
+                    </select>
+                </div>
+                <div class = 'box'>
+                    <span>Idade</span>
+                    <input type="text" id="idade_ipt">
+                </div>
+                <div class="box"></div>
+                    <button onclick="validar()">Validar usuário</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+<script>
+    //S = 1(!A!B!C!D!E) + 2(!A!B!C!DE) + 3(!A!BC!D!E) + 4(!A!BC!DE) + 5(!AB!C!D!E) + 6(!AB!C!DE) + 7(!AB!CD!E) + 8(!ABC!D!E) + 9(!ABC!DE) + 10(!ABCD!E) + 11(!ABCDE) + 12(A!B!C!D!E) + 13(A!B!C!DE) + 14(A!BC!D!E) + 15(A!BC!DE) + 16(AB!C!D!E) + 17(AB!C!DE) + 18(AB!CD!E) + 19(AB!CDE) + 20(ABC!D!E) + 21(ABC!DE) + 22(ABCD!E) + 23(ABCDE)
+
+    // LOGIN: sptech
+    // SENHA: school
+    // CODIGO: 595
+    // NACIONALIDADE: Brasil
+    // IDADE: +18
+
+    function validar(){
+        var login = login_ipt.value;
+        var senha = senha_ipt.value;
+        var codigo = codigo_ipt.value;
+        var nacio = nacionalidade.value;
+        var idade = Number(idade_ipt.value);
+        var a = 0; var b = 0; var c = 0; var d = nacio; var e = 0;
+
+        if (login == "sptech"){
+            a = 1
+        }
+        if (senha == "school"){
+            b = 1
+        }
+        if (codigo = "595"){
+            c = 1
+        }
+        if (idade >= 18){
+            e = 1
+        }
+        
+        if (a != 1 && b != 1 &&  c != 1 &&  d != 1 && e != 1){           //1
+            saida()
+        }else if (a != 1 && b != 1 &&  c != 1 &&  d != 1 && e == 1){     //2
+            saida()
+        }else if (a != 1 && b != 1 &&  c == 1 &&  d != 1 && e != 1){     //3
+            saida()
+        }else if (a != 1 && b != 1 &&  c == 1 &&  d != 1 && e == 1){     //4
+            saida()
+        }else if (a != 1 && b == 1 &&  c != 1 &&  d != 1 && e != 1){     //5
+            saida()
+        }else if (a != 1 && b == 1 &&  c != 1 &&  d != 1 && e == 1){     //6
+            saida()
+        }else if (a != 1 && b == 1 &&  c != 1 &&  d == 1 && e != 1){     //7
+            saida()
+        }else if (a != 1 && b == 1 &&  c == 1 &&  d != 1 && e != 1){     //8
+            saida()
+        }else if (a != 1 && b == 1 &&  c == 1 &&  d != 1 && e == 1){     //9
+            saida()
+        }else if (a != 1 && b == 1 &&  c == 1 &&  d == 1 && e != 1){     //10
+            saida()
+        }else if (a != 1 && b == 1 &&  c == 1 &&  d == 1 && e == 1){     //11
+            saida()
+        }else if (a == 1 && b != 1 &&  c != 1 &&  d != 1 && e != 1){     //12
+            saida()
+        }else if (a != 1 && b != 1 &&  c != 1 &&  d != 1 && e == 1){     //13
+            saida()
+        }else if (a == 1 && b != 1 &&  c == 1 &&  d != 1 && e != 1){     //14
+            saida()
+        }else if (a == 1 && b != 1 &&  c == 1 &&  d != 1 && e == 1){     //15
+            saida()
+        }else if (a == 1 && b == 1 &&  c != 1 &&  d != 1 && e != 1){     //16
+            saida()
+        }else if (a == 1 && b == 1 &&  c != 1 &&  d != 1 && e == 1){     //17
+            saida()
+        }else if (a == 1 && b == 1 &&  c != 1 &&  d == 1 && e != 1){     //18
+            saida()
+        }else if (a == 1 && b == 1 &&  c != 1 &&  d == 1 && e == 1){     //19
+            saida()
+        }else if (a == 1 && b == 1 &&  c == 1 &&  d != 1 && e != 1){     //20
+            saida()
+        }else if (a == 1 && b == 1 &&  c == 1 &&  d != 1 && e == 1){     //21
+            saida()
+        }else if (a == 1 && b == 1 &&  c == 1 &&  d == 1 && e != 1){     //22
+            saida()
+        }else if (a == 1 && b == 1 &&  c == 1 &&  d == 1 && e == 1){     //23
+            saida()
+        }else{
+            alert("Usuário negado")
+        }
+    }
+    function saida(){
+            alert("Usuário autorizado!!")
+        }
+</script>
