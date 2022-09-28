@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio Banco 24h</title>
+</head>
+<body>
+    <h1>Banco 24h</h1>
+    <h3>Apenas notas de R$10,00, R$50,00, R$100,00</h3>
+    Quantidade de cedulas de R$10,00 <input type="text" id="nota10" placeholder="10,00" autofocus><br>
+    Quantidade de cedulas de R$50,00 <input type="text" id="nota50" placeholder="50,00"><br>
+    Quantidade de cedulas de R$100,00 <input type="text" id="nota100" placeholder="100,00"><br>
+    <button onclick="iniciar()">Iniciar</button><br>
+    Valor do saque <input type="text" id="saque_valor"><br>
+    <button onclick="solicitarSaque()">Solicitar saque</button>
+</body>
+</html>
+<script>
+    var total_saldo = 0;
+    var n10 = 0;
+    var n50 = 0;
+    var n100 = 0;
+    var tot10 = 0;
+    var tot50 = 0;
+    var tot100 = 0;
+    var saldo = 0;
+    function iniciar(){
+        n10 = Number(nota10.value)
+        n50 = Number(nota50.value)
+        n100 = Number(nota100.value)
+        tot10 = n10 * 10;
+        tot50 = n50 * 50;
+        tot100 = n100 * 100;
+        total_saldo = tot10 + tot50 + tot100;
+    }
+    function solicitarSaque(){
+        var saque = saque_valor.value;
+        if (saque <= 0){
+            alert('Não é possível sacar 0 ou menos')
+        }else{
+            if(saque > total_saldo){
+                alert('Montante disponível não atende a solicitação')
+            }else{
+                if(saque %10 != 0){
+                    alert('Valor não possível devido às notas disponíveis')
+                }else{
+                    if (n100 > 0){
+                        notas_100 = Math.floor (saque / 100)
+                        if(n100 < notas_100){
+                            saque -= (n100 * 100)
+                            n100 = 0;
+                        }else{
+                            saque -= (notas_100 * 100);
+                            n100 -= notas_100
+                        }
+                    }if (n50 > 0){
+                        notas_50 = Math.floor (saque / 50)
+                        if(n50 < notas_50){
+                            saque -= (n50 * 50)
+                            n50 = 0;
+                        }else{
+                            saque -= (notas_50 * 50);
+                            n50 -= notas_50
+                        }
+                    }if (n10 > 0){
+                        notas_10 = Math.floor (saque / 10)
+                        if(n10 < notas_10){
+                            saque -= (n10 * 10)
+                            n10 = 0;
+                        }else{
+                            saque -= (notas_10 * 10);
+                            n10 -= notas_10
+                        }
+                    }
+                    if (saque > 0){
+                        alert('A quantidade e valor das cédulas disponíveis não atende o valor desejado')
+                    }else{
+                        alert('Retire o dinheiro no local indicado')
+                    }
+                    tot10 = n10 * 10;
+                    tot50 = n50 * 50;
+                    tot100 = n100 * 100;
+                    total_saldo = tot10 + tot50 + tot100;
+                }
+            }
+        }
+    }
+</script>
