@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex3 - Truco</title>
+</head>
+<body>
+    <h1>Manilha do truco</h1>
+    <select id="jogador1">
+        <option value="Normal">Normal</option>
+        <option value="ouros">ouros</option>
+        <option value="copas">copas</option>
+        <option value="espada">espada</option>
+        <option value="paus">paus</option>
+    </select>
+    <select id="jogador2">
+        <option value="Normal">Normal</option>
+        <option value="ouros">ouros</option>
+        <option value="copas">copas</option>
+        <option value="espada">espada</option>
+        <option value="paus">paus</option>
+    </select>
+    <button onclick="verificar()">Ver vencedor</button>
+</body>
+</html>
+<script>
+    function verificar(){
+        jog1 = jogador1.value
+        jog2 = jogador2.value
+        if (jog1 != jog2){
+            if(jog1 == 'paus' && (jog2 == 'espada' || jog2 == 'copas' || jog2 == 'ouros'|| jog2 == 'Normal') || jog1 == 'espada' && (jog2 == 'copas' || jog2 == 'copas' || jog2 == 'ouros' || jog2 == 'Normal') || jog1 == 'copas' && (jog2 == 'ouros'|| jog2 == 'Normal') || jog1 == 'ouros' && jog2 == 'Normal'){
+                alert('Vitoria do jogador 1')
+            }else{
+                alert('Vitoria do jogador 2')
+            }
+        }else{
+            alert('Tá tendo carta a mais nesse baralho!!')
+        }
+    }
+</script>
