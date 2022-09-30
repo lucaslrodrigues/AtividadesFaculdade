@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex3 - Espressão booleana em JS</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,900;1,100&family=Yanone+Kaffeesatz:wght@600&display=swap');
+        body{
+            margin: 0%;
+            background-color: white;
+            font-family: 'Lato', sans-serif; font-family: 'Yanone Kaffeesatz', sans-serif;
+        }
+        .header img{
+            width: 50px;
+        }
+        .header{
+            background-color: #ffbc0d;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            height: 100px;
+            width: 100%;
+            margin: auto;
+            box-shadow: 5px 0px 5px rgba(0, 0, 0, 0.298);
+        }
+        .container{
+            margin: auto;
+            border: solid 1px rgba(128, 128, 128, 0.418);
+            margin-top: 10%;
+            width: 700px;
+            height: 300px;
+            display: flex;
+            justify-content: space-between;
+            border-radius: 5px;
+            box-shadow: 2px 2px 7px rgba(0, 0, 0, 0.298);
+        }
+        .ask{
+            display: flex;
+            flex-direction: column;
+            padding: 19px;
+            justify-content: space-around;
+        }
+        .box{
+            display: flex;
+            flex-direction: column;
+            margin-top: 7%;
+        }
+        .text{
+            font-size: 20pt;
+            margin-bottom: 5px;
+        }
+        select{
+            font-family: 'Lato', sans-serif; font-family: 'Yanone Kaffeesatz', sans-serif;
+            font-size: 13pt;
+            padding: 4px;
+            border: none;
+            border-left: solid 3px #ffbc0d;
+            border-bottom:solid 1px grey;
+        }
+
+        .result{
+            background-color: #ffbc0d;
+            width: 60%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-around;
+        }
+        .result button{
+            width: 114px;
+            height: 44px;
+            border: none;
+            background-color: white;
+            border-radius: 4px;
+        }
+        .result .res{
+            text-align: center;
+            color: white;
+            font-family: 'Lato', sans-serif; font-family: 'Yanone Kaffeesatz', sans-serif;
+            font-size: 30pt
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <img src="https://www.mcdonalds.com.br/images/layout/mcdonalds-logo-bg-red.png">
+        <h1>Ir ao McDonald's?</h1>
+    </div>
+    <div class="container">
+        <div class="ask">
+            <div class="box">
+                <span class="text">Está chovendo?</span><select id="a">
+                    <option value="">Selecionar</option>
+                    <option value="1">Sim</option>
+                    <option value="0">Não</option>
+                </select>
+            </div>
+            <div class="box">
+                <span class="text">Tenho dinheiro?</span> <select id="b">
+                    <option value="">Selecionar</option>
+                    <option value="1">Sim</option>
+                    <option value="0">Não</option>
+                </select>
+            </div>
+            <div class="box">
+                <span class="text">Tenho tempo?</span> <select id="c">
+                    <option value="">Selecionar</option>
+                    <option value="1">Sim</option>
+                    <option value="0">Não</option>
+                </select>
+            </div>
+            <div class="box">
+                <span class="text">Gosto de nuggets?</span> <select id="d">
+                    <option value="">Selecionar</option>
+                    <option value="1">Sim</option>
+                    <option value="0">Não</option>
+                </select>
+            </div>
+        </div>
+        <div class="result">
+            <span class='res'id="exibir">...</span>
+            <button onclick="verificar()">Vou ao Mc?</button>
+        </div>
+    </div>
+</body>
+</html>
+<script>
+    function verificar(){
+        var A = Number(a.value)
+        var B = Number(b.value)
+        var C = Number(c.value)
+        var D = Number(d.value)
+
+        let Mc = (!A && !B && C && !D) || (!A && !B && C && D) || (!A && B && C && D) || (A && !B && C && D) || (A && B && C && D)
+
+        if (Mc){
+            exibir.innerHTML = `Sim, vou ao McDonald's<br>\\o/`
+        }else{
+            exibir.innerHTML = "Não, quem sabe na próxima..."
+        }
+    }
+</script>

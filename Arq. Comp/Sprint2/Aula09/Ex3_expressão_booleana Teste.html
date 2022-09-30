@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex3 - Espressão booleana em JS</title>
+</head>
+<body>
+    <h1>Ir ao McDonald's</h1>
+    Está chovendo: <select id="a">
+        <option value="">Selecionar</option>
+        <option value="1">Sim</option>
+        <option value="0">Não</option>
+    </select>
+    Tenho dinheiro: <select id="b">
+        <option value="">Selecionar</option>
+        <option value="True">Sim</option>
+        <option value="False">Não</option>
+    </select>
+    Tenho tempo: <select id="c">
+        <option value="">Selecionar</option>
+        <option value="True">Sim</option>
+        <option value="False">Não</option>
+    </select>
+    Gosto de nuggets: <select id="d">
+        <option value="">Selecionar</option>
+        <option value="True">Sim</option>
+        <option value="False">Não</option>
+    </select>
+    <button onclick="verificar()">Vou ao Mc?</button>
+    <div id="exibir"></div>
+</body>
+</html>
+<script>
+    function verificar(){
+        var A = Number(a.value)
+        var B = Boolean(b.value)
+        var C = Boolean(c.value)
+        var D = Boolean(d.value)
+
+        let Mc = (A)
+
+        if (Mc){
+            exibir.innerHTML = `Sim, vou ao McDonald's`
+        }else{
+            exibir.innerHTML = `Não, quem sabe na próxima`
+        }
+    }
+</script>

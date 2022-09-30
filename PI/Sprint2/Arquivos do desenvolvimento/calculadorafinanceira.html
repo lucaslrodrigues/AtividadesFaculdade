@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora Financeira</title>
+</head>
+
+<body>
+
+    <h1>Calculadora financeira</h1>
+    Informe o padrão do seu comercio <input id="tipo" placeholder="Ex: Supermercado,Hipermercado ou Atacado"><br><br>
+    Informe o faturamento mensal do seu comécio <input id="faturamento" placeholder="Ex: Supermercado,Hipermercado ou Atacado"><br><br>
+    <h2>Descubra o quanto pode faturar com DataFlux</h2>
+    <button onclick="calcular()">Faturamento</button><br><br>
+
+    <div id="resultado"></div>
+    <div id="porcentagem"> </div>
+</body>
+
+</html>
+
+<script>
+    function calcular() {
+
+        var FT = faturamento.value;
+        var tipoc = tipo.value;
+   
+
+        if (tipoc == "Supermercado") {
+            var faturamento1 = (FT * 1.01);
+            var lucro = 1.01 * 100;
+            resultado.innerHTML = `O faturamento do seu Supermercado ao se fundir ao nosso projeto será de R$${faturamento1}<br><br>`;
+            porcentagem.innerHTML = ` A margem de lucro pode subir até ${lucro}% com a funcionamento dos sensores DATAFLUX, com os dados fornecidos<br>, é possível saber sua margem de lucro e como você poderá fazer um melhor uso para a modalegem finanaceira do seu negócio`;
+
+
+        } else if (tipoc == "Hipermercado") {
+
+            var faturamento2 = (FT * 1.03);
+            var lucro = 1.03 * 100;
+            resultado.innerHTML = `O faturamento do seu Hipermercado ao se fundir ao nosso projeto será de R$${faturamento2}<br><br>`;
+            porcentagem.innerHTML = ` A margem de lucro pode subir até ${lucro}%com a funcionamento dos sensores DATAFLUX, com os dados fornecidos,<br> é possível saber sua margem de lucro e como você poderá fazer um melhor uso para a modalegem finanaceira do seu negócio`;
+
+        } else if (tipoc == "Atacado") {
+            var faturamento3 = (FT * 1.06);
+            var lucro = 1.06 * 100;
+            resultado.innerHTML = `O faturamento do seu Hipermercado ao se fundir ao nosso projeto será de R$${faturamento3}<br><br>`;
+            porcentagem.innerHTML = ` A margem de lucro pode subir até ${lucro}%  com a funcionamento dos sensores DATAFLUX, com os dados fornecidos,<br> é possível saber sua margem de lucro e como você poderá fazer um melhor uso para a modalegem finanaceira do seu negócio`;
+        } else {
+            alert('informação inserida inválida')
+        }
+    }
+</script>
