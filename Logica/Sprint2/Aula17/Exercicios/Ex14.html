@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex14 - Idade do usuário</title>
+</head>
+<body>
+    <h1>Fases da vida</h1>
+    Qual a sua idade <input type="text" id="idade_ipt" placeholder="Idade"><br>
+    <button onclick="atualizar()">Ver fases</button><br>
+    <span id="exibir"></span>
+</body>
+</html>
+<script>
+    function atualizar(){
+        exibir.innerHTML = ''
+        var idade = Number(idade_ipt.value)
+        var cont = 0;
+        while(cont <= idade){
+            if(cont > 100){
+                exibir.innerHTML += `${cont} anos (Matusalém)<br>`
+            }else if (cont > 50){
+                exibir.innerHTML += `${cont} anos (Melhor idade)<br>`
+            }else if (cont > 18){
+                exibir.innerHTML += `${cont} anos (Adulto)<br>`
+            }else if (cont > 10){
+                exibir.innerHTML += `${cont} anos (Adolescência)<br>`
+            }else if (cont > 6){
+                exibir.innerHTML += `${cont} anos (Segunda Infância)<br>`
+            }else if (cont > 4){
+                exibir.innerHTML += `${cont} anos (Pré-escolar)<br>`
+            }else if(cont >= 0){
+                exibir.innerHTML += `${cont} anos (Primeira Infância)<br>`
+            }else{
+                exibir.innerHTML += `${cont} Esse ainda nem nasceu!<br>`
+            }
+            cont ++;
+        }
+    }
+</script>

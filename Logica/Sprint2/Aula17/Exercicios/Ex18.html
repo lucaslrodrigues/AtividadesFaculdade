@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex18 - Trajeto de um estudante</title>
+</head>
+<body>
+    <h1>Trajeto para a SPTECH</h1>
+    Quantos ônibus <input type="text" id="onibus_input"><br>
+    Quantos trens <input type="text" id="trem_input"><br>
+    Quantos metrôs <input type="text" id="metro_input"><br>
+    <button onclick="atualizar()">#Partiu Tajeto</button><br>
+    <span id="exibir"></span>
+</body>
+</html>
+<script>
+    function atualizar(){
+        exibir.innerHTML = ''
+        var onibus = Number(onibus_input.value)
+        var trem = Number(trem_input.value)
+        var metro = Number(metro_input.value)
+        var cont_oni = 0;
+        var cont_trem = 0;
+        var cont_metro = 0;
+
+        if(onibus > 0){
+            while(cont_oni < onibus){
+                cont_oni ++
+                exibir.innerHTML += `<span style="color:#d91e34;">Pegando o ${cont_oni}º buzão</span><br>`
+            }
+        }
+        if (trem > 0){
+            while(cont_trem < trem){
+                cont_trem ++
+                exibir.innerHTML += `<span style="color:#00824c;">Pegando o ${cont_trem}º trem</span><br>`
+            }
+        }
+        if (metro > 0){
+            while(cont_metro < metro){
+                cont_metro ++
+                exibir.innerHTML += `<span style="color:#0572b0;">Pegando o ${cont_metro}º trem</span><br>`
+            }
+        }
+    }
+</script>

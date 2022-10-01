@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex16 - Caronas em um carro</title>
+</head>
+<body>
+    <h1>Caronas</h1>
+    Quantas pessoas vão entrar no carro? <input type="text" id="quantidade_pessoas">
+    <button onclick="atualizar()">#Partiu Carona</button><br>
+    <span id="exibir"></span>
+</body>
+</html>
+<script>
+    function atualizar(){
+        var qtd = Number(quantidade_pessoas.value)
+        exibir.innerHTML = ''
+        cont = 2;
+        exibir.innerHTML += `Entrou o 1º passageiro (que é o(a) motorista)<br>`
+        while(cont <= qtd){
+            if(cont < 6){
+                exibir.innerHTML += `Entrou o ${cont}º passageiro<br>`
+            }else{
+                exibir.innerHTML += `O ${cont}º passageiro terá que esperar!<br>`
+            }
+            cont++
+        }
+    }
+</script>

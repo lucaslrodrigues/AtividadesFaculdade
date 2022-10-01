@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex13- Rotina de musculação</title>
+</head>
+<body>
+    A cada quantos dias você pratica musculação? <input type="text" id="dias_input"><br>
+    <button onclick="atualizar()">Exibir rotina mensal</button><br>
+    <span id="exibir"></span><br>
+</body>
+</html>
+<script>
+    function atualizar(){
+        exibir.innerHTML = '';
+        var dia_bruto = Number(dias_input.value);
+        var dias = 1;
+        var cont = 0;
+        while(cont < 30){
+            cont++;
+            if (cont == dias || cont == 1){
+                exibir.innerHTML += `Dia ${cont} - Musculação<br>`;
+                dias += dia_bruto
+            }else{
+                exibir.innerHTML += `Dia ${cont} - - Comer, dormir etc<br>`;
+            }
+        }
+    }
+</script>
