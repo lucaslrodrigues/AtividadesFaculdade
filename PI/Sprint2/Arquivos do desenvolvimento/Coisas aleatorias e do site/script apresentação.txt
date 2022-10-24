@@ -1,0 +1,29 @@
+[1]
+
+Nossa home foi criada seguindo a estrutura one page em que o usuário vai descendo a tela e vendo as informações.
+
+Nesta primeira parte nós temos uma breve apresentação da empresa.
+
+[2]
+
+(se puderem ver nós optamos por criar uma navbar fixa que acompanha a rolagem do site).
+	systoyanka é uma empresa de tecnologia focada no monitoramento de vagas de shopping.
+
+mais pra baixo na segunda tela nós informamos quem nós somos (que nós somos uma empresa de tecnologia wue tem como produto o monitoramento dos estacionamentos como foi dito anteriormente, para que o cliente já tenha uma noção melhor de quem nós somos apresentando o nosso escopo).
+
+Mais a baixo nós falamos sobre a cultura da empresa.
+
+Nossa missão:
+	Nossa missão é agir com praticidade e agilidade, possibilitando a facilidade de tomadas de decisões rápidas e inteligentes aos nossos clientes.
+
+Visão:
+	Ser referência no ramo de estacionamentos, visando sempre a eficiência em nossos serviços e trazendo o melhor direcionamento a nossos clientes.
+
+E valores:
+	Agimos com propósito, trabalhamos com simplicidade para entregarmos resultados eficazes, tendo como valor transparência e acesso.
+
+
+
+- Emplementação da criação de novos cadastros de usuarios ligados ao usuário principal;
+- Cadastro e login ligados a API;
+- Um dashboard para a visualização do historia
