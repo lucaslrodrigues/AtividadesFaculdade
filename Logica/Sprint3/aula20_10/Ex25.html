@@ -27,11 +27,11 @@
         var juros_tot = 0;
 
         if(poupado <= 0){
-            alert('Se não poupar o valor não muda')
+            alert('Se não poupar acima de 0 o valor não muda')
         }else if(meses < 10){
             alert('Pelo menos 10 meses para o dinheiro render ;)')
         }else if (juros < 0.5 && juros > 2){
-            alert('No juros no gain!!')
+            alert('Juros devem estar entre 0,5 e 2')
         }else{
             exibir.innerHTML = '';
         

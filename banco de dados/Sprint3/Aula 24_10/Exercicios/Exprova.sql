@@ -107,4 +107,43 @@ select c.*, i.*, v.*, p.*, pv.*
                     
                     
 # Exibir apenas a data da venda, o nome do produto e a quantidade do produto numa determinada venda.
-select 
+select v.dtVenda 'Data', p.nome 'Nome', pv.quantidade 'Quantidade'
+	from vendas as v join produtosVenda as pv
+		on v.idVenda = pv.fkVenda
+			join produto as p
+				on p.idProduto = pv.fkProduto
+					where idVenda = 1;
+
+# Exibir apenas o nome do produto, o valor do produto e a soma da quantidade de produtos vendidos agrupados pelo nome do produto.
+select p.nome, p.preco, sum(quantidade)
+	from produto as p join produtosVenda as pv
+		on pv.fkProduto = idProduto
+			group by p.nome;
+
+# Inserir dados de um novo cliente. Exibir os dados dos clientes, das respectivas vendas, e os clientes que não realizaram nenhuma venda.
+insert into cliente values
+	(null, 'Paulo', 'paula@sptech.school', 05777000, 'São José dos Campos', 'São Paulo', 101);
+    
+select cliente.*, vendas.*
+	from cliente left join vendas
+		on idCliente = fkCliente;
+
+# Exibir o valor mínimo e o valor máximo dos preços dos produtos
+select max(preco) 'Valor máximo' , min(preco) 'Valor mínimo' from produto;
+
+# Exibir a soma e a média dos preços dos produtos
+select sum(preco) 'Soma dos preços', avg(preco) 'Média de preços' from produto;
+
+# Exibir a quantidade de preços acima da média entre todos os produtos;
+select count(preco) 'Quantidade acima da média' from produto where preco > (select avg(preco) from produto);
+
+# Exibir a soma dos preços distintos dos produtos;
+select sum(preco) 'Soma' from produto;
+
+# Exibir a soma dos preços dos produtos agrupado por uma determinada venda
+select sum(preco) 'Soma de preços'
+	from produto join produtosVenda
+		on idProduto = fkProduto
+			join vendas
+				on idVenda = fkVenda
+					group by idVenda = 1;
