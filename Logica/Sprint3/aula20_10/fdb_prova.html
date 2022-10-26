@@ -7,8 +7,77 @@
     <title>FDB da prova</title>
 </head>
 <body>
-    Limite superior <input type="lim_sup_ipt">
-    Limite inferior <input type="lim_inf_ipt"><br>
-    Número de divisibilidade <input type="div_num_ipt">
+    Limite superior <input id="lim_sup_ipt"><br>
+    Limite inferior <input id="lim_inf_ipt"><br>
+    Número de divisibilidade <input id="div_num_ipt"><br>
+    <button onclick="verificar()">calcular</button><br>
+    <span id="exibir"></span>
 </body>
 </html>
+<script>
+    var superior = 0;
+    var inferior = 0;
+    var divisor = 0;
+    
+    function verificar(){
+        superior = Number(lim_sup_ipt.value)
+        inferior = Number(lim_inf_ipt.value)
+        divisor = Number(div_num_ipt.value)
+
+        if (inferior < 1){
+            alert('Limite inferior deve ser maior que 0')
+        }else if (superior > 100 || inferior > superior){
+            alert('Limite superior deve ser menor que 100 e maior que o limite superior')
+        }else if (divisor < 3 || divisor > 10){
+            alert('O divisor deve estar ente 3 e 10')
+        }else{
+            calcular()
+        }
+    }
+    function calcular(){
+        var cont = inferior;
+        var divisiveis = '';
+        var cont_voltas = 0;
+        var maior = 0;
+        var menor = 0;
+        var soma = 0;
+        var media = 0;
+        var qtd_exibidos = 0;
+
+        exibir.innerHTML = '';
+        while (cont <= superior){
+            if (cont % divisor == 0){
+                if (qtd_exibidos == 0){
+                    maior = cont;
+                    menor = cont;
+                    qtd_exibidos ++;
+                }
+                if (cont < menor){
+                    menor = cont;
+                    qtd_exibidos ++;
+                }else if (cont > maior){
+                    maior = cont;
+                    qtd_exibidos ++;
+                }
+                divisiveis += cont;
+                divisiveis += ','
+                soma += cont;
+            }
+            cont_voltas ++
+            cont ++
+        }
+        var divisao = 0;
+        if (soma > 0){
+            divisao = soma / qtd_exibidos;
+        }
+        exibir.innerHTML += `<br>${divisiveis}`
+
+        exibir.innerHTML += `<br><br>
+        QUANTIDADE TOTAL DE NÚMEROS EXIBIDOS: ${qtd_exibidos}<br>
+        SOMATÓRIO DOS NÚMEROS EXIBIDOS: ${soma}<br>
+        MÉDIA DOS NÚMEROS EXIBIDOS: ${(divisao).toFixed(1)}<br>
+        MAIOR NÚMERO EXIBIDO: ${maior}<br>
+        MENOR NÚMERO EXIBIDO: ${menor}
+        `
+    }
+</script>
