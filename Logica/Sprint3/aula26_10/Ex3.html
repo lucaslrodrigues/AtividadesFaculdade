@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex2 - Algo sobre a quarentena</title>
+</head>
+<body>
+    <input type="text" id="texto">
+    <button onclick="calcular()">Diga algo sobbre a quarentena</button><br>
+    <span id="exibir"></span>
+</body>
+</html>
+<script>
+    function calcular(){
+        exibir.innerHTML = '';
+        var txt = texto.value
+        for (var cont = 1; cont <= 7; cont ++){
+            exibir.innerHTML += `${cont} - ${txt} <br>`
+        }
+    }
+</script>
