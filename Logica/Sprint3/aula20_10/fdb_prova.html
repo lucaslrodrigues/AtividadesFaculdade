@@ -7,8 +7,8 @@
     <title>FDB da prova</title>
 </head>
 <body>
-    Limite superior <input id="lim_sup_ipt"><br>
     Limite inferior <input id="lim_inf_ipt"><br>
+    Limite superior <input id="lim_sup_ipt"><br>
     Número de divisibilidade <input id="div_num_ipt"><br>
     <button onclick="verificar()">calcular</button><br>
     <span id="exibir"></span>
@@ -24,10 +24,11 @@
         inferior = Number(lim_inf_ipt.value)
         divisor = Number(div_num_ipt.value)
 
-        if (inferior < 1){
-            alert('Limite inferior deve ser maior que 0')
-        }else if (superior > 100 || inferior > superior){
+
+        if (superior >= 100 || inferior > superior){
             alert('Limite superior deve ser menor que 100 e maior que o limite superior')
+        }else if (inferior <= 1){
+            alert('Limite inferior deve ser maior que 1')
         }else if (divisor < 3 || divisor > 10){
             alert('O divisor deve estar ente 3 e 10')
         }else{
