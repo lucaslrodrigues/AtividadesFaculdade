@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex20 - è tri é penta</title>
+</head>
+<body>
+    <button onclick="atualizar()">Curto 3 e 5!</button><br>
+    <span id="exibir"></span>
+</body>
+</html>
+<script>
+    function atualizar(){
+        exibir.innerHTML = ''
+        for(var cont = 0; cont <= 100; cont ++){
+            if (cont % 3 == 0 && cont % 5 == 0){
+                exibir.innerHTML += `É TRI!É PENTA!<br>`
+            }else if (cont % 3 == 0){
+                exibir.innerHTML += `É TRI!<br>`
+            }else if (cont % 5 == 0){
+                exibir.innerHTML += `É PENTA!<br>`
+            }else{
+                exibir.innerHTML += `${cont}<br>`
+            }
+        }
+    }
+</script>

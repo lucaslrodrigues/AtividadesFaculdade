@@ -21,6 +21,8 @@
             exibir.innerHTML = 'Limite inferior deve ser maior que 1'
         }else if (superior >= 100){
             exibir.innerHTML = 'Limite superior deve ser menor que 100'
+        }else if (superior < inferior){
+            exibir.innerHTML = 'Limite superior deve ser maior que o inferior'
         }else{
             exibir.innerHTML = ''
             for (; inferior <= superior; inferior ++){

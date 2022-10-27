@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex19 - Idade</title>
+</head>
+<body>
+    Informe sua idade <input type="text" id="idade_ipt" oninput="atualizar()"><br>
+    <span id="exibir"></span>
+</body>
+</html>
+<script>
+    function atualizar(){
+        exibir.innerHTML = '';
+        if (idade_ipt.value == ''){
+            exibir.innerHTML = ''
+        }else{
+            var idade = Number(idade_ipt.value);
+            var fase = '';
+            if (idade < 0){
+                exibir.innerHTML = 'Insira uma idade válida';
+            }else{
+                for (var cont = 0; cont <= idade; cont++){
+                    if(cont <= 4){
+                        fase = 'Primeira infância'
+                    }else if (cont <= 6){
+                        fase = 'Pré-escolar'
+                    }else if (cont <= 10){
+                        fase = 'Segunda infância'
+                    }else if (cont <= 18){
+                        fase = 'Adolescência'
+                    }else if (cont <= 50){
+                        fase = 'Adulto'
+                    }else if (cont <= 100){
+                        fase = 'Melhor idade'
+                    }else{
+                        fase = 'Matusálem'
+                    }
+                    exibir.innerHTML += `${cont} anos (${fase})<br>`
+                }
+            }
+        }
+    }
+</script>

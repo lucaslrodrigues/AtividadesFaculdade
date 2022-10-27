@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex13 - Xícaras de café que ele já tomou na vida</title>
+</head>
+<body>
+    Quantas xícaras de café você já tomou na vida <input type="text" id="xicara_ipt"><br>
+    <button onclick="atualizar()">Ver quantidade</button><br>
+    <span id="exibir"></span>
+</body>
+</html>
+<script>
+    function atualizar(){
+        exibir.innerHTML = ''
+        var qtd = Number(xicara_ipt.value)
+        if (qtd == 0){
+            exibir.innerHTML = '<span style="color:red;">Insira uma quantidade</span>'
+        }else{
+            for (var cont = 0; cont < qtd; cont ++){
+                exibir.innerHTML += `
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTsl35bD5IzY2O4mlVBXDzBx8wKPdN0Kvy_iAdYFPY6CA&s" style="padding: 0px 3px; width: 90px;">
+                `
+                for(c = 0; c < 2; c++){
+                    exibir.innerHTML += `
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQucca_xwckV4Ywaqd4b70MvfdSSfugKG5wvSPPZ485tw&s" style="padding: 0px 3px; width: 90px;">
+                    `
+                }
+                exibir.innerHTML += "<br>"
+        }
+        }
+    }
+</script>

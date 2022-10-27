@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex14 - Rendimento de depositos</title>
+</head>
+<body>
+    Quantos depositos você fez no banco? <input type="text" id="qtd_deposito_ipt"><br>
+    Valor de cada deposito <input type="text" id="valor_ipt"><br>
+    <button onclick="atualizar()">Acompanhar grana</button><br>
+    <span id="exibir"></span>
+</body>
+</html>
+<script>
+    function atualizar(){
+        exibir.innerHTML = '';
+        var deposito = Number(qtd_deposito_ipt.value);
+        var valor = Number(valor_ipt.value);
+        var final = 0;
+        if(deposito < 1){
+            exibir.innerHTML = 'Precisa de pelo menos um deposito'
+        }
+        for (var cont = 1; cont <= deposito; cont ++){
+            exibir.innerHTML += `${cont}º Mês: R$ ${(final += valor).toFixed(2)}<br>`
+        }
+        exibir.innerHTML += `Total guardado: ${final.toFixed(2)}`
+    }
+</script>

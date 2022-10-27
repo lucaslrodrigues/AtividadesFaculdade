@@ -4,9 +4,36 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Divisibilidade</title>
 </head>
 <body>
-    
+    Limite inferior <input type="text" id="inferior_ipt"><br>
+    Limite superior <input type="text" id="superior_ipt"><br>
+    Numero de Divisibilidade <input type="text" id="divisibilidade_ipt"><br>
+    <button onclick="atualizar()">Contar</button><br>
+    <span id="exibir"></span>
 </body>
 </html>
+<script>
+    function atualizar(){
+        var superior = Number(superior_ipt.value)
+        var inferior = Number(inferior_ipt.value)
+        var divisor = Number(divisibilidade_ipt.value)
+
+        if (inferior <= 1){
+            exibir.innerHTML = 'Limite inferior deve ser maior que 1'
+        }else if (superior >= 100){
+            exibir.innerHTML = 'Limite superior deve ser menor que 100'
+        }else if (inferior > superior){
+            exibir.innerHTML = 'Limite superior deve ser maior que o inferior'
+        }else if (divisor < 3 || divisor > 10){
+            exibir.innerHTML = 'Numero de divisibilidade deve estar entre 3 e 10'
+        }else{
+            for (var cont = inferior; cont <= superior; cont ++){
+                if (cont % divisor == 0){
+                    exibir.innerHTML += `${cont}<br>`
+                }
+            }
+        }
+    }
+</script>
