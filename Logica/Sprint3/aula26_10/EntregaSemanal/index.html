@@ -23,7 +23,7 @@
         var num1 = Number(num1_ipt.value)
         var num2 = Number(num2_ipt.value)
 
-        if (inferior < 20){
+        if (inferior <= 20){
             exibir.innerHTML += 'Limite inferior tem que ser maior que 20<br>'
         }else if(superior >= 1000 || superior < inferior){
             exibir.innerHTML += 'Limite superior invalido, verifique o conteúdo<br>'
@@ -33,7 +33,6 @@
             exibir.innerHTML += 'Segundo número de divisibilidade tem que estar entre 3 e 20 e ser diferente do primeiro<br>'
         }else{
             // Exibição do intervalo
-            exibir.innerHTML = ''
             var validacao = true;
             var qtd = 0;
             var maior = 0;
@@ -49,21 +48,21 @@
                     total += cont;
                     validacao = false;
                     divisivel = true;
-                    exibir.innerHTML += `O número ${cont} é divisível de pelo primeiro e pelo segundo número`
+                    exibir.innerHTML += `O número ${cont} é divisível de pelo primeiro e pelo segundo número<br>`
                 }else if (cont %num1 == 0){
                     qtd ++
                     total += cont;
                     validacao = false;
                     divisivel = true;
-                    exibir.innerHTML += `O número ${cont} é divisível de pelo primeiro número`
+                    exibir.innerHTML += `O número ${cont} é divisível de pelo primeiro número<br>`
                 }else if (cont %num2 == 0){
                     qtd ++
                     total += cont;
                     validacao = false;
                     divisivel = true;
-                    exibir.innerHTML += `O número ${cont} é divisível de pelo segundo número`
+                    exibir.innerHTML += `O número ${cont} é divisível de pelo segundo número<br>`
                 }
-                if (divisivel){
+                if (divisivel == true){
                     if (cont_voltas == 1){
                         menor = cont;
                         maior = cont;
@@ -77,10 +76,10 @@
                     }
                 }
             }
-            if (validacao){
+            if (validacao == true){
                 exibir.innerHTML = '***Não foram encontrados números divisíveis***'
             }else{
-                exibir.innerHTML = `
+                exibir.innerHTML += `<br><br>
                 <h3>ANÁLISE DOS NÚMEROS EXIBIDOS<h3>
                 Quantidade de números exibidos: ${qtd}<br>
                 Média dos números exibidos: ${(total / qtd).toFixed(1)}<br>
