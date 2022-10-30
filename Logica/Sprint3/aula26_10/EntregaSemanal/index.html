@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Limite inferior <input type="text" id="inferior_ipt"><br>
+    Limite superior <input type="" id="superior_ipt"><br>
+    Numero 1 <input type="text" id="num1_ipt"><br>
+    Numero 2 <input type="text" id="num2_ipt"><br>
+    <button onclick="change()">Mostrar</button><br>
+    <span id="exibir"></span>
+</body>
+</html>
+<script>
+    function change(){
+        exibir.innerHTML = '';
+        var superior = Number(superior_ipt.value)
+        var inferior = Number(inferior_ipt.value)
+        var num1 = Number(num1_ipt.value)
+        var num2 = Number(num2_ipt.value)
+
+        if (inferior < 20){
+            exibir.innerHTML += 'Limite inferior tem que ser maior que 20<br>'
+        }else if(superior >= 1000 || superior < inferior){
+            exibir.innerHTML += 'Limite superior invalido, verifique o conteúdo<br>'
+        }else if(num1 < 3 || num1 > 20){
+            exibir.innerHTML += 'Primeiro número de divisibilidade tem que estar entre 3 e 20<br>'
+        }else if(num2 < 3 || num2 > 20 || num2 == num1){
+            exibir.innerHTML += 'Segundo número de divisibilidade tem que estar entre 3 e 20 e ser diferente do primeiro<br>'
+        }else{
+            // Exibição do intervalo
+            exibir.innerHTML = ''
+            var validacao = true;
+            var qtd = 0;
+            var maior = 0;
+            var menor = 0;
+            var total = 0;
+            var cont_voltas = 0;
+
+            for (var cont = inferior; cont <= superior; cont ++){
+                var divisivel = false;
+                cont_voltas++
+                if (cont %num1 == 0 && cont %num2 == 0){
+                    qtd ++
+                    total += cont;
+                    validacao = false;
+                    divisivel = true;
+                    exibir.innerHTML += `O número ${cont} é divisível de pelo primeiro e pelo segundo número`
+                }else if (cont %num1 == 0){
+                    qtd ++
+                    total += cont;
+                    validacao = false;
+                    divisivel = true;
+                    exibir.innerHTML += `O número ${cont} é divisível de pelo primeiro número`
+                }else if (cont %num2 == 0){
+                    qtd ++
+                    total += cont;
+                    validacao = false;
+                    divisivel = true;
+                    exibir.innerHTML += `O número ${cont} é divisível de pelo segundo número`
+                }
+                if (divisivel){
+                    if (cont_voltas == 1){
+                        menor = cont;
+                        maior = cont;
+                    }else{
+                        if (cont < menor){
+                            menor = cont
+                        }
+                        if (cont > maior){
+                            maior = cont;
+                        }
+                    }
+                }
+            }
+            if (validacao){
+                exibir.innerHTML = '***Não foram encontrados números divisíveis***'
+            }else{
+                exibir.innerHTML = `
+                <h3>ANÁLISE DOS NÚMEROS EXIBIDOS<h3>
+                Quantidade de números exibidos: ${qtd}<br>
+                Média dos números exibidos: ${(total / qtd).toFixed(1)}<br>
+                Maior número exibido: ${maior}<br>
+                Menor número exibido: ${menor}
+                `;
+            }
+        }
+    }
+</script>
