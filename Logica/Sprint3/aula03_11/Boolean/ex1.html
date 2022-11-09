@@ -20,21 +20,21 @@
 </html>
 <script>
     function validar(){
-        var login = login_ipt.value
-        var senha = senha_ipt.value
+        var login = (login_ipt.value).trimStart()
+        var senha = (senha_ipt.value).trimStart()
         exibir.innerHTML = '';
         var credenciais = {
             log: "aidimin",
             pass: "seinha"
         }
 
-        if (login.indexOf(credenciais.log) < 0 && senha.indexOf(credenciais.pass) < 0){
+        if (login.startsWith(credenciais.log) == false && senha.startsWith(credenciais.pass) == false){
             exibir.innerHTML += `<span style="color: red;">Sua senha está inválida!</span><br><span style="color: red;">Seu login está inválido!</span>`
-        }else if(login.indexOf(credenciais.log) < 0){
+        }else if(login.startsWith(credenciais.log) == false){
             exibir.innerHTML += `<span style="color: red;">Seu login está inválido!</span>`
-        }else if (senha.indexOf(credenciais.pass) < 0){
+        }else if (senha.startsWith(credenciais.pass) == false){
             alert('Entre em contato com o suporte para recuperar sua senha')
-        }else if (login.indexOf(credenciais.log) >= 0 || senha.indexOf(credenciais.pass) >= 0){
+        }else if (login.startsWith(credenciais.log) == true || senha.startsWith(credenciais.pass) == true){
             exibir.innerHTML = `<span style='color:#389ce4;'>Usuário autenticado com sucesso!</span>`
         }
     }
