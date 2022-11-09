@@ -1,0 +1,9 @@
+- Entrada de solicitações (Portal de solicitações)
+- SLA (em até quanto tempo, a partir do momento da solicitação, será tomada uma decisão?)
+- filas (gerenciamento de solicitações, ordenação)
+	Chamados pendentes
+	chamados sem dono
+	Em atendimento
+- Indicadores (sla, quantidade de solicitações solucionadas)
+
+-SLA 1horas

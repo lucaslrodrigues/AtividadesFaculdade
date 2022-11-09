@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conta poupança</title>
+</head>
+<body>
+    <span>Saldo: R$ <label id="saldo">00,00</label></span><br>
+    <span>Depósitos: <label id="deposito">0</label></span><br>
+    <span>Saques: <label id="saques">0</label></span><br>
+    <button onclick="depositar()">Depostitar 100</button><button onclick="sacar()">Sacar 20</button>
+</body>
+</html>
+<script>
+    var total = 0;
+    var contSaque = 0;
+    var contDeposito = 0;
+    var depSaque = {
+        deposito: 100,
+        saque: 20
+    }
+    function depositar(){
+        total += depSaque.deposito
+        saldo.innerHTML = `${total}`
+        deposito.innerHTML = `${++contDeposito}`
+    }
+    function sacar(){
+        total -= depSaque.saque
+        saldo.innerHTML = `${total}`
+        saques.innerHTML = `${++contSaque}`
+    }
+</script>

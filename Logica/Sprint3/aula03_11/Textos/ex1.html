@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solicitação de email</title>
+    <style>
+        body{
+            font-family: sans-serif;
+        }
+    </style>
+</head>
+<body>
+    Indique um email de sua preferencia <input type="text" id="email_ipt" oninput="verificar()"><br>
+    <span id="exibir"></span>
+</body>
+</html>
+<script>
+    function verificar(){
+        var email = email_ipt.value
+        if(email.indexOf('@') < 0){
+            exibir.innerHTML = `<span style="color: red;">Insira um email válido</span>`
+        }else{
+            exibir.innerHTML = `<span style='color:green;'>Email ${email} é valido!!</span>`
+        }
+    }
+</script>

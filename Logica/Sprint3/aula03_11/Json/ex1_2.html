@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex1</title>
+</head>
+<body>
+    Vitorias <input type="text" id="vitorias_ipt"><br>
+    Empates <input type="text" id="empates_ipt"><br>
+    Derrotas <input type="text" id="derrotas_ipt"><br>
+    <button onclick="analisar()">Analisar campanha</button><br>
+    <span id="exibir"></span>
+</body>
+</html>
+<script>
+    function analisar(){
+        var campanha = {
+            value_vitorias: 3,
+            value_empates: 1,
+            value_derrotas: 0
+        }
+        var vitorias = Number(vitorias_ipt.value)
+        var empates =  Number(empates_ipt.value)
+        var derrotas = Number(derrotas_ipt.value)
+        exibir.innerHTML = `O time terminou o campeonato com ${(vitorias * campanha.value_vitorias)+(derrotas * campanha.value_derrotas)+(empates * campanha.value_empates)} pontos`
+    }
+</script>

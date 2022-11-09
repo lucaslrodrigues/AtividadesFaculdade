@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Letra por letra</title>
+    <style>
+        body{
+            font-family: sans-serif;
+        }
+    </style>
+</head>
+<body>
+    Escreva uma frase <input type="text" id="frase_ipt" oninput="pularLinha()"><br>
+    <span id="exibir"></span>
+</body>
+</html>
+<script>
+    function pularLinha(){
+        var frase = frase_ipt.value;
+        exibir.innerHTML = ``
+
+        for(cont = 0; cont < frase.length; cont++){
+            exibir.innerHTML += `${frase[cont]}<br>`
+        }
+
+    }
+</script>

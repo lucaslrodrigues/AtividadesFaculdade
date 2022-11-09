@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validação de login sptech</title>
+    <style>
+        body{
+            font-family: sans-serif;
+        }
+    </style>
+</head>
+<body>
+    Insira um login <input id="login_ipt"><br>
+    Insira a senha <input type = "password"id="senha_ipt"><br>
+    <button onclick="validar()">Entrar</button><br>
+    <span id="exibir"></span>
+</body>
+</html>
+<script>
+    function validar(){
+        var login = login_ipt.value
+        var senha = senha_ipt.value
+        exibir.innerHTML = '';
+        var credenciais = {
+            log: "aidimin",
+            pass: "seinha"
+        }
+
+        if (login.indexOf(credenciais.log) < 0 && senha.indexOf(credenciais.pass) < 0){
+            exibir.innerHTML += `<span style="color: red;">Sua senha está inválida!</span><br><span style="color: red;">Seu login está inválido!</span>`
+        }else if(login.indexOf(credenciais.log) < 0){
+            exibir.innerHTML += `<span style="color: red;">Seu login está inválido!</span>`
+        }else if (senha.indexOf(credenciais.pass) < 0){
+            alert('Entre em contato com o suporte para recuperar sua senha')
+        }else if (login.indexOf(credenciais.log) >= 0 || senha.indexOf(credenciais.pass) >= 0){
+            exibir.innerHTML = `<span style='color:#389ce4;'>Usuário autenticado com sucesso!</span>`
+        }
+    }
+</script>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solicitação de senha</title>
+    <style>
+        body{
+            font-family: sans-serif;
+        }
+    </style>
+</head>
+<body>
+    Indique um senha de sua preferencia <input type="text" id="senha_ipt" oninput="verificar()"><br>
+    <span id="exibir">Senha mais forte: ...</span>
+</body>
+</html>
+<script>
+    function verificar(){
+        var senha = senha_ipt.value;
+        var palavra = '';
+       
+
+        for(cont = 0; cont < senha.length; cont++){
+            if(senha[cont] == 'a' || senha[cont] == 'A'){
+                palavra += '@'
+            }else if(senha[cont] == 'e' || senha[cont] == 'E'){
+                palavra += '3'
+            }else{
+                palavra += senha[cont];
+            }
+        }
+        exibir.innerHTML = `Senha mais forte: ${palavra}`
+        if(senha.length == 0){
+            exibir.innerHTML = 'Senha mais forte: ...';
+        }
+    }
+</script>

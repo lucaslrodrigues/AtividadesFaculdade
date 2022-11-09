@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex1</title>
+</head>
+<body>
+    <h3>Time 1</h3>
+    Nome do time <input type="text" id="nome_t1_ipt"><br>
+    Vitorias <input type="text" id="vitorias_ipt"><br>
+    Empates <input type="text" id="empates_ipt"><br>
+    Derrotas <input type="text" id="derrotas_ipt"><br>
+    <h2>VS</h2>
+    <h3>Time 2</h3>
+    Nome do time <input type="text" id="nome_t2_ipt"><br>
+    Vitorias <input type="text" id="vitorias2_ipt"><br>
+    Empates <input type="text" id="empates2_ipt"><br>
+    Derrotas <input type="text" id="derrotas2_ipt"><br>
+    <button onclick="analisar()">Analisar campanha</button><br>
+    <span id="exibir"></span>
+</body>
+</html>
+<script>
+    function analisar(){
+        var campanha = {
+            value_vitorias: 3,
+            value_empates: 1,
+            value_derrotas: 0
+        }
+        var nome_t1 = nome_t1_ipt.value
+        var nome_t2 = nome_t2_ipt.value
+
+        var vitorias = Number(vitorias_ipt.value)
+        var empates =  Number(empates_ipt.value)
+        var derrotas = Number(derrotas_ipt.value)
+        var vitorias2 = Number(vitorias2_ipt.value)
+        var empates2 =  Number(empates2_ipt.value)
+        var derrotas2 = Number(derrotas2_ipt.value)
+        exibir.innerHTML = `O time ${nome_t1} terminou o campeonato com ${(vitorias * campanha.value_vitorias)+(derrotas * campanha.value_derrotas)+(empates * campanha.value_empates)} pontos<br>O time ${nome_t2} terminou o campeonato com ${(vitorias2 * campanha.value_vitorias)+(derrotas2 * campanha.value_derrotas)+(empates2 * campanha.value_empates)} pontos`
+    }
+</script>
