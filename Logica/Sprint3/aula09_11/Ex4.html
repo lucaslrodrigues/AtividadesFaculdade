@@ -9,23 +9,33 @@
 <body>
     Informe os filmes que você mais gosta em ordem a partir do melhor <input type="text" id="filme_ipt">
     <button onclick="cadastrar()">Cadastrar filme</button>
-    <button onclick="show()">Ver favoritos</button><br>
-    <span id="exibir"></span>
+    <button onclick="show()">Ver favoritos</button><br><br>
+    <span id="exibir" style="font-size: 20px;"></span>
 </body>
 </html>
 <script>
     var filmes = [];
     function cadastrar(){
-        filmes.push(filme_ipt.value);
-        filme_ipt.value = '';
+        if(filme_ipt.value == ''){
+            exibir.innerHTML = 'Insira filme válido'
+        }else{
+            filmes.push(filme_ipt.value);
+            filme_ipt.value = '';
+        }
+
     }
     function show(){
-        exibir.innerHTML = ''
-        for(cont = 0; cont < filmes.length; cont++){
-            exibir.innerHTML += `${filmes[cont]}<br>`;
+        if(filmes.length == 0){
+            exibir.innerHTML = 'Você não tem filmes cadastrados! <img src="">'
+        }else{
+            exibir.innerHTML = ''
+            for(cont = 0; cont < filmes.length; cont++){
+                exibir.innerHTML += `${filmes[cont]}<br>`;
+            }
+            exibir.innerHTML += `<br>Total: ${filmes.length}<br>`;
+            exibir.innerHTML += `O que mais gosta é "${filmes[0]}"<br>`;
+            exibir.innerHTML += `E desses, o que menos gosta é "${filmes[filmes.length - 1]}"<br>`;
         }
-        exibir.innerHTML += `<br>Total: ${filmes.length}<br>`;
-        exibir.innerHTML += `O que mais gosta é "${filmes[0]}"<br>`;
-        exibir.innerHTML += `E desses, o que menos gosta é "${filmes[filmes.length - 1]}"<br>`;
+
     }
 </script>

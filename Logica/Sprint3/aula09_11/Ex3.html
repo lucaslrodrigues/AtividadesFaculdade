@@ -7,11 +7,14 @@
     <title>Cadastro de lugares onde já morou</title>
 </head>
 <body>
+    <h3>Bairro</h3>
     Insira um bairro onde já morou <input type="text" id="bairro_ipt"><br>
     <button onclick="cadastrar()">Cadastrar bairro</button><br>
+    <h3>Consulta</h3>
     Insira um número referente ao bairro <input type="text" id="num_ipt"><br>
     <button onclick="relembrar()">Relembrar moradia</button>
-    <span id="exibir"></span>
+    <br><br>
+    <span id="exibir" style="font-size: 20px;"></span>
 </body>
 </html>
 <script>
@@ -20,15 +23,28 @@
     var num = 0;
 
     function cadastrar(){
-        moradia.push(bairro_ipt.value);
-        bairro_ipt.value = '';        
+        if ((bairro_ipt.value).length == 0){
+            exibir.innerHTML = 'Digite um bairro valido'
+        }else{
+            moradia.push(bairro_ipt.value);
+            bairro_ipt.value = '';  
+        }
     }   
     function relembrar(){
-        num = Number(num_ipt.value) - 1;
-        if(num > moradia.length + 1){
-            exibir.innerHTML = `Você ainda não morou num ${num}º bairro!`
-        }else{
-            exibir.innerHTML = `${moradia[num]}`
-        }
-    }
+
+            if(num_ipt.value == ''){
+                exibir.innerHTML = 'Insira um número'
+            }else{
+                if(Number(num_ipt.value) <= 0 || isNaN(num_ipt.value) == true){
+                    exibir.innerHTML = `Informe uma sequencia valida`
+                }else{      
+                    num = Number(num_ipt.value) - 1;
+                    if(num + 1 > moradia.length){
+                        exibir.innerHTML = `Você ainda não morou num ${num + 1}º bairro!`
+                    }else{
+                        exibir.innerHTML = `<b>${moradia[num]}</b>`
+                    }
+                }
+            }
+        }   
 </script>

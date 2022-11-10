@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quantos projetos o usuario já participou</title>
+    <style>
+        button{
+            margin: 5px 5px;
+        }
+    </style>
+</head>
+<body>
+    Informe os projetos que você já participou na vida <input id="project_ipt"><br>
+    <button onclick="signup()">Cadastrar</button><button onclick="seeAll()">Mostrar projetos</button><br>
+    <span id= 'text_view' style="display: none;">Você já fez <label id="amount"></label> projetos. Por isso você é um profissional <label id="type_prof"></label></span>
+    <span id="exibir"></span>
+</body>
+</html>
+<script>
+    var project = 0;
+    var projects = [];
+    function signup(){
+        project = (project_ipt.value).trimStart();
+
+        if(project == ''){
+            exibir.innerHTML = 'Insira um projeto válido'
+        }else{
+            exibir.innerHTML = '';
+            projects.push(project);
+            project_ipt.value = '';
+            text_view.style.display = 'block'
+            show()
+        }
+    }
+    function show(){
+        amount.innerHTML = `${projects.length}`
+        var type = '';
+        if(projects.length > 13){
+            type = `Sênior`
+        }else if(projects.length > 4){
+            type = `Plêno`
+        }else{
+            type = `Junior`
+        }
+        type_prof.innerHTML = `${type}`
+    }
+    function seeAll(){
+        exibir.innerHTML = ''
+        if(projects.length == 0){
+            exibir.innerHTML = `Você não tem projetos cadastrados`
+        }else{
+            var cont = 0;
+            for(let index = projects.length - 1; index >= 0; index--){
+                exibir.innerHTML += `${projects[cont++]}<br>`
+            }
+        }
+    }
+</script>

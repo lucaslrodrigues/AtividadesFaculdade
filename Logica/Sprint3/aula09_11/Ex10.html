@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Linha de ônibus</title>
+    <style>
+        button{
+            margin: 5px 5px;
+        }
+    </style>
+</head>
+<body>
+    <h3>Linhas que o usuario pegou ao longo da semana</h3>
+    Informe a linha de ônibs que você pegou <input id="line_ipt">
+    <button onclick="signup()">Gravar busão</button><br>
+    <span id="text_view"></span>
+    <h3>Busca por linhas</h3>
+    <input placeholder="Consulta de linha" id="line_search_ipt">
+    <button onclick='search()'>Pesquisar</button><br>
+    <span id="info_view"></span>
+</body>
+</html>
+<script>
+    var lines = [];
+    var line = '';
+
+    function signup(){
+        line = (line_ipt.value).trimStart();
+        if(line == ''){
+            text_view.innerHTML = `Insira um valor válido`
+        }else{
+            lines.push(line);
+            line_ipt.value = '';
+            show()
+        }
+    }
+    function show(){
+        text_view.innerHTML = ''
+        for(let index = lines.length - 1; index >= 0; index--){
+            text_view.innerHTML += `${lines[index]}<br>`
+        }
+    }
+    function search(){
+        info_view.innerHTML = '';
+        var line_search = line_search_ipt.value;
+        if(lines.indexOf(line_search) == -1){
+            info_view.innerHTML = `Você nunca pegou essa linha`
+        }else{
+            let mount = 0;
+            let lines_arq = 0;
+            for(let index = 0; index <= lines.length; index ++){
+                if(lines[index] == line_search){
+                    lines_arq += (index + ' ')
+                    mount++
+                }
+            }
+            info_view.innerHTML += `Você já pegou essa linha ${mount} vezes, nessa ordem: ${lines_arq}`
+        }
+    }
+</script>

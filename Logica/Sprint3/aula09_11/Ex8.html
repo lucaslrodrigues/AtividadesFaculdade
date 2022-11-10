@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>alunos favoritos</title>
+    <style>
+        body{
+            font-family: sans-serif;
+        }
+    </style>
+</head>
+<body>
+    Cadastre os alunos <input type="text" id="aluno_ipt"><br>
+    <button onclick="cadastrar()" style="width: 80px; height: 30px;">Cadastrar</button><br><br>
+    <span id="exibir"></span>
+</body>
+</html>
+<script>
+    var alunos = [];
+    function cadastrar(){
+        var aluno = aluno_ipt.value
+        if(aluno == ''){
+            exibir.innerHTML = 'Insira um aluno válido'
+        }else{
+            alunos.push(aluno)
+            aluno_ipt.value = ''
+            exibicao()
+        }
+    }
+    function exibicao(){
+        exibir.innerHTML = '';
+        for(let index = alunos.length - 1; index >= 0; index--){
+            exibir.innerHTML += `${alunos[index]}<br>`;
+        }
+    }
+</script>

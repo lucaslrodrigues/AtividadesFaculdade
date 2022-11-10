@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filmes favoritos</title>
+    <style>
+        body{
+            font-family: sans-serif;
+        }
+    </style>
+</head>
+<body>
+    Informe seus filmes favoritos <input type="text" id="filme_ipt"><br>
+    <button onclick="cadastrar()" style="width: 80px; height: 30px;">Cadastrar</button><br><br>
+    <span id="exibir"></span>
+</body>
+</html>
+<script>
+    var filmes = [];
+    function cadastrar(){
+        var filme = filme_ipt.value
+        if(filme == ''){
+            exibir.innerHTML = 'Insira um filme válido'
+        }else{
+            filmes.push(filme)
+            filme_ipt.value = ''
+            exibicao()
+        }
+    }
+    function exibicao(){
+        exibir.innerHTML = '';
+        var cont = 0;
+        for(let index = 0; index < filmes.length; index++){
+            if(cont %2 == 0){
+                exibir.innerHTML += `<label style='color:#db3c20;'>${filmes[index]}</label><br>`;
+            }else{
+                exibir.innerHTML += `<label style='color:#3364ad;'>${filmes[index]}</label><br>`;
+            }
+            cont++  
+        }
+    }
+</script>
