@@ -49,10 +49,11 @@
             info_view.innerHTML = `Você nunca pegou essa linha`
         }else{
             let mount = 0;
-            let lines_arq = 0;
+            let lines_arq = [];
             for(let index = 0; index <= lines.length; index ++){
                 if(lines[index] == line_search){
-                    lines_arq += (index + ' ')
+                    lines_arq.push(index+1)
+                    console.log(lines_arq)
                     mount++
                 }
             }
