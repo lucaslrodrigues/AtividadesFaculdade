@@ -23,12 +23,11 @@
 </body>
 </html>
 <script>
-    var lines = [];
+    const lines = [];
     var line = '';
 
     function signup(){
         line = (line_ipt.value).trimStart();
-        line = line.trimEnd();
         if(line == ''){
             text_view.innerHTML = `Insira um valor válido`
         }else{
@@ -45,8 +44,7 @@
     }
     function search(){
         info_view.innerHTML = '';
-        var line_search = (line_search_ipt.value).trimStart();
-        line_search = line_search.trimEnd();
+        var line_search = line_search_ipt.value;
         if(lines.indexOf(line_search) == -1){
             info_view.innerHTML = `Você nunca pegou essa linha`
         }else{

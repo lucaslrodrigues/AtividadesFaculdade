@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filmes favoritos</title>
+</head>
+<body>
+    Informe o preço de algum produto <input type="text" id="price_ipt" placeholder="Preço">
+    <button onclick="register()">Cadastrar</button>
+    <button onclick="update()">Atualizar estoque</button>
+    <span id="view_area" style="font-size: 20px;"></span>
+</body>
+</html>
+<script>
+    var inventory = [];
+    function register(){
+        let price = (price_ipt.value).trimStart()
+        if(price.length > 0 && Number(price) > 0 && isNaN(Number(price)) == false){
+            inventory.push(price)
+            price_ipt.innerHTML = ""
+        }else{
+            view_area.innerHTML = `<p style = "color: red;">Digite um valor válido</p>`
+        }
+    }
+    function update(){
+        let mount = inventory.length;
+        let tot = 0;
+        if(mount == 0){
+            view_area.innerHTML = `<p style = "color: red;">Você não tem itens cadastrados</p>`
+        }else{
+            for(let index = 0; index < mount; index ++){
+                tot += Number(inventory[index]);
+            }
+            view_area.innerHTML = `<p>Você tem ${inventory.length} produtos cadastrados em estoque<br>
+                Seu estoque vale <span style = "color: green;">R$${tot.toFixed(2)}</span></p>
+                `
+        }
+    }
+</script>

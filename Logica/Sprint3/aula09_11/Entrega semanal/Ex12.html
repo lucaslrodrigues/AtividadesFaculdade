@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filmes favoritos</title>
+    <style>
+        body{
+            font-family: sans-serif;
+        }
+    </style>
+</head>
+<body>
+    Informe o nome de um filho seu <input type="text" id="name_ipt" placeholder="Nome">
+    <button onclick="register()">Cadastrar</button>
+    <button onclick="update()">Atualizar familia</button>
+    <span id="view_area" style="font-size: 20px;"></span>
+</body>
+</html>
+<script>
+    const names = [];
+
+    function register(){
+        let name = (name_ipt.value).trimStart()
+        name = name.trimEnd()
+        let check = false;
+        const mount = names.length;
+
+        if(name.length > 0 && isNaN(Number(name)) == true){
+            for(let index = 0; index < mount; index ++){
+                if (names[index].toUpperCase() == name.toUpperCase()) {
+                    check = true;
+                }
+            }
+            if (check){
+                alert(`Não pode ter mais de 1 filho com o mesmo nome!`)
+            }else{
+                alert(`Filho cadastrado`)
+                names.push(name)
+                name_ipt.innerHTML = ""
+            }
+        }else{
+            alert('Digite um nome válido')
+        }
+    }
+    function update(){
+        const mount = names.length;
+
+        if(mount == 0){
+            alert('Você não tem filhos cadastrados')
+        }else{
+            view_area.innerHTML = `
+                <p><h3>Você tem ${mount} filhos</h3>
+                Seu custo mensal será aproximadamente <b>R$${(mount * 3000).toFixed(2)}</b> se colocar eles em escola particular
+                ou <b>R$${(mount * 1500).toFixed(2)}</b> se eles estudarem em escola pública</p>
+                `
+        }
+    }
+</script>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filmes favoritos</title>
+    <style>
+        body{
+            font-family: sans-serif;
+        }
+    </style>
+</head>
+<body>
+    Informe o nome de um filho seu <input type="text" id="name_ipt" placeholder="Nome">
+    <button onclick="register()">Cadastrar</button>
+    <button onclick="update()">Atualizar familia</button>
+    <span id="view_area" style="font-size: 20px;"></span>
+    <span id="erro_area"style = "color: red; display:none;"></span>
+</body>
+</html>
+<script>
+    var names = [];
+
+    function register(){
+        let name = (name_ipt.value).trimStart()
+        name = name.trimEnd()
+        let check = false;
+        let mount = names.length;
+
+        if(name.length > 0){
+            erro_area.style.display = "none"
+            for(let index = 0; index < mount; index ++){
+                if (names[index] == name){
+                    check = true;
+                }
+            }
+            if (check){
+                alert(`Não pode ter mais de 1 filho com o mesmo nome!`)
+            }else{
+                names.push(name)
+                name_ipt.innerHTML = ""
+            }
+        }else{
+            erro_area.innerHTML += `<p>Digite um valor válido</p>`
+            erro_area.style.display = "block"
+        }
+    }
+    function update(){
+        let mount = names.length;
+
+        if(mount == 0){
+            erro_area.innerHTML = `<p>Você não tem nomes cadastrados</p>`
+            erro_area.style.display = "block"
+        }else{
+            erro_area.style.display = "none"
+            view_area.innerHTML = `
+                <p><h3>Você tem ${mount} filhos</h3>
+                Seu custo mensal será aproximadamente <b>R$${(mount * 3000).toFixed(2)}</b> se colocar eles em escola particular
+                ou <b>R$${(mount * 1500).toFixed(2)}</b> se eles estudarem em escola pública</p>
+                `
+        }
+    }
+</script>
