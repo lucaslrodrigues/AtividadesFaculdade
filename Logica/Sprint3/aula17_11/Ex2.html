@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex 2 - Sorteio de time</title>
+</head>
+<body>
+    <h3>Sorteie um time</h3>
+    <button onclick="sort()">Sortear time</button>
+    <p><span id="content"></span></p>
+</body>
+</html>
+<script>
+    var img = ["avai.png","sãoPaulo.jpg","palmeiras.png","colo.png"]
+    function sort(){
+        content.innerHTML = ``;
+        let num = (Math.random() * 4).toFixed(0);
+        content.innerHTML = `<img src="${img[num - 1]}" heigth="150px">`;
+    }
+</script>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pedra papel ou tesoura</title>
+</head>
+<body>
+    <h3>Jogue pedra papel ou tesoura</h3>
+    <select id="">
+        <option value="">- Selecione -</option>
+        <option value="1">Pedra</option>
+        <option value="2">Papel</option>
+        <option value="3">Tesoura</option>
+    </select>
+    <button onclick="play()">Jogar</button>
+</body>
+</html>
+<script>
+    var img = []
+    var ppt = '';
+    function play(){
+        let random = (Math.random() * 2 + 1).toFixed(0);
+        if(random == 1){
+            ppt = 'tesoura'
+        }else if(random == 2){
+            ppt = 'papel'
+        }else{
+            ppt = 'pedra'
+        }
+        
+    }
+</script>

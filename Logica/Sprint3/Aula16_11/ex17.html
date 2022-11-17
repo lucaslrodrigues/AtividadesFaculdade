@@ -53,8 +53,12 @@
         }
     }
     function analysis(){
-        place1.style.display = "none";
-        place2.style.display = "block";
+        if(ary_nota.length == 0 || ary_name.length == 0){
+            alert("Você  não tem nada cadastrado")
+        }else{
+            place1.style.display = "none";
+            place2.style.display = "block";
+        }
     }
     function search(){
         var from = Number(from_ipt.value);
@@ -70,37 +74,46 @@
         }else{
             if(isNaN(to) == false && isNaN(from) == false){
 
-                if(from >= 0 && from <= 10 && to >= 0 && to <= 10){
-        
-                    for(let index = 0; index < ary_nota.length; index ++){
-                        if(ary_nota[index] >= from && ary_nota[index] <= to){
-                            view_area2.innerHTML += `O aluno ${ary_name[index]} ficou com a nota ${(ary_nota[index]).toFixed(1)}<br>`
-                            tot_list ++;
-                            avg += ary_nota[index];
-
-                            if(index > 0){
-                                if(ary_nota[index] < min){
+                if(from <= to){
+                    if(from >= 0 && from <= 10 && to >= 0 && to <= 10){
+            
+                        for(let index = 0; index < ary_nota.length; index ++){
+                            if(ary_nota[index] >= from && ary_nota[index] <= to){
+                                view_area2.innerHTML += `O aluno ${ary_name[index]} ficou com a nota ${(ary_nota[index]).toFixed(1)}<br>`
+                                tot_list ++;
+                                avg += ary_nota[index];
+    
+                                if(index > 0){
+                                    if(ary_nota[index] < min){
+                                        min = ary_nota[index];
+                                    }
+                                    if(ary_nota[index] > max){
+                                        max = ary_nota[index];
+                                    }
+                                }else{
+                                    max = ary_nota[index];
                                     min = ary_nota[index];
                                 }
-                                if(ary_nota[index] > max){
-                                    max = ary_nota[index];
-                                }
-                            }else{
-                                max = ary_nota[index];
-                                min = ary_nota[index];
                             }
                         }
+                        if(ary_nota.length > 1){
+                            avg = avg / ary_nota.length;
+                        }
+                        view_area2.innerHTML += `<p>
+                            Total de alunos registrados: ${ary_nota.length}<br>
+                            Total de alunos listado: ${tot_list}<br>
+                            Maior Nota = ${max}<br>
+                            Menor Nota = ${min}<br>
+                            Média da Nota = ${(avg).toFixed(1)}<br>
+                            </p>`
+                    }else{
+                        alert(`O campo "De" e o campo "Até" devem estar entre 0 e 10`)
                     }
-                    view_area2.innerHTML += `<p>
-                        Total de alunos registrados: ${ary_nota.length}<br>
-                        Total de alunos listado: ${tot_list}<br>
-                        Maior Nota = ${max}<br>
-                        Menor Nota = ${min}<br>
-                        Média da Nota = ${(avg / tot_list).toFixed(1)}<br>
-                        </p>`
+
                 }else{
-                    alert(`O campo "De" e o campo "Até" devem estar entre 0 e 10`)
+                    alert('O ponto de partida deve ser menor que o limite')
                 }
+
             }else{
                 alert('Insira apenas números entre 0 e 10')
             }

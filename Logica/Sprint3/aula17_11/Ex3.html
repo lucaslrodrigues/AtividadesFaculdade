@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex 3 - Jogar dado</title>
+</head>
+<body>
+    <h3>Jogue o dado</h3>
+    <button onclick="sort()">Sortear dado</button>
+    <p><span id="content"></span></p>
+</body>
+</html>
+<script>
+    function sort(){
+        let num = (Math.random() * 6 + 1).toFixed(0)
+        content.innerHTML = `Lado do dado: ${num}`
+    }
+</script>

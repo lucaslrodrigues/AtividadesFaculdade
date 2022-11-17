@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex 5 - jo ken po</title>
+</head>
+<body>
+    <h3>Jo ken po</h3>
+    <button onclick="sort()">Jogar</button>
+    <p><span id="content"></span></p>
+</body>
+</html>
+<script>
+    var img = ["pedra.jpg", "papel.jpg", "tesoura.jpg"]
+    function sort(){
+        let num = (Math.random() * 2).toFixed(0);
+        content.innerHTML = `<img src=${img[num]} heigth="200"> ${num}`
+    }
+</script>

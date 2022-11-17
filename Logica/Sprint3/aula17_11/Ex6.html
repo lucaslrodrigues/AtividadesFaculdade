@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex 6 - Sortear momento do dia</title>
+</head>
+<body>
+    <h3>Sorteie um momento do dia</h3>
+    <button onclick="sort()">Sortear momento do dia</button>
+    <p><span id="content"></span></p>
+</body>
+</html>
+<script>
+    function sort(){
+        let num = (Math.random(0) * 23).toFixed(0);
+        num = 12;
+        if(num > 18){
+            content.innerHTML = `Boa noite, durma bem! São ${num}h!`
+        }else if(num > 12){
+            content.innerHTML = `Boa tarde, já vai tarde! São ${num}h!`
+        }else if(num > 0){
+            content.innerHTML = `Bom dia, flor do dia, são ${num}h!`
+        }
+    }
+</script>

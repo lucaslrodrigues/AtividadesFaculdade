@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex 1 - Arredondar</title>
+</head>
+<body>
+    <h3>Sorteie um numero</h3>
+    <button onclick="sort()">Sortear</button><p><span id="content"></span></p>
+</body>
+</html>
+<script>
+    function sort(){
+        content.innerHTML = ``;
+
+        let num = Math.random()
+        content.innerHTML = `<p>${num}</p>`
+        if(num > 0.5){
+            content.innerHTML += `Eu arredondaria para 1`; 
+        }else{
+            content.innerHTML += `Eu arredondaria para 0`;
+        }
+    }
+</script>
