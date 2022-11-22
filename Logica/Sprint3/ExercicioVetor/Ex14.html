@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loja eletronica</title>
+</head>
+<body>
+    <input type="text" id="name_ipt" placeholder="Nome do Produto">
+    <input type="text" id="price_ipt" placeholder="Preço de compra"><br>
+    <p><button onclick="register()">Cadastrar</button>
+        <button onclick="report()">Relatório de estoque</button>
+    </p>
+    <p><span id="view_area"></span></p>
+</body>
+</html>
+<script>
+    var prices = [];
+    var names = [];
+    function register(){
+        let price = (price_ipt.value).trimStart();
+        let name = (name_ipt.value).trimStart();
+
+        if (price.length == 0 || name.length == 0){
+            alert('Insira um valor valido!')
+        }else{
+            isNaN(Number(price)) ? alert('O preço dever ser numerico') :
+            isNaN(Number(name)) == false ? alert('Insira um nome valido ao produto') :
+            prices.push(price);
+            names.push(name);
+            price_ipt.value = '';
+            name_ipt.value = '';
+        }
+    }
+    function report(){
+        view_area.innerHTML = ``;
+        for(let index = 0; index < prices.length; index ++){
+            if(index == 0){
+                view_area.innerHTML = `<h3>Total de produtos: ${prices.length}</h3>`
+            }
+            view_area.innerHTML += `<p>
+                Produto 1: ${names[index]}<br>
+                Preço de compra: R$${prices[index]}. Vender por R$${Number(prices[index]) * 1.25}
+                </p>
+            `
+        }
+
+    }
+</script>
