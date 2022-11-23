@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Corrida de carros</title>
+</head>
+<body>
+    <h3>Corridas de carros</h3>
+    <button onclick="race()">Cemeçar corrida</button><br>
+    <span id="view_area"></span>
+</body>
+</html>
+<script>
+    var car1temp = [];
+    var car2temp = [];
+    var car3temp = [];
+
+    var car1comb = [];
+    var car2comb = [];
+    var car3comb = [];
+
+    var verifyCar1 = true;
+    var verifyCar2 = true;
+    var verifyCar3 = true;
+    let sum1 = 0;
+    let sum2 = 0;
+    let sum3 = 0;
+    
+    function race(){
+        for(index = 0; index < 10; index ++){
+            for(let cont = 0; cont < car1comb.length; cont ++, sum1 = 0, sum2 = 0, sum3 = 0){
+                sum1 += Number(carcomb1[index]);
+                sum2 += Number(carcomb2[index]);
+                sum3 += Number(carcomb3[index]);
+                if(verifyCar1){
+                    if(sum1 >= 50){
+                        verifyCar1 = false
+                    }
+                }
+                if(verifyCar2){
+                    if(sum2 >= 50){
+                        verifyCar2 = false
+                    }
+                }
+                if(verifyCar3){
+                    if(sum3 >= 50){
+                        verifyCar3 = false
+                    }
+                }
+            }
+            if(verifyCar1){
+                velCar1 = (Math.random() * 40 + 230).toFixed(0);
+                car1temp.push(velCar1);
+                combCar1 = (velCar1 / 250) * 5;
+                car1comb.push(combCar1);
+            }
+            if(verifyCar2){
+                velCar2 = (Math.random() * 40 + 230).toFixed(0);
+                car2temp.push(velCar2);
+                combCar2 = (velCar2 / 250) * 5;
+                car2comb.push(combCar2);
+            }
+            if(verifyCar3){
+                velCar3 = (Math.random() * 40 + 230).toFixed(0);
+                car3temp.push(velCar3)
+                combCar3 = (velCar3 / 250) * 5;
+                car3comb.push(combCar3);
+            }
+        }
+    } 
+</script>
