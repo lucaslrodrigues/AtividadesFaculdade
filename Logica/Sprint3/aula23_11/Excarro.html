@@ -5,6 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Corrida de carros</title>
+    <style>
+        body{
+            font-family: sans-serif;
+        }
+    </style>
 </head>
 <body>
     <h3>Corridas de carros</h3>
@@ -13,27 +18,57 @@
 </body>
 </html>
 <script>
-    var car1temp = [];
-    var car2temp = [];
-    var car3temp = [];
-
-    var car1comb = [];
-    var car2comb = [];
-    var car3comb = [];
-
-    var verifyCar1 = true;
-    var verifyCar2 = true;
-    var verifyCar3 = true;
-    let sum1 = 0;
-    let sum2 = 0;
-    let sum3 = 0;
-    
     function race(){
+        view_area.innerHTML = '';
+        // VARIAVEIS
+        var car1Time = [];
+        var car2Time = [];
+        var car3Time = [];
+
+        var car1comb = [];
+        var car2comb = [];
+        var car3comb = [];
+
+        var verifyCar1 = true;
+        var verifyCar2 = true;
+        var verifyCar3 = true;
+
+        var sum1 = 0;
+        var sum2 = 0;
+        var sum3 = 0;
+
+        var first = 100;
+        var firstName = '';
+        var podiumTime = [];
+        var podiumCar = [];
+
         for(index = 0; index < 10; index ++){
-            for(let cont = 0; cont < car1comb.length; cont ++, sum1 = 0, sum2 = 0, sum3 = 0){
-                sum1 += Number(carcomb1[index]);
-                sum2 += Number(carcomb2[index]);
-                sum3 += Number(carcomb3[index]);
+            // ADICIONANDO TEMPO E COMBUSTIVEL AO VETOR
+
+            if(verifyCar1){
+                velCar1 = (Math.random() * 40 + 230).toFixed(0);
+                car1Time.push(20 / velCar1);
+                combCar1 = (velCar1 / 250) * 5;
+                car1comb.push(combCar1);
+            }
+            if(verifyCar2){
+                velCar2 = (Math.random() * 40 + 230).toFixed(0);
+                car2Time.push(20 / velCar2);
+                combCar2 = (velCar2 / 250) * 5;
+                car2comb.push(combCar2);
+            }
+            if(verifyCar3){
+                velCar3 = (Math.random() * 40 + 230).toFixed(0);
+                car3Time.push(20 / velCar3)
+                combCar3 = (velCar3 / 250) * 5;
+                car3comb.push(combCar3);
+            }
+
+            // VERIFICAÇÃO PARA DESCLASSIFICAÇÃO
+            for(var cont = 0; cont < car1comb.length; cont ++){
+                sum1 += Number(car1comb[cont]);
+                sum2 += Number(car2comb[cont]);
+                sum3 += Number(car3comb[cont]);
                 if(verifyCar1){
                     if(sum1 >= 50){
                         verifyCar1 = false
@@ -50,24 +85,61 @@
                     }
                 }
             }
-            if(verifyCar1){
-                velCar1 = (Math.random() * 40 + 230).toFixed(0);
-                car1temp.push(velCar1);
-                combCar1 = (velCar1 / 250) * 5;
-                car1comb.push(combCar1);
+            if(cont < 10){
+                sum1 = 0, sum2 = 0, sum3 = 0;
+            }else{
+                if(verifyCar1){
+                    podiumTime.push(sum1)
+                    podiumCar.push('Carro 1')
+                }
+                if(verifyCar2){
+                    podiumTime.push(sum2)
+                    podiumCar.push('Carro 2')
+                }
+                if(verifyCar3){
+                    podiumTime.push(sum3)
+                    podiumCar.push('Carro 3')
+                }
             }
-            if(verifyCar2){
-                velCar2 = (Math.random() * 40 + 230).toFixed(0);
-                car2temp.push(velCar2);
-                combCar2 = (velCar2 / 250) * 5;
-                car2comb.push(combCar2);
+
+            let masgCar1 = ''; let msgCar2 = ''; let msgCar3 = '';
+
+            if (verifyCar1){
+                msgCar1 = (Number(car1Time[index]) * 60).toFixed(2) + ' Min';
+            }else{
+                msgCar1 = '<b><i>Desclassificado</i></b>';
             }
-            if(verifyCar3){
-                velCar3 = (Math.random() * 40 + 230).toFixed(0);
-                car3temp.push(velCar3)
-                combCar3 = (velCar3 / 250) * 5;
-                car3comb.push(combCar3);
+            if (verifyCar2){
+                msgCar2 = (Number(car2Time[index]) * 60).toFixed(2) + ' Min'
+            }else{
+                msgCar2 = '<b><i>Desclassificado</i></b>';
             }
+            if (verifyCar3){
+                msgCar3 = (Number(car3Time[index]) * 60).toFixed(2) + ' Min'
+            }else {
+                msgCar3 = '<b><i>Desclassificado</i></b>';
+            }
+
+            // EXIBIÇÃO DE TEMPOS
+            view_area.innerHTML += `<p><h3>Volta ${index + 1}</h3><b><u>Tempos</u></b><br> <b>Carro 1:</b> ${msgCar1}<br>
+                <b>Carro 2:</b> ${msgCar2}<br><b>Carro 3:</b> ${msgCar3}
+            </p>`
+        }
+
+        // EXIBIÇÃO DE VENCEDOR
+        if(verifyCar1 == false && verifyCar2 == false && verifyCar3 == false){
+            view_area.innerHTML += `<h3><i>Não ouveram vencedores</i></h3>`
+        }else{
+            for(var cont = 0; cont < podiumTime.length; cont ++){
+                if(Number(podiumTime[cont]) < first){
+                    first = podiumTime[cont];
+                    firstName = podiumCar[cont];
+                }
+            }
+
+            view_area.innerHTML += `<h2>Vencedor</h2>
+                1° Lugar:  ${firstName}<br>Tempo: ${Number(first).toFixed(2)}
+            `
         }
     } 
 </script>
