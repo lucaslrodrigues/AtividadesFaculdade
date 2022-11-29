@@ -1,0 +1,1 @@
+Memórias flash são compostas por quantidades enormes de transistores do tamanho de poucos atomos que armazenam quantidades de eletrons que quando lidos por meio de corrente, informam se é um transistor com valor 1 ou 0. Essa memoria possui maior vida util.

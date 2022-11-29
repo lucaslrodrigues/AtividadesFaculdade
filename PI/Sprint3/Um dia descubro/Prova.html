@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prova</title>
+</head>
+<body>
+    <div id="Tela1" style="display: block;">
+    <h2>Corrida</h2>
+
+    Nome da Prova: <input id="Nome1">
+    Tempo da Prova: <input id="Tempo1">
+    <button onclick="Registrar()">Registrar</button>
+    <button onclick="Analisar()">Analisar</button>
+
+    </div>
+    <div id="Tela2" style="display: none;">
+        <h2>Pesquisar</h2>
+
+        De: <input id="De1" placeholder="De"> Até: <input id="Ate1" placeholder="Até">
+        <button onclick="Pesquisar()">Pesquisar</button>
+    </div>
+    <div id="div1"></div>
+    <div id="div2"></div>
+</body>
+</html>
+<script>
+    vtNome = []
+    vtTempo = []
+
+    function Analisar(){
+
+        Tela1.style.display = "none"
+        Tela2.style.display = "block"
+
+    }
+    function Registrar(){
+
+        var Nome = Nome1.value
+        var Tempo = Number(Tempo1.value)
+        let Repetir = 0
+
+        for(let index = 0; index < vtNome.length; index++){
+
+            if(vtNome[index] == Nome){
+                alert('Não Pode Ser Cadastrado Duas Provas Iguais')
+                Repetir++
+            }
+        }
+        if(Nome == ""){
+            Repetir++
+            alert('Digite o Nome da Prova!!')
+        }
+        if(Tempo == ""){
+            Repetir++
+            alert('Digite o Tempo da Prova!!')
+        }
+        if(Tempo < 40 || Tempo > 50){
+            Repetir++
+            alert('O Tempo da Prova está Inválido!!')
+        }
+        if(Number.isNaN(Tempo)){
+            Repetir++
+            alert('Letras são Inváldias no campo de Tempo!')
+        }
+        if(Repetir == 0){
+            vtNome.push(Nome)
+            vtTempo.push(Tempo)
+            Nome1.value = ""
+            Tempo1.value = ""
+            alert('Prova Cadastrada com Sucesso!')
+        }   
+    }
+    function Pesquisar(){
+        var De = Number(De1.value)
+        var Ate = Number(Ate1.value)
+        let Repetir = 0
+
+        if(De > Ate){
+            Repetir++
+            alert('Intervalo Inválido')
+        }
+        if(Number.isNaN(De) || Number.isNaN(Ate)){
+            Repetir++
+            alert('Letras são Inválidas nesses Campos!')
+        }
+        if(vtNome == ""){
+            Repetir++
+            alert('Não Existe Provas Cadastradas!')
+        }
+        if(De == "" || Ate == ""){
+            Repetir++
+            alert('Preencha os Campos Corretamente')
+        }
+        if(Ate > vtTempo.length){
+            Repetir++
+            alert('Você não fez ainda essa quantidade de provas')
+        }
+        if(Repetir == 0){
+            div2.innerHTML = ""
+            div1.innerHTML = ""
+            var MenorTempo = 50
+            var MaiorTempo = 0
+            var Soma = 0
+
+            for(var index = 0; index < vtTempo.length; index++){
+                Soma += vtTempo[index] 
+
+                if(vtTempo.length >= De && vtTempo.length <= Ate){
+
+                    if(vtTempo.length < MenorTempo){
+                        MenorTempo = vtTempo[index]
+                    }
+                    if(vtTempo.length > MaiorTempo){
+                        MaiorTempo = vtTempo[index]
+                    }
+
+                }
+            div2.innerHTML += `<br><br> ${index+1}° ${vtNome[index]} - ${vtTempo[index]}<br> `
+            }
+            div1.innerHTML += `<br><u>RESUMO DAS PROVAS QUE ATENDEM O INTERVALO</u><br><br><br> MENOR TEMPO:${MenorTempo}<br>MAIOR TEMPO: ${MaiorTempo}<br>TEMPO MÉDIO:${(Soma / vtTempo.length).toFixed(2)} MINUTOS`
+        }
+
+    }
+</script>

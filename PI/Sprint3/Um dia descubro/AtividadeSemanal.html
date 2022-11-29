@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade Semanal</title>
+</head>
+<body>
+    Limite Inferior: <input id="Inferior1"><br>
+    Limite Superior: <input id="Superior1"><br>
+    Primeiro Número Divisivel: <input id="Divisivel1"><br>
+    Segundo Número Divisivel: <input id="Divisivel2"><br>
+    <button onclick="Mostrar()">Mostrar</button> 
+    <div id="div1"></div>
+</body>
+</html>
+<script>
+    function Mostrar(){
+       div1.innerHTML = ""
+       var LimiteInferior = Number(Inferior1.value)
+       var LimiteSuperior = Number(Superior1.value)
+       var NumDivisivel1 = Number(Divisivel1.value)
+       var NumDivisivel2 = Number(Divisivel2.value)
+       var Media = 0
+       var QuantidadeNumeros = 0
+       var NumeroMaior = 0
+       var NumeroMenor = 1000
+
+       if(LimiteInferior == "" && LimiteSuperior == "" && NumDivisivel1 == "" && NumDivisivel2 == ""){
+            alert('Campos de entrada vazio!!')
+       
+        }else if(LimiteInferior <= 20){
+            alert('Número inferior tem que ser maior que 20')
+       
+        }else if(LimiteSuperior <= LimiteInferior || LimiteSuperior >= 1000){
+            alert('Limite Superior inválido, verifique o conteúdo')
+        
+        }else if(NumDivisivel1 < 3 || NumDivisivel1 > 20){
+            alert('Primeiro número de divisibilidade tem que estar entre 3 e 20')
+        
+        }else if(NumDivisivel2 == NumDivisivel1 || NumDivisivel2 < 3 || NumDivisivel2 > 20){
+            alert('Segundo número de Divisibilidade tem que estar entre 3 e 20 e ser diferente do primeiro')
+        
+        }else{
+            var Verificador = 0
+
+            for(var Contador = LimiteInferior; Contador <= LimiteSuperior; Contador++){
+                
+                if(Contador % NumDivisivel1 == 0 || Contador % NumDivisivel2 == 0){
+                    Verificador++
+                }
+
+                if(Contador % NumDivisivel1 == 0 && Contador % NumDivisivel2 == 0){
+                    div1.innerHTML += `O Número ${Contador} é Divisivel pelo primeiro e segundo número<br>`
+                
+                }else if(Contador % NumDivisivel1 == 0){
+                    div1.innerHTML += `O Número ${Contador} é Divisivel pelo primeiro número<br>` 
+                
+                }else if(Contador % NumDivisivel2 == 0){
+                    div1.innerHTML += `O Número ${Contador} é Divisivel pelo segundo número<br>` 
+                }
+
+                if(Contador % NumDivisivel1 == 0 || Contador % NumDivisivel2 == 0){
+                    QuantidadeNumeros++
+                    Media = Contador / QuantidadeNumeros
+                    NumeroMaior = Contador
+
+                    if(NumeroMenor > Contador){
+                        NumeroMenor = Contador
+                    }
+                }
+
+                }
+                div1.innerHTML += `<br><br>ANÁLISE DOS NÚMEROS EXIBIDOS<br><br> Quantidade de números exibidos:${QuantidadeNumeros}<br>Média dos números exibidos:${Media}<br>Maior número exibido:${NumeroMaior}<br>Menor número exibido:${NumeroMenor}`
+
+                if(Verificador == 0){
+                     div1.innerHTML = `“***Não Foram Encontrados Números Divisíveis***”`
+                }
+                }
+                
+    }
+</script>

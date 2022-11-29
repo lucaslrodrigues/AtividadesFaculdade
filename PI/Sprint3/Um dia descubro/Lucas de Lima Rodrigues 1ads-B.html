@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Corrida de 10 km</title>
+</head>
+<body>
+    <div id="place1">
+        <h3>Corrida de 10 km</h3>
+        Nome da prova <input type="text" id="name_ipt"><br>
+        Tempo de realização da prova em minutos<input type="text" id="time_ipt"><br>
+        <button onclick="register()">Registrar</button>
+        <button onclick="analyze()">Analisar</button>
+    </div>
+    <div id="place2" style="display: none;">
+        <h3>Resumo das provas</h3>
+        Informe o intervalo de consulta: De <input type="text" id="from_ipt"> até <input type="text" id="to_ipt"><br>
+        <button onclick="search()">Pesquisar</button>
+        <span id="view_area"></span>
+    </div>
+</body>
+</html>
+<script>
+    var ary_name = [];
+    var ary_time = [];
+    var order = []
+
+    function register(){
+        let time = time_ipt.value.trimStart()
+        time = Number(time);
+        let name = (name_ipt.value).trimStart()
+
+        let verify = true;
+        let verifyName = true;
+        
+        if(time == '' || isNaN(time)|| time < 40 || time > 50){
+            alert('Insira um tempo válido entre 40 e 50 minutos')
+            verify = false;
+        }
+        if(name == ''){
+            alert('Preencha o campo nome')
+            verify = false;
+        }else{
+            if(ary_name.length > 0){
+                for(let index = 0; index < ary_name.length; index++){
+                    if(ary_name[index] == name){
+                        verifyName = false;
+                    }
+                }
+            }
+            if (verify){
+                if(verifyName){
+                        ary_name.push(name)
+                        ary_time.push(time)
+                        order.push(order.length + 1)
+                        alert('Prova cadastrada com sucesso!!!')
+                    }else{
+                        alert('Este nome já foi inserido anteriormente')
+                    }
+                }
+        }
+        name_ipt.value = '';
+        time_ipt.value = '';
+    }
+    function analyze(){
+        if(ary_name.length > 0){
+            place1.style.display = 'none'
+            place2.style.display = 'block'
+        }else{
+            alert('Você não tem corridas cadastradas!!')
+        }
+    }
+    function search(){
+        view_area.innerHTML = '';
+        let resumo = [];
+        let verify = true;
+        let max = 40;
+        let min = 50;
+        let avg = 0;
+        let mount = 0;
+        let times_tot = 0;
+
+        let from = Number(from_ipt.value);
+        let to = Number(to_ipt.value);
+
+        if(isNaN(from) || isNaN(to)){
+            alert('Os intervalos devem ser numericos!!');
+            verify = false;
+        }
+        if(from > to){
+            alert('"De" deve ser menor que "até"');
+            verify = false;
+        }
+        if(from < 40 || from > 50 || to < 40 || to > 50){
+            alert('O intervalo deve estar entre 40 e 50');
+            verify = false;
+        }
+        if(verify){
+            for(let index = 0; index < order.length; index ++){
+                if(Number(ary_time[index]) >= from && Number(ary_time[index]) <= to){
+                    resumo.push(index)
+                    mount ++
+                    times_tot += Number(ary_time[index]);
+                    if(Number(ary_time[index] < min)){
+                        min = Number(ary_time[index]);
+                    }
+                    if(Number(ary_time[index] > max)){
+                        max = Number(ary_time[index]);
+                    }
+                }
+            }
+            if(mount < 1){
+                alert('Não foram encontrados valores no intervalo selecionado')
+                verify = false;
+            }
+            if(mount == 1){
+                avg = times_tot
+            }else{
+                avg = times_tot / mount;
+            }
+            if(verify){
+                view_area.innerHTML = `<p>
+                    Menor tempo: ${min.toFixed(1)}<br>
+                    Maior tempo: ${max.toFixed(1)}<br>
+                    Tempo médio: ${avg.toFixed(1)}<br>
+                </p>`
+                for(let index = 0; index < resumo.length; index ++){
+                    view_area.innerHTML += `
+                        ${resumo[index] + 1}° - ${ary_name[resumo[index]]} - ${Number(ary_time[resumo[index]]).toFixed(1)}<br>
+                    `
+                }
+            }
+        }
+    }
+</script>

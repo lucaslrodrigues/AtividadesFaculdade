@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vetor15</title>
+</head>
+<body>
+    <h3>LOJA</h3>
+    Nome do Produto: <input id="NomeProduto1"><br>
+    Preço da Compra: <input id="Preco1"><br>
+    <button onclick="Cadastrar()">Cadastrar</button>
+    <button onclick="Relatorio()">Relatório de Estoque</button>
+    <div id="div1"></div>
+    <div id="div2"></div>
+    <div id="div3"></div>
+</body>
+</html>
+<script>
+    VtProduto = []
+    VtPreco = []
+    function Cadastrar(){
+
+        var NomeProduto = NomeProduto1.value
+        var Preco = Number(Preco1.value)
+
+        if(NomeProduto == ""){
+            alert('Nenhum Produto Informado')
+        }else if(Preco == ""){
+            alert('Nenhum Preço Informado')
+        }else{
+            VtProduto.push(NomeProduto)
+            VtPreco.push(Preco)
+        }
+           
+        NomeProduto1.value = ""
+        Preco1.value = ""
+    }
+    function Relatorio(){
+        var MaisCaro = 0
+
+        for(var Contador = 0; Contador < VtProduto.length; Contador++){
+
+            div1.innerHTML = `Total de Produtos ${VtProduto.length}<br><br>`
+            
+            div2.innerHTML += `Produto ${Contador+1}: ${VtProduto[Contador]}<br>`
+            div2.innerHTML += `O Preço do Produto é ${VtPreco[Contador]}, Deve Vender por ${(VtPreco[Contador] *= 1.25).toFixed(2)}<br><br>`
+       
+        }
+
+        for(var index = 0; index < VtPreco.length; index++){
+
+            if(VtPreco[index] > MaisCaro){
+            MaisCaro = VtPreco[index]
+            }
+           
+        }
+	alert(index)
+        div1.innerHTML = `O Produto mais caro é ${MaisCaro} ${MaisCaro}`
+    }
+</script>
