@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio lista classificada</title>
+    <style>
+        body{
+            font-family: sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <h3>Insira um nome</h3>
+    <input type="text" id="name_ipt">
+    <button onclick="add()">Cadastrar nome</button><button onclick="show()">Ver nomes</button>
+    <br>
+    <span id="view_area"></span>
+</body>
+</html>
+<script>
+    vt_nomes = [];
+
+    function add(){
+        name = (name_ipt.value).trimStart();
+        if(name == ''){
+            alert('Insira um nome válido')
+        }
+        else{
+            vt_nomes.push(name);
+            name_ipt.value = '';
+            view_area.innerHTML = ``;
+            // alert('Nome cadastrado');
+        }
+    }
+
+    function show(){
+        vt_ordenado = [];
+        vt_copia = vt_nomes;
+        qtd_inic = vt_nomes.length;
+        verificar = true;
+
+        while(verificar){
+            qtd = vt_copia.length
+
+            for (i = 0; i < qtd; i++){
+
+                let verify = true;
+
+                for (index = 0; index < qtd; index++){
+                    if (index != i){
+                        if (vt_copia[i] >= vt_copia[index]){
+                            verify = false;
+                        }
+                    }
+                }
+
+                if (verify){
+                    vt_ordenado.push(vt_copia[i])
+                    delete vt_copia[i]
+                }
+                
+                if(vt_ordenado.length == qtd_inic){
+                    verificar = false;
+                }
+            }
+        }
+
+        view_area.innerHTML = `Nomes: ${vt_ordenado}`;
+    }
+</script>
