@@ -26,8 +26,7 @@
         name = (name_ipt.value).trimStart();
         if(name == ''){
             alert('Insira um nome válido')
-        }
-        else{
+        }else{
             vt_nomes.push(name);
             name_ipt.value = '';
             view_area.innerHTML = ``;
@@ -57,8 +56,10 @@
                 }
 
                 if (verify){
-                    vt_ordenado.push(vt_copia[i])
-                    delete vt_copia[i]
+                    if(vt_copia[i] != undefined){
+                        vt_ordenado.push(vt_copia[i])
+                        delete vt_copia[i]
+                    }
                 }
                 
                 if(vt_ordenado.length == qtd_inic){
@@ -66,7 +67,7 @@
                 }
             }
         }
-
-        view_area.innerHTML = `Nomes: ${vt_ordenado}`;
+        view_area.innerHTML = `Lista desordenada: ${vt_nomes}`;
+        view_area.innerHTML += `<br>Lista ordenada: ${vt_ordenado}`;
     }
 </script>
