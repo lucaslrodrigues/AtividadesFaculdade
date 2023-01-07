@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pair progamming</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <ul>
+            <li>Batalha de cartas | Heróis</li>
+            <li><img src="cartas/Marvel_Logo.svg.png" alt="Marvel simble"></li>
+        </ul>
+    </header>
+    <section class="data">
+        <div class="player">
+            <label>Jogador: <span id="pointsPlayer"></span></label>
+            <div id="cardsPlayer"></div>
+        </div>
+        <div class="adversary">
+            <label>Adversario: <span id="pointsAdversary"></span></label>
+            <div id="cardsAdversary"></div>
+        </div>
+    </section>
+    <div class="batleAreaBack">
+
+        <section class="batleArea">
+
+            <!-- <div class="batlePlay"> -->
+
+                <button onclick="start()">Simular batalha</button>
+                <div class="batleContent">
+                    <span id="imgPlayer"></span>
+                    <label>VS</label>
+                    <span id="imgAdversary"><img src="cartas/homem_de_ferro.png"></span>
+                </div>
+                
+            <!-- </div> -->
+
+            <!-- <div class="ranking">
+    
+            </div> -->
+
+        </section>
+
+    </div>
+</body>
+</html>
+<script src="script.js"></script>

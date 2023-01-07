@@ -1,0 +1,172 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
+
+body, button{
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    font-family: 'Roboto Condensed', sans-serif;
+    background-color: #151515;
+}
+
+header{
+    width: 100%;
+    height: 50px;
+    background-color: #202020;
+    border-bottom: 1px solid #c6c6c6;
+}
+
+header ul, .data, .batleArea{
+    width: 80%;
+    height: 100%;
+    margin: auto;
+}
+
+header ul{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    list-style: none;
+    font-weight: 900;
+    font-size: 13pt;
+}
+
+header ul li img{
+    width: 70px;
+}
+
+.data, .batleArea{
+    width: 80%;
+    margin: auto;
+    display: flex;
+    justify-content: space-around;
+}
+
+.data {
+    height: 170px;
+    align-items: center;
+    color: white;
+}
+
+.player, .adversary{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* border: #bbb solid 0.5px; */
+    width: 50%;
+    height: 90px;
+}
+
+.player{
+    border-right: #bbb solid 0.1px;
+}
+
+.adversary{
+    border-left: #bbb solid 0.1px;
+}
+
+#cardsPlayer img, #cardsAdversary img{
+    width: 60px;
+    padding: 2px;
+}
+
+/* AREA DE BATALHA */
+
+.batleArea {
+    height: 250px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    border-left: #bbb solid 1px;
+    border-right: #bbb solid 1px;
+    color: #D9301C;
+    font-weight: 900;
+    font-size: 30pt;
+}
+
+.batleContent{
+    margin-top: 35px;
+    /* border-bottom: #D9301C solid 1px; */
+    padding: 45px;
+    height: 100px;
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.batleContent img{
+    width: 200px;
+}
+
+.batleAreaBack{
+    background-color: white;
+}
+
+/* .batlePlay{
+    height: 100%;
+    width: 100%;
+    color: #D9301C;
+    font-weight: 900;
+    font-size: 30pt;
+    border: blue solid 3px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}  */
+
+.batleArea button{
+    margin-top: -30px;
+    width: 150px;
+    height: 40px;
+    outline: none;
+    background-color: #D9301C;
+    border: 1px solid white;
+    padding: 10px 20px;
+    color: white;
+    font-weight: 400;
+}
+
+.batleArea button:hover{
+    width: 152px;
+    height: 42px;
+    margin-bottom: -2px;
+    cursor: pointer;
+}
+
+.batlePlay button:before {
+    background-size: 16px 24px;
+    background-image: repeating-linear-gradient(-45deg,#fff,#fff 1px,transparent 0,transparent 16px);
+    transition: none;
+    left: 0;
+    top: 0;
+}
+
+.batlePlay button:after {
+    background-size: 24px 16px;
+    background-image: repeating-linear-gradient(-135deg,#fff,#fff 1px,transparent 0,transparent 16px);
+    transition: none;
+    right: 0;
+    top: 0;
+}
+
+.batlePlay button:before {
+    border-color: transparent;
+    border-style: solid;
+    border-width: 0 0 16px 16px;
+    box-sizing: border-box;
+    content: "";
+    display: block;
+    position: absolute;
+}
+
+.batlePlay button:after{
+    border-color: transparent;
+    border-style: solid;
+    border-width: 16px 16px 0 0;
+    box-sizing: border-box;
+    content: "";
+    display: block;
+    position: absolute;
+}
