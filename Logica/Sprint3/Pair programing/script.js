@@ -119,31 +119,164 @@ for (let i = 0; i < 5; i++) {
     cardsAdversary.innerHTML += `<span id="cardA${i}"><img src="${adversaryCards[i].src}"></span>`
 }
 
-var arrayNumbers = [];
+var arrayNumbersPlayer = [];
+var arrayNumbersAdversary = [];
+var finish = false;
+var pointsPlayer = 0;
+var pointsAdversary = 0;
+
+
 function start(){
-    // Player
-    let numCard = (Math.random() * 5).toFixed(0);
-    console.log(numCard)
-    if (arrayNumbers.length != 0){
+    let player = 0;
+    let adversary = 0;
+
+    // PLAYER
+    var loop = true;
+    while (loop) {
+        let verify = true;
+        let numCard = (Math.random() * 4).toFixed(0);
+        console.log(numCard)
+
+        if (arrayNumbersPlayer.length > 0){
+            for (let i = 0; i < arrayNumbersPlayer.length; i ++) {
+                if (numCard == arrayNumbersPlayer[i]) {
+                    verify = false;
+                }
+            }
+            if (verify) {
+                // console.log('Local da carta: ' + playerCards[numCard].src);
+                // numCard == 5 ? imgPlayer.innerHTML = `<img src="${playerCards[numCard - 1].src}">`
+                imgPlayer.innerHTML = `<img src="${playerCards[numCard].src}">`
+            
+                // let teste = `cardP${numCard}`;
+                // console.log(teste)
+                // teste.innerHTML = ``;
+            
+                let span = document.getElementById(`cardP${numCard}`);
+                span.innerHTML = ``;
+                
+                player = playerCards[numCard]; 
+                delete playerCards[numCard];
+                arrayNumbersPlayer.push(numCard);
+            
+                // let arrayP = [];
+                // for (let i = 0; i < playerCards.length; i ++) {
+                //     if (i != numCard) {
+                //         arrayP.push(playerCards[i])
+                //     }
+                // }
+                // playerCards = arrayP;
+            
+                console.log(playerCards);
+                loop = false;
+            }
+        }else{
+            imgPlayer.innerHTML = `<img src="${playerCards[numCard].src}">`
+
+            let span = document.getElementById(`cardP${numCard}`);
+            span.innerHTML = ``;
         
-    }
-
-    // console.log('Local da carta: ' + playerCards[numCard].src);
-    imgPlayer.innerHTML = `<img src="${playerCards[numCard].src}">`
-
-    // let teste = `cardP${numCard}`;
-    // console.log(teste)
-    // teste.innerHTML = ``;
-
-    let span = document.getElementById(`cardP${numCard}`);
-    span.innerHTML = ``;
-
-    let arrayP = [];
-    for (let i = 0; i < playerCards.length; i ++) {
-        if (i != numCard) {
-            arrayP.push(playerCards[i])
+            player = playerCards[numCard]; 
+            delete playerCards[numCard];
+            arrayNumbersPlayer.push(numCard);
+        
+            console.log(playerCards);
+            loop = false;
+        }
+        if (arrayNumbersPlayer.length == 5) {
+            loop = false;
+            finish = true;
+            buttonStart.style.display = "none";
         }
     }
-    playerCards = arrayP;
-    console.log(playerCards);
+
+    // ADVERSARY
+
+    loop = true;
+    while (loop) {
+        let verify = true;
+        let numCard = (Math.random() * 4).toFixed(0);
+
+        if (arrayNumbersAdversary.length > 0){
+            for (let i = 0; i < arrayNumbersAdversary.length; i ++) {
+                if (numCard == arrayNumbersAdversary[i]) {
+                    verify = false;
+                }
+            }
+            if (verify) {
+                imgAdversary.innerHTML = `<img src="${adversaryCards[numCard].src}">`
+            
+                let span = document.getElementById(`cardA${numCard}`);
+                span.innerHTML = ``;
+                
+                adversary = adversaryCards[numCard];
+                delete adversaryCards[numCard];
+                arrayNumbersAdversary.push(numCard);
+            
+                console.log(adversaryCards);
+                loop = false;
+            }
+        }else{
+            imgAdversary.innerHTML = `<img src="${adversaryCards[numCard].src}">`
+            
+            let span = document.getElementById(`cardA${numCard}`);
+            span.innerHTML = ``;
+        
+            adversary = adversaryCards[numCard];
+            delete adversaryCards[numCard];
+            arrayNumbersAdversary.push(numCard);
+        
+            console.log(adversaryCards);
+            loop = false;
+        }
+        if (arrayNumbersAdversary.length == 5) {
+            loop = false;
+            finish = true;
+            buttonStart.style.display = "none";
+        }
+    }
+
+    // PONTUAÇÂO
+
+    winner = '<label style = "color: #06777c">Empate</label>';
+    console.log(player, adversary)
+    if (player.def <= adversary.atac && adversary.def <= player.atac) {
+
+        pointsAdversary += 1;
+        pointsAdversaryView.innerHTML = `${pointsAdversary}`;
+        pointsPlayer += 1;
+        pointsPlayerView.innerHTML = `${pointsPlayer}`;
+
+    }else if (player.def <= adversary.atac) {
+
+        winner = '<label style = "color:#D9301C">o Adversario venceu</label>';
+        pointsAdversary += 3;
+        pointsAdversaryView.innerHTML = `${pointsAdversary}`;
+
+    }else if (adversary.def <= player.atac) {
+
+        winner = '<span style = "color:#016a2d;" >o jogador venceu</span>';
+        pointsPlayer += 3;
+        pointsPlayerView.innerHTML = `${pointsPlayer}`;
+    }else{
+
+        pointsAdversary += 1;
+        pointsAdversaryView.innerHTML = `${pointsAdversary}`;
+        pointsPlayer += 1;
+        pointsPlayerView.innerHTML = `${pointsPlayer}`;
+
+    }
+
+    resTurn.innerHTML = `${winner}`
+
+    // RESULTADO
+    if (finish) {
+        if (pointsAdversary > pointsPlayer) {
+            resBattle.innerHTML = `<label style = " color : #D9301C ">O adversário venceu a partida com ${pointsAdversary} pontos!</label>`
+        } else if (pointsPlayer > pointsAdversary) {
+            resBattle.innerHTML = `<label style = " color : #016a2d ">O jogador é o grande vencedor da partida com ${pointsPlayer} pontos!</label>`
+        } else {
+            resBattle.innerHTML = `<label style = " color : #06777c ">Oloco meo! Ambos são igualmente bons!</label>`
+        }
+    }
 }

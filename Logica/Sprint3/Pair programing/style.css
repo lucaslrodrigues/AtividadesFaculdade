@@ -55,6 +55,8 @@ header ul li img{
     /* border: #bbb solid 0.5px; */
     width: 50%;
     height: 90px;
+    font-size: 20pt;
+    font-weight: 100;
 }
 
 .player{
@@ -169,4 +171,31 @@ header ul li img{
     content: "";
     display: block;
     position: absolute;
+}
+
+
+/* RESULTADOS */
+
+.results {
+    width: 50%;
+    height: 20vh;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    /* background-color: #06777c; */
+}
+
+#resTurn {
+    font-size: 20pt;
+    font-weight: 700;
+    text-shadow: -1px 0 #ffffff, 0 1px #ffffff, 1px 0 #ffffff, 0 -1px #ffffff;
+}
+
+#resBattle {
+    font-size: 20pt;
+    font-weight: 700;
+    /* padding: 5px;
+    border: #bbb solid 1px; */
 }

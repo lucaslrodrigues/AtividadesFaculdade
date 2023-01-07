@@ -16,11 +16,11 @@
     </header>
     <section class="data">
         <div class="player">
-            <label>Jogador: <span id="pointsPlayer"></span></label>
+            <label>Jogador: <span id="pointsPlayerView">0</span></label>
             <div id="cardsPlayer"></div>
         </div>
         <div class="adversary">
-            <label>Adversario: <span id="pointsAdversary"></span></label>
+            <label>Adversario: <span id="pointsAdversaryView">0</span></label>
             <div id="cardsAdversary"></div>
         </div>
     </section>
@@ -30,11 +30,11 @@
 
             <!-- <div class="batlePlay"> -->
 
-                <button onclick="start()">Simular batalha</button>
+                <button id = "buttonStart" onclick="start()">Simular batalha</button>
                 <div class="batleContent">
                     <span id="imgPlayer"></span>
                     <label>VS</label>
-                    <span id="imgAdversary"><img src="cartas/homem_de_ferro.png"></span>
+                    <span id="imgAdversary"></span>
                 </div>
                 
             <!-- </div> -->
@@ -46,6 +46,10 @@
         </section>
 
     </div>
+    <section class="results">
+        <div id="resTurn"></div>
+        <div id="resBattle"></div>
+    </section>
 </body>
 </html>
 <script src="script.js"></script>
