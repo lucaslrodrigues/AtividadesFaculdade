@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Quantas coca cola você já tomou <input type="text" id="quantidade"><br>
+    <button onclick="atualizar()">Ver coca</button><br>
+    <span id="exibir"></span>
+</body>
+</html>
+<script>
+    function atualizar(){
+        exibir.innerHTML = ``
+        var qtd_coca = Number(quantidade.value)
+        cont = 0;
+        while(cont < qtd_coca){
+            exibir.innerHTML += `<img src="https://http2.mlstatic.com/D_NQ_NP_736339-MLA46806825831_072021-O.jpg" width = '20px'>`
+            cont++
+        }
+    }
+</script>

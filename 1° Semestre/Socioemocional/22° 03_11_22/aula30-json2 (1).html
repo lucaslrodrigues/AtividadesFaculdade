@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSON - JavaScript Object Notation</title>
+</head>
+<body>
+    
+    <input placeholder="Insira o nome" type="text" name="" id="ipt_nome"> <br>
+    <input placeholder="Insira o sobrenome" type="text" name="" id="ipt_sobrenome"> <br>
+    <input placeholder="Insira a idade" type="text" name="" id="ipt_idade"> <br>
+    <button onclick="exibir()">Exibir</button>
+
+    <div id="div_mensagem"></div>
+
+</body>
+</html>
+
+<script>
+    function exibir() {
+        const ano = 2022;
+        
+        const nome = ipt_nome.value;
+        const sobrenome = ipt_sobrenome.value;
+        const idade = Number(ipt_idade.value);
+
+
+        /*
+            JSON (JavaScript Object Notation) representa um agrupamento/conjunto de dados que pertencem a um mesmo contexto;
+            No exemplo abaixo, estamos criando o JSON "pessoa", delimitado pelas chaves de abertura e fechamento do objeto {};
+            Tudo que estiver entre as chaves, faz parte do JSON, sendo informações pertencentes àquele JSON;
+
+            - No exemplo abaixo, temos as informações "nome", "sobrenome" e "idade", onde todas pertencem ao contexto de "pessoa" (pois estão entre as chaves "{}");
+        */
+        const pessoa = {
+            nome: ipt_nome.value, // recebendo valor da input "nome" para armazenar na informação "nome" do JSON "pessoa"
+            sobrenome: sobrenome, // recebendo valor da variável "sobrenome" para armazenar na informação "sobrenome" do JSON "pessoa"
+            idade: idade, // recebendo valor da variável "idade" para armazenar na informação "idade" do JSON "pessoa"
+        }
+
+        // Podemos acessar as informações de qualquer JSON ao invocá-las utilizando "nomeJSON.atributoJSON"
+        div_mensagem.innerHTML = `Nome: ${pessoa.nome} ${pessoa.sobrenome}`; // podemos utilizar as informações de um JSON como se fossem variáveis
+        div_mensagem.innerHTML += "<br> Nascimento: " + (ano - pessoa.idade); // inclusive, para realizar cálculos
+    
+    }
+</script>

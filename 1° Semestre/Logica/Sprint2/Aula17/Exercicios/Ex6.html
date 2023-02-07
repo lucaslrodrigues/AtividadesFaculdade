@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex6 - Pessoa que mais ama</title>
+</head>
+<body>
+    Qual é a pessoa que você mais ama? <input type="text" id="nome_pessoa">
+    Quanto você ama ela (número inteiro) <input type="text" id="quantidade">
+    <button onclick="atualizar()">Expressar amor</button>
+    <div id="exibir"></div>
+</body>
+</html>
+<script>
+    function atualizar(){
+        var nome = nome_pessoa.value
+        var qtd = quantidade.value
+        cont = 0;
+        exibir.innerHTML = ''
+        while(cont < qtd){
+            exibir.innerHTML += `${nome}, eu te amo! Sempre lembre disso!<br>`;
+            cont++
+        }
+    }
+</script>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex1 lista 8</title>
+</head>
+<body>
+    <h1>Frutas</h1>
+    Qual o nome da fruta que chegou a mesa <input type="text" id="fruta">
+    <button onclick="atualizar()">Vai come?</button>
+</body>
+</html>
+<script>
+    function atualizar(){
+        var FRUTA = fruta.value
+        if (FRUTA == 'uva' || FRUTA == 'abacaxi'){
+            alert(`Sim, vai comer ${FRUTA}`)
+        }else{
+            alert(`A fruta ${FRUTA} ela não come`)
+        }
+    }
+</script>

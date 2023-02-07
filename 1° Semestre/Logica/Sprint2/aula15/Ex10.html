@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex10 lista8 - Estágio ideal</title>
+</head>
+<body>
+    <h1>Qual empresa é a ideal</h1>
+    Nome da empresa: <input type="text" id="nome" placeholder="Nome"><br>
+    Valor da bolsa: <input type="text" id="valor" placeholder="Valor"><br>
+    Valor do VR: <input type="text" id="vr" placeholder="VR"><br>
+    Tempo de deslocamento da empresa para a SPTech: <input type="text" id="tempo" placeholder="Tempo de deslocamento"><br>
+    <button onclick="atualisar()">É preferida?</button><br>
+    <span id="exibir"></span>
+</body>
+</html>
+<script>
+    function atualisar(){
+        NOME = nome.value
+        VALUE = Number(valor.value)
+        VR = Number(vr.value)
+        TIME = Number(tempo.value)
+        if (VALUE >= 1800 || VR >= 20 || TIME <= 30){
+            exibir.innerHTML = `A empresa ${NOME} é uma de suas preferências`
+        }else{
+            exibir.innerHTML = `A empresa ${NOME} está fora da sua lista`
+        }
+    }
+</script>

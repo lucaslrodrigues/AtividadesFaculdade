@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSON - JavaScript Object Notation</title>
+</head>
+<body>
+
+    <button onclick="exibir()">Exibir Informações</button>
+    <div id="div_mensagem"></div>
+    
+</body>
+</html>
+
+<script>
+
+    function exibir() {
+
+        /*
+            JSON (JavaScript Object Notation) representa um agrupamento/conjunto de dados que pertencem a um mesmo contexto, com sua sintaxe sendo: 
+            - var nomeJSON = { atributoJSON: valorAtributoJSON }
+
+            No exemplo abaixo, estamos criando o JSON "pessoa", delimitado pelas chaves de abertura e fechamento do objeto {};
+
+            Tudo que estiver entre as chaves, faz parte do JSON, sendo informações pertencentes àquele JSON;
+            - No exemplo abaixo, temos as informações "nome", "sobrenome" e "idade", onde todas pertencem ao contexto de "pessoa" (pois estão entre as chaves "{}");
+        */
+        var pessoa = {
+            nome: "João",
+            sobrenome: " De Paula",
+            idade: 23,
+        } 
+
+        var ano = 2022;
+
+        // Podemos acessar as informações de qualquer JSON ao invocá-las utilizando "nomeJSON.atributoJSON"
+        div_mensagem.innerHTML = "<br> Nome: " + pessoa.nome + pessoa.sobrenome; // podemos utilizar as informações de um JSON como se fossem variáveis
+        div_mensagem.innerHTML += "<br> Nascimento: " + (ano - pessoa.idade); // inclusive, para realizar cálculos
+    }
+
+</script>

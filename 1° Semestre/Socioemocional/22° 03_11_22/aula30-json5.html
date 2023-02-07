@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <button onclick="exibir()">Exibir</button>
+    <div id="div_mensagem"></div>
+
+</body>
+</html>
+
+<script>
+    function exibir( ){
+        const objetoImutavel = {
+            nome: "JP"
+        }
+
+        // não ocorre erro por manipular informações do JSON
+        objetoImutavel.nome = "XPTO";
+
+        // não ocorre erro por criar novas informações no JSON
+        objetoImutavel.teste = {
+            teste2: "xpto"
+        }
+       
+        div_mensagem.innerHTML = objetoImutavel.nome + "<br>";
+        div_mensagem.innerHTML += objetoImutavel.teste.teste2;
+        
+
+        // ocorre um erro por tentar REATRIBUIR a constante como um todo
+        objetoImutavel = {
+            nome: "JP"
+        }
+
+        alert (objetoImutavel.nome)
+    }
+</script>

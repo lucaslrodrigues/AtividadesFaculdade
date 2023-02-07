@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex11 lista 6 - Idade do usuário e quanto ganha</title>
+</head>
+<body>
+    <h1>Menor ou Maior de diade</h1>
+    Idade <input type="text" id="IDADE" autofocus>
+    Salário <input type="text" id="SALARIO">
+    <button onclick="atualizar()">Análisar situação</button>
+    <span id="exibir"></span>
+</body>
+</html>
+<script>
+    function atualizar(){
+        var AGE = Number(IDADE.value)
+        var WAGE = Number(SALARIO.value)
+        if (AGE < 18 && WAGE < 2500){
+            exibir.innerHTML = 'Menor de idade liso'
+        }else if (AGE < 18 && WAGE >= 2500){
+            exibir.innerHTML = 'Menor de idade e ostentação'
+        }else if (AGE >= 18 && WAGE < 3500){
+            exibir.innerHTML = 'Maior de idade e liso'
+        }else if (AGE <= 18 && WAGE >= 3500 && WAGE < 7000){
+            exibir.innerHTML = 'Maior de idade e ostentação'
+        }else{
+            exibir.innerHTML = 'Maior de idade e mega ostentação'
+        }
+    }
+</script>

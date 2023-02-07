@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex1 lista 6 - Temperatura ideal</title>
+</head>
+<body>
+    Qual a temperatura ambiente: <input type="text" id="temperatura" autofocus>
+    <button onclick="atualizar()">Ver temperatura</button>
+    <div id="exibir"></div>
+</body>
+</html>
+<script>
+    function atualizar(){
+        var temp = temperatura.value
+        if (temp >= 21 && temp <= 24){
+            alert('Temperaturaconfortável :)')
+        }else{
+            alert('Temperatura DESCONFORTÁVEL :(')
+        }
+    }
+</script>

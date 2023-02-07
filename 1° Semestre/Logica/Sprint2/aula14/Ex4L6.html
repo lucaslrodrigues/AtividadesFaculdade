@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex4 lista6 - Verificar se é vegano</title>
+</head>
+<body>
+    O que você come no café da manhã <select id="CAFE_SEL">
+        <option value="">SELECIONE</option>
+        <option value="Ovos">Ovos</option>
+        <option value="Leite de arroz">Leite de arroz</option>
+        <option value="Bacon">Bacon</option>
+    </select>
+    O que você come no almoço <select name="" id="ALMOCO_SEL">
+        <option value="">SELECIONE</option>
+        <option value="Bife">Bife</option>
+        <option value="Hamburguer de soja">Hamburguer de soja</option>
+        <option value="Frango grelhado">Frango grelhado</option>
+    </select>
+    O que você come na anta <select name="" id="JANTA_SEL">
+        <option value="">SELECIONE</option>
+        <option value="Picanha de soja">Picanha de soja</option>
+        <option value="Cupim">Cupim</option>
+        <option value="Coração">Coração</option>
+    </select>
+    <button onclick="atualizar()">Sou vegano</button>
+</body>
+</html>
+<script>
+    function atualizar(){
+        var CAFE = CAFE_SEL.value
+        var ALMOCO = ALMOCO_SEL.value
+        var JANTA = JANTA_SEL.value
+        if(CAFE == 'Leite de arroz' && ALMOCO == 'Hamburguer de soja' && JANTA == 'Picanha de soja'){
+            alert('Sim, você é vegano!')
+        }else{
+            alert('"Não, você não é vegano')
+        }
+    }
+</script>

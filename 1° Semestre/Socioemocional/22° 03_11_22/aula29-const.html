@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 29 - const</title>
+</head>
+<body>
+    
+    <h2 id="h_muda" onclick="mudar()">Clique aqui</h2>
+
+</body>
+</html>
+
+<script>
+/*  
+CONST é uma outra forma de criar variáveis. 
+
+A principal característica da variáveis criadas com CONST é que esse tipo de variável não permite reatribuir valores para ela, ou seja, uma vez que ela foi inicializada não podemos atribuir um novo valor para ela.
+*/
+    function mudar() {
+        const cidade = 'Guarulhos';
+
+        // esta linha provoca um erro, pois variável criada com 'const' não pode ser reatribuída!
+        cidade = 'São Paulo';
+
+        h_muda.innerHTML = cidade;
+    }
+</script>

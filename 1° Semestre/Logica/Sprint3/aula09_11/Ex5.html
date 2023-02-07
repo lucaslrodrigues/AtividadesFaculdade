@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filmes favoritos</title>
+    <style>
+        body{
+            font-family: sans-serif;
+        }
+    </style>
+</head>
+<body>
+    Informe seus filmes favoritos <input type="text" id="filme_ipt"><br>
+    <button onclick="cadastrar()" style="width: 80px; height: 30px;">Cadastrar</button><br><br>
+    <span><b>Seu filme favorito:</b> <label id="filme_fav">...</label><br>
+        <b>Seu 3º filme favorito:</b> <label id="filme_3">...</label><br>
+        <b>Total de filmes cadastrados:</b> <label id="filme_tot">...</label>
+    </span><br><br>
+    <span id="exibir" style="color: red;"></span>
+</body>
+</html>
+<script>
+    var filmes = [];
+    function cadastrar(){
+        var filme = filme_ipt.value
+        if(filme == ''){
+            exibir.innerHTML = 'Insira um filme válido'
+        }else{
+            filmes.push(filme)
+            filme_ipt.value = ''
+            exibicao()
+        }
+    }
+    function exibicao(){
+        filme_fav.innerHTML = `${filmes[0]}`
+        if(filmes.length >= 3){
+            filme_3.innerHTML = `${filmes[2]}`
+        }else{
+            filme_3.innerHTML = `Ainda não existe`
+        }
+        filme_tot.innerHTML = `${filmes.length}`
+        exibir.innerHTML = ''
+    }
+</script>

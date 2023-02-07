@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 28 - let</title>
+</head>
+<body>
+    
+    <h2 id="h_numero" onclick="exibir()">Clique nimin</h2>
+    
+
+</body>
+</html>
+<script>
+/*  LET é uma outra forma de criar variáveis. 
+    As variáveis criadas com LET tem abrangência mais reduzida, sendo que, se a variável foi criada em uma estrutura ela só é válida naquela estrutura.
+    Por exemplo, quando eu crio uma variável com LET dentro de um FOR, essa variável só é válida e só pode ser manipulada nesse FOR. Quando o FOR é encerrado a variável deixa de existir.
+*/
+
+    // variáveis globais com 'let' têm exatamente o mesmo comportamento de quando criadas com 'var'
+    let programador = 'teste X';
+
+    function exibir() {
+
+        alert(programador);
+
+        // o código abaixo provocaria um erro e o for NÃO seria executado
+        // pois, com 'let' a variável só existe a partir da linha de código que é criada
+        // se fosse com 'var' não daria erro, pois a variável já existiria com o valor undefined
+           
+        // alert ('antes do FOR - veja o conteúdo da variável numero:' + numero)
+        // for (let numero = 0; numero < 4; numero++) {
+        //     alert(numero);
+        // }
+        // alert ('depois do for ' + numero + ' agora troque de var para let na linha 33');
+
+
+
+        // Isso é válido tambem para as estruturas de decisão.
+        // Veja no if abaixo a diferença do var e let
+        if (programador == 'teste X'){
+            let ax_literal = "criei a variáve e atribui este texto"
+            alert (ax_literal)
+            if (programador.length > 0) {
+                alert ('olha o que aconteceu no if seguinte' + ax_literal)
+            }
+        } else {
+            alert ('vamos ver o que acontece aqui:' + ax_literal)
+        }
+        alert ('apos if ' + ax_literal + ' agora troque de var para let na linha 43')
+  
+    }
+    
+</script>

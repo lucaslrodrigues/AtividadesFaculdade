@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSON - JavaScript Object Notation</title>
+</head>
+<body>
+    
+    <input placeholder="Insira o nome" type="text" name="" id="ipt_nome"> <br>
+    <input placeholder="Insira o sobrenome" type="text" name="" id="ipt_sobrenome"> <br>
+    <input placeholder="Insira a idade" type="text" name="" id="ipt_idade"> <br>
+    <button onclick="exibir()">Exibir</button>
+
+    <div id="div_mensagem"></div>
+
+</body>
+</html>
+
+<script>
+    function exibir() {
+        // Também podemos declarar informações dentro de um JSON mesmo sem definir/ atribuir um valor inicial para elas 
+        var pessoa = {
+            nome,
+            sobrenome,
+            idade
+        }
+
+        var nome = ipt_nome.value;
+        var sobrenome = ipt_sobrenome.value;
+        var idade = Number(ipt_idade.value);
+        
+        /*
+            Caso eu chame a linha abaixo, aparecerá "undefined" e "undefined", porque realmente não atribuí um valor para a informação do JSON
+
+            div_mensagem.innerHTML = `Nome: ${pessoa.nome} ${pessoa.sobrenome}`; 
+        */
+
+       
+        pessoa.nome = nome; // usando variável para atribuir na informação "nome" do JSON de "pessoa"
+        pessoa.sobrenome = sobrenome; // usando variável para atribuir na informação "sobrenomenome" do JSON de "pessoa"
+        pessoa.idade = idade; // usando variável para atribuir na informação "idade" do JSON de "pessoa"
+
+        
+        // Podemos acessar as informações de qualquer JSON ao invocá-las utilizando "nomeJSON.atributoJSON"
+        div_mensagem.innerHTML = `Nome: ${pessoa.nome} ${pessoa.sobrenome}`; 
+    
+    }
+</script>

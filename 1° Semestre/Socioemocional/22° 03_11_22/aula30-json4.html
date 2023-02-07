@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSON - JavaScript Object Notation</title>
+</head>
+<body>
+
+    <h3>Responsável: </h3>
+    <input placeholder="Insira o nome" type="text" name="" id="ipt_nome_resp"> <br>
+    <input placeholder="Insira o sobrenome" type="text" name="" id="ipt_sobrenome_resp"> <br>
+
+    <h3>Aluno: </h3>
+    <input placeholder="Insira o nome" type="text" name="" id="ipt_nome_alu"> <br>
+    <input placeholder="Insira o sobrenome" type="text" name="" id="ipt_sobrenome_alu"> <br>
+
+    <button onclick="exibir()">Exibir</button>
+
+    <div id="div_mensagem"></div>
+
+</body>
+</html>
+
+<script>
+    function exibir() {
+        // Podemos criar JSONs que possuam o mesmo atributo, como "nome" e "sobrenome", pois tratam de contextos diferentes 
+        var responsavel = {
+            nome: ipt_nome_resp.value,
+            sobrenome: ipt_sobrenome_resp.value,
+        }
+
+        var aluno = {
+            nome: ipt_nome_alu.value,
+            sobrenome: ipt_sobrenome_alu.value,
+        }
+        /*
+            - Também não teria problema eu criar uma variável "nome" ou "sobrenome" fora do JSON, como:
+                var nome = "XPTO"
+                var sobrenome = "ZPTA"
+
+            - Isso acontece devido aos diferentes contextos, pois as informações "nome" e "sobrenome" dos JSONs "responsavel"/"aluno" pertencem somente àqueles JSONs;
+            - Já as variáveis "nome" e "sobrenome" criadas acima, pertencem à todo o script (ou seja, quando forem invocadas no contexto do script, as variáveis serão referenciadas);
+            - Por isso, a leitura de código com JSON fica mais organizada, a fim de termos um contexto específico para alguma informação (neste caso, contexto de "aluno" e "responsável");
+            
+        */
+
+        div_mensagem.innerHTML = `Aluno: ${aluno.nome} ${aluno.sobrenome}` // usando informações do JSON "aluno", com "nome" e "sobrenome" pertencentes àquele contexto
+
+        div_mensagem.innerHTML += `<br>Responsável: ${responsavel.nome} ${responsavel.sobrenome}` // usando informações do JSON "responsavel", com "nome" e "sobrenome" pertencentes àquele contexto
+
+        /*
+            Caso utilizemos um JSON invocando alguma informação que não existe, ele nos retornará "undefined", afinal, não foi definido, como:
+                alert(aluno.moranguinho)
+            
+            Neste caso, como não definimos nenhuma informação "moranguinho" dentro do JSON "aluno", ele irá retornar "undefined";
+            Mas em todo caso, podemos criar novas informações dinamicamente utilizando o JSON, onde podemos simplesmente chamar o nome da informação, e atribuir um novo valor para aquela informação, como abaixo:
+        */
+
+       // criando informação "identidade", que representa outro JSON dentro do JSON "responsavel"
+        responsavel.identidade = { 
+            tipo: "RG",
+            numero: 1234567890
+        }
+
+        div_mensagem.innerHTML += `<br>Identidade: ${responsavel.identidade.tipo}, ${responsavel.identidade.numero}`; // acessando informação "tipo", do JSON "identidade", que é uma informação do JSON "responsavel"
+
+
+
+    }
+</script>

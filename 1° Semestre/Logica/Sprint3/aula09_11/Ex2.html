@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Destino de viagem</title>
+</head>
+<body>
+    Qual o destino da viagem? <input type="text" id="destino_ipt">
+    <button onclick="adicionar()">Adicionar</button><br><br>
+    <button onclick="primeira()">Primeira viagem</button>
+    <button onclick="terceira()">Terceira viagen</button>
+    <button onclick="ultima()">Última viagem</button><br>
+
+    <span id="exibir"></span>
+</body>
+</html>
+<script>
+    var destinos = [];
+    function adicionar(){
+        destinos.push(destino_ipt.value)
+        destino_ipt.value = ''
+    }
+    function primeira(){
+        if(destinos.length <= 0){
+            exibir.innerHTML = `ainda não viajou`
+        }else{
+            exibir.innerHTML = `${destinos[0]}`
+        }
+    }
+    function terceira(){
+        if(destinos.length < 3){
+            exibir.innerHTML = `ainda fez a 3ª viagem`
+        }else{
+            exibir.innerHTML = `${destinos[2]}`
+        }
+    }
+    function ultima(){
+        if(destinos.length <= 0){
+            exibir.innerHTML = `ainda não viajou`
+        }else{
+            exibir.innerHTML = `${destinos[destinos.length - 1]}`
+        }
+    }
+</script>

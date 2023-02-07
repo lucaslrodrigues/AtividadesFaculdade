@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex1 - Numeros e um intervalo</title>
+</head>
+<body>
+    <h1>Numeros em um intervalo</h1>
+    Limite inferior <input type="text" id="minimo">
+    Limite superior <input type="text" id="maximo">
+    <button onclick="atualizar()">Mostrar</button>
+    <div id="exibir"></div>
+</body>
+</html>
+<script>
+    function atualizar(){
+        exibir.innerHTML = ''
+        var min = Number(minimo.value)
+        var max = Number(maximo.value)
+        var cont = min
+        if (cont%2 != 0){cont++}
+        while(cont <= max){
+                exibir.innerHTML += `${cont}<br>`;
+            cont += 2
+        }
+    }
+</script>
