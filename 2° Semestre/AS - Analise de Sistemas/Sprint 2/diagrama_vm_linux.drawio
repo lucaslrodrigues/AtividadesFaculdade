@@ -1,9 +1,87 @@
-<mxfile host="app.diagrams.net" modified="2023-04-29T03:10:40.010Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36" version="21.2.1" etag="Dwec6-AvyFdBGQEhW0xK" type="github">
+<mxfile host="app.diagrams.net" modified="2023-04-29T03:48:02.356Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36" etag="TwAwto7zgstaOHOQ5_Y-" version="21.2.1" type="github">
   <diagram name="Page-1" id="0tnOo0xGAge1h8nqypMt">
-    <mxGraphModel>
+    <mxGraphModel dx="1434" dy="788" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
+        <mxCell id="iFZqDGDqlubp6X6bE3Xs-3" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="iFZqDGDqlubp6X6bE3Xs-1" target="iFZqDGDqlubp6X6bE3Xs-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="iFZqDGDqlubp6X6bE3Xs-1" value="" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="65" y="80" width="40" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="iFZqDGDqlubp6X6bE3Xs-5" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="iFZqDGDqlubp6X6bE3Xs-2" target="iFZqDGDqlubp6X6bE3Xs-4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="iFZqDGDqlubp6X6bE3Xs-2" value="Iniciando conexão via shh" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="145" y="70" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="iFZqDGDqlubp6X6bE3Xs-7" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="iFZqDGDqlubp6X6bE3Xs-4" target="iFZqDGDqlubp6X6bE3Xs-6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="iFZqDGDqlubp6X6bE3Xs-4" value="executar sudo apt update &amp;amp;&amp;amp; sudo apt upgrade -y" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="305" y="70" width="150" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="iFZqDGDqlubp6X6bE3Xs-24" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="iFZqDGDqlubp6X6bE3Xs-6" target="iFZqDGDqlubp6X6bE3Xs-23">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="iFZqDGDqlubp6X6bE3Xs-6" value="trocar a senha do ubuntu e do root com&amp;nbsp; passwd" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="495" y="70" width="130" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="iFZqDGDqlubp6X6bE3Xs-42" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="iFZqDGDqlubp6X6bE3Xs-12" target="iFZqDGDqlubp6X6bE3Xs-31">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="iFZqDGDqlubp6X6bE3Xs-45" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="iFZqDGDqlubp6X6bE3Xs-12" target="iFZqDGDqlubp6X6bE3Xs-14">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="iFZqDGDqlubp6X6bE3Xs-12" value="" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="685" y="260" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="iFZqDGDqlubp6X6bE3Xs-46" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="iFZqDGDqlubp6X6bE3Xs-14" target="iFZqDGDqlubp6X6bE3Xs-31">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="iFZqDGDqlubp6X6bE3Xs-14" value="Intalar java 17.0.5" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="665" y="420" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="iFZqDGDqlubp6X6bE3Xs-16" value="Não possui java instalado" style="text;html=1;strokeColor=#d6b656;fillColor=#fff2cc;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="675" y="360" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="iFZqDGDqlubp6X6bE3Xs-29" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="iFZqDGDqlubp6X6bE3Xs-23" target="iFZqDGDqlubp6X6bE3Xs-28">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="iFZqDGDqlubp6X6bE3Xs-23" value="Criar usuário urubu100&amp;nbsp;" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="665" y="70" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="iFZqDGDqlubp6X6bE3Xs-30" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="iFZqDGDqlubp6X6bE3Xs-28" target="iFZqDGDqlubp6X6bE3Xs-12">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="iFZqDGDqlubp6X6bE3Xs-28" value="logar com o usuario urubu100" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="665" y="170" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="iFZqDGDqlubp6X6bE3Xs-44" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="iFZqDGDqlubp6X6bE3Xs-31" target="iFZqDGDqlubp6X6bE3Xs-36">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="iFZqDGDqlubp6X6bE3Xs-31" value="Clonar repositório com a api java" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="415" y="270" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="iFZqDGDqlubp6X6bE3Xs-52" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="iFZqDGDqlubp6X6bE3Xs-36" target="iFZqDGDqlubp6X6bE3Xs-47">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="iFZqDGDqlubp6X6bE3Xs-36" value="executar api java com as dependencias" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="225" y="270" width="130" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="iFZqDGDqlubp6X6bE3Xs-33" value="Possui Java" style="text;html=1;strokeColor=#d6b656;fillColor=#fff2cc;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="570" y="285" width="80" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="iFZqDGDqlubp6X6bE3Xs-47" value="" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="145" y="280" width="40" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="iFZqDGDqlubp6X6bE3Xs-53" value="Fim do script" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="135" y="240" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="iFZqDGDqlubp6X6bE3Xs-54" value="Criada a&amp;nbsp;instância ec2" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="40" y="40" width="90" height="40" as="geometry" />
+        </mxCell>
       </root>
     </mxGraphModel>
   </diagram>
