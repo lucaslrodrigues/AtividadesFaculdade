@@ -51,7 +51,7 @@ foreign key (fkTipo) references tipoComponente (idTipoComponente)
 create table Computador (
 hostname varchar(45) primary key,
 status varchar(15),
-constraint ctStatus check (status in ('Operando', 'Manutenção', 'Interrompido')),
+constraint ctStatus check (status in ('Operando', 'Manutenção', 'Interrompido', 'Desativado')),
 sistemaOperacional varchar(45),
 mac varchar(45),
 fkLocalizacao int,
@@ -77,8 +77,32 @@ fkConfig int,
 foreign key (fkConfig) references Config(idConfig)
 );
 -- delete from Computador where hostname = "LUCAS";
+select c.hostname, 
+	c.status, 
+    l.setor,
+	t.nome 'tipo'
+    from Computador as c
+		join config on c.hostname = config.fkComputador
+			join Componente on config.fkComponente = Componente.idComponente
+				join tipoComponente as t on t.idTipoComponente = Componente.fkTipo
+					join Localizacao as l on l.idLocalizacao = c.fkLocalizacao
+						where t.idTipoComponente = 4 or t.idTipoComponente = 5 and c.fkEmpresa = 1 and c.status not in ("Operando", "Manutenção");
+                        
+select c.hostname, 
+	c.status, 
+    l.setor,
+	t.nome 'tipo',
+    Componente.numeroChave 'volume'
+    from Computador as c
+		join config on c.hostname = config.fkComputador
+			join Componente on config.fkComponente = Componente.idComponente
+				join tipoComponente as t on t.idTipoComponente = Componente.fkTipo
+					join Localizacao as l on l.idLocalizacao = c.fkLocalizacao
+						where t.idTipoComponente = 4 and c.fkEmpresa = 1 and c.status IN ('Operando', 'Manutenção', 'Interrompido') or t.idTipoComponente = 5 and c.fkEmpresa = 1 and c.status IN ('Operando', 'Manutenção', 'Interrompido');
 
-select * from metrica;
+update Computador set status = 'Operando', fkLocalizacao = 3 where hostname = 'LUCAS';
+insert into Localizacao(setor) values ('B');
+select * from metrica order by idMetrica desc;
 select * from config;
 select * from Empresa;
 select * from Endereco;
@@ -87,6 +111,19 @@ select * from Computador;
 select * from Componente;
 select * from tipoComponente;
 select * from Localizacao;
+
+update config set fkComponente = 5 where idConfig = 5;
+select 
+	c.idComponente
+		from componente c
+			join tipoComponente t
+				on fkTipo = idTipoComponente where t.nome = 'ssd';
+
+select 
+c.idComponente
+	from componente c
+		join tipoComponente t
+			on fkTipo = idTipoComponente where t.nome = 'ssd' and c.numeroChave = '256';
 
 INSERT INTO Empresa (nomeEmpresa, cnpj, telefone) values ('Contax', '12345678901234', '1187878787');
 INSERT INTO Usuario (nomeUsuario, email, senha, tipo, fkEmpresa) VALUES ('MonitrorMind','monitormind@email.com', '123', 'Owner', 1);
