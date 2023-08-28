@@ -42,9 +42,10 @@ public class Livro extends Produto{
     @Override
     public String toString() {
         return """
-                Nome: %s
+                Livro
+                %sNome: %s
                 Autor: %s
                 isbn: %s
-                """.formatted(nome, autor, isbn);
+                """.formatted(super.toString(), nome, autor, isbn);
     }
 }

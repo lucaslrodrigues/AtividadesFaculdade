@@ -32,8 +32,9 @@ public class Dvd extends Produto{
     @Override
     public String toString() {
         return """
-                Nome: %s
+                DVD
+                %sNome: %s
                 Gravadora: %s
-                """.formatted(nome, gravadora);
+                """.formatted(super.toString(), nome, gravadora);
     }
 }
