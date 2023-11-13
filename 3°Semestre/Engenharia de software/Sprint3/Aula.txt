@@ -1,0 +1,60 @@
+Modelo de processo evolucionario:
+
+Espiral:
+Custo alto
+É um processo que divide o processo e fases em que sempre é entregue algo novo, semelhante a Sprint (planeja, desenvolve, testa, homologa, volta)
+
+Prototipação:
+Utilizado quando não a clareza dos requisitos
+Construção de MVP, um prototipo para testar e validar.
+A modelagem é feita de forma rápida para construção do projeto.
+deve ser funcional
+
+Modelo incremental:
+Dividir o softwere em modulos menores, pequenas funcionalidades a serem desenvolvidas no modelo cascatas.
+Ocorre quando há um projeto com os requisitos definidos, e não há os insumos necessários para a implementação do cascata.
+Desvantagem: Necessita de muito planejamento para juntar tudo depois, muito caro.
+
+Baseado em componentes:
+O espiral com reuso.
+Reutiliza o que já existe na empresa.
+
+Modelo unificado:
+Modelo de projeto da IBM, modelo RUP
+planeja as diferentes fases do projeto. (não foi muito especificado)
+
+---------------------------------------------------------------------
+
+Vuka
+
+cenários instaveis do tempo de guerra.
+Nas empresas faz referencia a gestão de ricos
+
+vuka = volatil, complexo, ambguo e incerto.
+
+Volatil:
+o mundo muda muito, em uma velocidade que não sabemos onde ira parar.
+
+Incerto:
+Não sabemos o que vai acontecer e quais seram os próximos passos.
+Tudo é muito imprevisivel
+
+Complexo:
+Tudo é complexo e interligado
+Reação em cadeia
+
+Ambguo:
+Muitas interpretações para a mesma coisa.
+Deve-se saber as consequencias de uma tomada de decisões.
+
+A empresa dever ser resistente e rapida.
+
+-----------------------------------------------------------------
+XP
+
+Metodologia do Scrum para desenvolvedores (Super interessante)
+
+-----------------------------------------------------------------
+Feramentas case
+
+Frramentas utilizadas no desenvolvimento.

@@ -7,7 +7,7 @@ import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Set;
 
-@RestController
+//@RestController
 @RequestMapping("/pizzas")
 public class PizzaController {
     List<Pizza> pizzas = new ArrayList<>();
@@ -23,9 +23,9 @@ public class PizzaController {
         return pizzas.stream().filter(pizza -> pizza.getCodigo().equals(codigo)).findFirst().orElse(null);
     }
 
-    @PostMapping("/{sabor}/{valor}/{quantidade}")
-    public Pizza post(@PathVariable String sabor, @PathVariable Double valor, @PathVariable int quantidade){
-        var novaPizza = new Pizza(sabor, valor, quantidade);
+    @PostMapping("/")
+    public Pizza post(@RequestBody Pizza novaPizza){
+
         pizzas.add(novaPizza);
         return novaPizza;
     }
@@ -38,25 +38,35 @@ public class PizzaController {
         return retorno.formatted(codigo);
     }
 
-    @PutMapping("/{codigo}/{sabor}/{valor}/{quantidade}")
+    @PutMapping("/{codigo}")
     public Pizza put(@PathVariable Integer codigo,
-                     @PathVariable Double valor,
-                     @PathVariable String sabor,
-                     @PathVariable int quantidade){
-        var pizzaEncontrada = get(codigo);
-        if (pizzaEncontrada == null){
+                     @RequestBody Pizza pizza){
+
+        var encontrada = get(codigo);
+        if (encontrada == null){
             return null;
         }
 
-        delete(codigo);
+        int indice = pizzas.indexOf(encontrada);
 
-        pizzaEncontrada.setSabor(sabor);
-        pizzaEncontrada.setQuantidade(quantidade);
-        pizzaEncontrada.setValor(valor);
+        pizza.setCodigo(codigo);
+        pizzas.set(indice, pizza);
 
-        pizzas.add(pizzaEncontrada);
-
-        return pizzaEncontrada;
+        return pizza;
+//        var pizzaEncontrada = get(codigo);
+//        if (pizzaEncontrada == null){
+//            return null;
+//        }
+//
+//        delete(codigo);
+//
+//        pizzaEncontrada.setSabor(sabor);
+//        pizzaEncontrada.setQuantidade(quantidade);
+//        pizzaEncontrada.setValor(valor);
+//
+//        pizzas.add(pizzaEncontrada);
+//
+//        return pizzaEncontrada;
     }
 
     @PatchMapping("/venda/{codigo}/{quantidade}")

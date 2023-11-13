@@ -45,6 +45,10 @@ public class Pizza {
         return quantidade;
     }
 
+    public void setCodigo(Integer codigo) {
+        this.codigo = codigo;
+    }
+
     public void setSabor(String sabor) {
         this.sabor = sabor;
     }

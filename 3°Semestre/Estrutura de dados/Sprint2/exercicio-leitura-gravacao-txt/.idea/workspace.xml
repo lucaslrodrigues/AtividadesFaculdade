@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="bf0020cb-3072-4f3b-bfdf-2c53b1580778" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../../Sprint1/exemplo-vetores/src/main/java/TesteVetores.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Sprint1/exemploOrdenacao/src/main/java/ExemploOrdenacao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Sprint1/exercicio-turma/src/main/java/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Sprint1/exercicio-vetor-continuacao/src/main/java/Exercicio5.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Sprint1/exercicio-vetor-continuacao/src/main/java/Exercicio6.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Sprint1/exercicio-vetor/src/main/java/Exercicio1.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Sprint1/exercicio-vetor/src/main/java/Exercicio2.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Sprint1/exercicio-vetor/src/main/java/Exercicio3.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Sprint1/exercicio-vetor/src/main/java/Exercicio4.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Sprint1/exercicios-vetor3/src/main/java/Exercicio1.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Sprint1/lucas-lima-ac1/src/main/java/Brinquedo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Sprint1/lucas-lima-ac1/src/main/java/BrinquedoIngresso.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Sprint1/lucas-lima-ac1/src/main/java/ControleImposto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Sprint1/lucas-lima-ac1/src/main/java/IRenda.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Sprint1/lucas-lima-ac1/src/main/java/main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../desafio-ler-gravar-ordenar/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../exemplo-exception/src/main/java/DivisaoLoop.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../exemplo-exception/src/main/java/TesteExcecao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../exemplo-gravar-ler-txt/src/main/java/Aluno.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../exemplo-gravar-ler-txt/src/main/java/GerenciadorArquivoTxt.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../exemplo-gravar-ler-txt/src/main/java/Teste.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../exemplo-ler-gravar-csv/src/main/java/GerenciadorDeArquivo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../exemplo-ler-gravar-csv/src/main/java/ListaObj.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../exemplo-ler-gravar-csv/src/main/java/Pet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../exemplo-ler-gravar-csv/src/main/java/Teste.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Roupa.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../exercicio-lista-saida/src/main/java/GerenciadorDeArquivos.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../web/Sprint1/projeto4/src/main/java/sptech/projeto4/PizzaComStatusController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../web/Sprint2/ex-filmes-imydb/ex-filmes-imydb/src/main/java/imydb/exfilmesimydb/controle/FilmesController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../web/Sprint2/ex-filmes-imydb/ex-filmes-imydb/src/main/java/imydb/exfilmesimydb/modelo/Filme.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../web/Sprint2/ex-filmes-imydb/ex-filmes-imydb/src/main/java/imydb/exfilmesimydb/repositorio/FilmesRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../web/Sprint2/projeto-19-09-23-jpa/src/main/java/sptech/controle/PokemonController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../web/Sprint2/projeto-19-09-23-jpa/src/main/java/sptech/dominio/Pokemon.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../web/Sprint2/projeto-19-09-23-jpa/src/main/java/sptech/dominio/TipoPokemon.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../web/Sprint2/projeto-19-09-23-jpa/src/main/java/sptech/dto/PokemonSimplesDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../web/Sprint2/projeto-19-09-23-jpa/src/main/java/sptech/repositorio/PokemonRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../web/Sprint2/projeto-19-09-23-jpa/src/main/java/sptech/repositorio/TipoPokemonRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../web/Sprint2/projeto-19-09-23/src/main/java/sptech/controle/CarroController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../web/Sprint2/projeto-19-09-23/src/main/java/sptech/controle/ClienteController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../web/Sprint2/projeto-19-09-23/src/main/java/sptech/modelo/Carro.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../web/Sprint2/projeto-19-09-23/src/main/java/sptech/modelo/Cliente.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../web/Sprint2/projeto-19-09-23/src/main/java/sptech/modelo/Fabricante.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../web/Sprint1/demo/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../web/Sprint1/demo/.mvn/wrapper/maven-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../web/Sprint1/demo/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../web/Sprint1/demo/mvnw" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../web/Sprint1/demo/mvnw.cmd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../web/Sprint1/demo/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../web/Sprint1/demo/src/main/java/api/anime/demo/AppConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../web/Sprint1/demo/src/main/java/api/anime/demo/DemoApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../web/Sprint1/demo/src/main/java/api/anime/demo/GraphQLController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../web/Sprint1/demo/src/main/java/api/anime/demo/GraphQLQuery.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../web/Sprint1/demo/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../web/Sprint1/demo/src/test/java/api/anime/demo/DemoApplicationTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../web/Sprint1/projeto4/src/main/java/sptech/projeto4/Pizza.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../web/Sprint1/projeto4/src/main/java/sptech/projeto4/Pizza.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../web/Sprint1/projeto4/src/main/java/sptech/projeto4/PizzaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../web/Sprint1/projeto4/src/main/java/sptech/projeto4/PizzaController.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../../.." />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 3
+}]]></component>
+  <component name="ProjectId" id="2XBYkj4RzUBzrTaTPIxqkvDqicm" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "C:/Users/lukas/Downloads/Git/AtividadesFaculdade/3°Semestre/Estrutura de dados/Sprint3/exercicio-lista-saida/exercicio-lista-saida/pom.xml",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="bf0020cb-3072-4f3b-bfdf-2c53b1580778" name="Changes" comment="" />
+      <created>1698104087510</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1698104087510</updated>
+    </task>
+    <servers />
+  </component>
+</project>
