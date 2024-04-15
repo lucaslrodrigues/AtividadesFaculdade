@@ -6,7 +6,9 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 import sptech.dominio.Pokemon;
+import sptech.dto.PokemonRelatorioDTO;
 import sptech.dto.PokemonSimplesDTO;
+import sptech.dto.mapper.PokemonRelatorioMapper;
 import sptech.repositorio.PokemonRepository;
 import sptech.servico.PokemonService;
 
@@ -14,6 +16,7 @@ import javax.validation.Valid;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/pokemons")
@@ -113,6 +116,17 @@ ResponseEntity.of() pode retornar?
                 : ResponseEntity.status(200).body(lista);
     }
 
+    @GetMapping("/relatorio")
+    public ResponseEntity<Map> getRelatorio(){
+        Map<String, Object> relatorio = Map.of(
+                "quantidadeAquaticos", repository.countAquaticos(),
+                "maiorForca", repository.getMaiorForca()
+        );
+        return ResponseEntity.status(200).body(relatorio);
+    }
+
+
+
     @PatchMapping("/prender/{forcaAbaixoDe}")
     public ResponseEntity<Integer> prender(
         @PathVariable Double forcaAbaixoDe
@@ -121,15 +135,6 @@ ResponseEntity.of() pode retornar?
         repository.prenderComForcaAbaixoDe(forcaAbaixoDe);
 
         return ResponseEntity.status(200).body(presos);
-    }
-
-    @GetMapping("/relatorio")
-    public ResponseEntity<Map> getRelatorio(){
-        Map<String, Object> relatorio = Map.of(
-                "quantidadeAquaticos", repository.countAquaticos(),
-                "maiorForca", repository.getMaiorForca()
-        );
-        return ResponseEntity.status(200).body(relatorio);
     }
 
     @PatchMapping(value = "/foto/{codigo}",
@@ -146,6 +151,22 @@ ResponseEntity.of() pode retornar?
             return ResponseEntity.status(200).body(repository.getFoto(codigo));
         }
         return ResponseEntity.status(404).build();
+    }
+
+    @GetMapping("{codigo}/relatorio-individual")
+    public ResponseEntity<Map> getRelatorio (@PathVariable int codigo){
+        if (!repository.existsById(codigo)) {
+            return ResponseEntity.status(404).build();
+        }
+        Optional<Pokemon> pokemon = repository.findById(codigo);
+        Map<String, Object> relatorio = Map.of(
+                "codigo", pokemon.get().getCodigo(),
+                "nome", pokemon.get().getNome(),
+                "totalLutas", repository.countByLutas(codigo),
+                "vitorias", repository.countByVitorias(codigo)
+        );
+        PokemonRelatorioMapper pokemonMapper = new PokemonRelatorioMapper();
+        return ResponseEntity.status(200).body(relatorio);
     }
 
     @PatchMapping("/{codigo}/apanhar/{forcaGolpe}")

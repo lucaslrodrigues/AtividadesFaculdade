@@ -1,11 +1,9 @@
 package sptech.dominio;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
+import java.util.List;
 
 @Entity
 public class TipoPokemon {
@@ -18,6 +16,14 @@ public class TipoPokemon {
     @Size(min = 2, max = 12)
     private String nome;
     private Double forcaMaxima;
+
+    /*
+    * Esta anotação só existe no Java. Não existe em banco de dados relacional
+    *
+    * mappedBy = "tipo" -> por que na entidade Polemon o TipoPokemon está mapeado com um atributo chamado "tipo"
+    * */
+    @OneToMany(mappedBy = "tipo")
+    private List<Pokemon> pokemons;
 
     public int getCodigo() {
         return codigo;
@@ -41,5 +47,13 @@ public class TipoPokemon {
 
     public void setForcaMaxima(Double forcaMaxima) {
         this.forcaMaxima = forcaMaxima;
+    }
+
+    public List<Pokemon> getPokemons() {
+        return pokemons;
+    }
+
+    public void setPokemons(List<Pokemon> pokemons) {
+        this.pokemons = pokemons;
     }
 }

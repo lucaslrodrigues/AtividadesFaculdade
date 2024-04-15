@@ -12,3 +12,10 @@ insert into Pokemon(forca, livre, nome, tipo_codigo) values
 (100.0, false, 'Pokemon A', 1),
 (222.2, true, 'Pokemon B', 2),
 (303.0, false, 'Pokemon C', 2);
+
+
+insert into luta(pokemon1_codigo, pokemon2_codigo, vencedor_codigo) values
+(1, 2, 1),
+(1, 2, 2),
+(3, 1, 3),
+(3, 2, 3);

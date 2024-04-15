@@ -8,6 +8,7 @@ import sptech.dto.PokemonSimplesDTO;
 
 import javax.transaction.Transactional;
 import java.util.List;
+import java.util.Optional;
 
 /*
 A interface JpaRepository possui os principais métodos de acesso a banco
@@ -108,4 +109,26 @@ as anotações @Modifying e @Transactional
             where p.codigo = ?1
             """)
     byte[] getRelatorio(int codigo);
+
+    Optional<Pokemon> findById(int codigo);
+
+    @Query("""
+            select count(l)
+            from Luta l
+            where l.pokemon1.codigo = ?1 or l.pokemon2 = ?1
+            """)
+    int countByLutas(int codigo);
+
+    @Query("""
+            select count(l)
+            from Luta l
+            where l.vencedor.codigo = ?1
+            """)
+    int countByVitorias(int codigo);
+//    @Query("""
+//            select count(p.lutasComoPokemon2)
+//            from Pokemon p
+//            where p.codigo = ?1
+//            """)
+//    int countByLutasComoPokemon2(int codigo);
 }

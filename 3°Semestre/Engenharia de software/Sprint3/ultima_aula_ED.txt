@@ -1,0 +1,32 @@
+Estrutura de dados
+
+Recursividade
+arvore
+estrutura de hash em Java (tipo um array que guar chave ou valor)
+Algoritimos mais performaticos
+Recursividade do merge sort
+Grafos
+Threads e asyncronismo
+
+Fila na vida real: Mensageria, rabitMQ
+
+
+
+===================================
+
+Prog Web.
+
+Rest Repositories: @EnableJpaRepository => cria endpoints automaticamente a partir da repository.
+
+Lombok: dependencia para boder plate, 
+@Data cria get, set e construtor
+
+Boder plate (code template): Criador de estruturas
+
+Criadores de rotinas:
+Linux: crontab -l
+Windows: scheduling
+
+inner class
+
+configurar ambientes por .yml profile e workers java

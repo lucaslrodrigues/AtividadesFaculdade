@@ -6,6 +6,7 @@ import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.PositiveOrZero;
 import javax.validation.constraints.Size;
+import java.util.List;
 
 @Entity // indica que a classe mapeia uma tabela, ou seja, é uma Entidade
 public class Pokemon {
@@ -19,7 +20,7 @@ public class Pokemon {
     private String nome;
 
     @PositiveOrZero
-    private Double forca;
+    private double forca;
 
     private boolean livre;
 
@@ -35,7 +36,15 @@ public class Pokemon {
     do atributo de id (no caso é "codigo")
      */
     @ManyToOne // cria o relacionamento FK -> PK entre as entidade
+    @JsonIgnore
     private TipoPokemon tipo;
+
+    @OneToMany(mappedBy =  "pokemon1")
+    private List<Luta> lutasComoPokemon1;
+    @OneToMany(mappedBy =  "pokemon2")
+    private List<Luta> lutasComoPokemon2;
+    @OneToMany(mappedBy =  "vencedor")
+    private List<Luta> lutasComoVencedor;
 
     public int getCodigo() {
         return codigo;
@@ -54,15 +63,17 @@ public class Pokemon {
     }
 
 
-    public Double getForca() {
+    public double getForca() {
         return forca;
     }
 
-    public void setForca(Double forca) {
-        if (this.tipo.getForcaMaxima() < forca) {
-            throw new IllegalArgumentException();
+    public void setForca(double forca) {
+        if (tipo != null) {
+            if (this.tipo.getForcaMaxima() < forca) {
+                throw new IllegalArgumentException();
+            }
+            this.forca = forca;
         }
-        this.forca = forca;
     }
 
     public boolean isLivre() {
@@ -96,5 +107,29 @@ public class Pokemon {
 
     public void setRelatorioCSV(byte[] relatorioCSV) {
         this.relatorioCSV = relatorioCSV;
+    }
+
+    public List<Luta> getLutasComoPokemon1() {
+        return lutasComoPokemon1;
+    }
+
+    public void setLutasComoPokemon1(List<Luta> lutasComoPokemon1) {
+        this.lutasComoPokemon1 = lutasComoPokemon1;
+    }
+
+    public List<Luta> getLutasComoPokemon2() {
+        return lutasComoPokemon2;
+    }
+
+    public void setLutasComoPokemon2(List<Luta> lutasComoPokemon2) {
+        this.lutasComoPokemon2 = lutasComoPokemon2;
+    }
+
+    public List<Luta> getLutasComoVencedor() {
+        return lutasComoVencedor;
+    }
+
+    public void setLutasComoVencedor(List<Luta> lutasComoVencedor) {
+        this.lutasComoVencedor = lutasComoVencedor;
     }
 }

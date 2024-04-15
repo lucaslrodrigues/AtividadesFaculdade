@@ -1,0 +1,14 @@
+i18n => internacionalização. É de boa pratica colocar os testos em arquivos
+para carregar diferentes linguas.
+
+lazyColumn => Uma lista que carrega apenas o que é exibido.
+
+Padrão de telas android => utiliza uma única activity
+
+sudo mysql
+sudo apt install mysql-server
+
+mysql -u admin -p (3306 implicito) -h (host endpoint do banco) nome-do-banco
+
+
+spring.dataresource.url=jdbc:endpoint:3306/database_name

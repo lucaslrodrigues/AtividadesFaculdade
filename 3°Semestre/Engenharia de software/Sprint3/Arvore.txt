@@ -1,0 +1,27 @@
+Arvore
+O conceito de arvore vem de dados que funcionam aninhadamente no formato de herança.
+Funciona como os cargos da empresa ou uma pasta de diretorios.
+
+Arvore binaria
+É um padrão de dados em que os dados são herdados de outros dados (sub arvores).
+
+Arvores de pesquisa binaria sempre tem o maior valor a esquerda.
+
+==================================================================================
+Aula Matriz
+
+matriz.length= linha
+matriz[0].length = coluna
+
+Não precisa ter o mesmo número de colunas para todas as linhas
+
+Matriz com tamanhos diferentes nas linhas:
+int[][] matrizLoka - new int[3][]
+
+Depois o tamanhod as linhas podem ser definidos.
+ex: matrizLoka[0] = new int[9]
+
+Percorrendo uma matriz:
+um for dentro de outro (linha > colunas)
+* colunas sempre vai usar o matriz[linha].length, caso contrario pode ser usado matriz[0].length.
+
