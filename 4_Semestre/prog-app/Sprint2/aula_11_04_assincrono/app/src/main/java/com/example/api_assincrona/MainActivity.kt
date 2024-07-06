@@ -16,6 +16,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.api_assincrona.ui.theme.Api_assincronaTheme
+import org.koin.android.ext.koin.androidContext
+import org.koin.core.context.startKoin
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -33,26 +35,39 @@ class MainActivity : ComponentActivity() {
                 }
             }
         }
+        startKoin {
+            androidContext(this@MainActivity)
+            modules(appModule)
+        }
     }
 }
 
 @Composable
 fun App(vm: MainViewModel) {
-
-    val isLoading by vm.isLoading.observeAsState()
-    val isSuccess by vm.isSuccess.observeAsState()
-    val isError by vm.isError.observeAsState()
-
-    if (isLoading == true){
-        LoadingBar()
-    } else if (isError == true) {
-        ErrorView() {
-            vm.getAllMusicas()
+    val state by vm.state.observeAsState()
+    when (state) {
+        is MainScreenState.Loading -> {
+            LoadingBar()
         }
-    } else {
-        LazyColumn() {
-            items(isSuccess!!) {musica ->
-                Text(text = musica)
+        is MainScreenState.Error, null -> {
+            val errorMessage =
+                (state as MainScreenState.Error).message
+            ErrorView(message = errorMessage) {
+                vm.getAllMusicas()
+            }
+        }
+        is MainScreenState.Success -> {
+            val musicas =
+                (state as MainScreenState.Success).data
+            LazyColumn(
+                modifier = Modifier
+                    .fillMaxSize()
+            ) {
+                items(musicas) { musica ->
+                    MusicaCard(
+                        data = musica
+                    )
+                }
             }
         }
     }

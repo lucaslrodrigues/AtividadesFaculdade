@@ -9,48 +9,43 @@ import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
 
-class MainViewModel: ViewModel() {
-    var isLoading = MutableLiveData(false)
+class MainViewModel(
+    private val repository: IMusicaRepository
+) : ViewModel() {
+    var state = MutableLiveData<MainScreenState>(MainScreenState.Loading)
         private set
 
-    var isSuccess = MutableLiveData<List<Musica>>(emptyList())
-        private set
-
-    var isError = MutableLiveData(false)
-
-    var errorMessage = MutableLiveData("")
     fun getAllMusicas() {
-        try{
             viewModelScope.launch { // Launch inicia uma nova tread paralela
                 // É necessário trocar de tread para que a tread principal não congele a tela
-                isLoading.value = true
-                val musicaRepository = ApiConfig
-                    .getInstance()
-                    .create(MusicasService::class.java)
-                val response = musicaRepository.getAll()
-                if (response.isSuccessful) {
-                    val list = response.body() ?: emptyList()
-                    isSuccess.value = list
-                    isLoading.value = false
-                } else {
-                    // TODO:
-                    throw Exception("Erro desconhecido")
+                try {
+                    state.value = MainScreenState.Loading
+                    val musicaRepository = ApiConfig
+                        .getInstance()
+                        .create(MusicasService::class.java)
+                    val response = repository.getAll()
+                    if (response.isSuccessful) {
+                        val list = response.body() ?: emptyList()
+                        state.value = MainScreenState.Success(data = list)
+                    } else {
+                        // TODO:
+                        throw Exception("Erro desconhecido")
+                    }
+
+                }catch (e: retrofit2.HttpException) {
+                    val message = when (e.code()) {
+                        400 -> "Música não encontrada"
+                        404 -> "Parâmetros incorretos"
+                        else -> "Erro desconhecido"
+                    }
+                    state.value = MainScreenState.Error(message)
+                } catch (e: Exception) {
+                    state.value = MainScreenState.Error(
+                        e.message ?: "Erro desconhecido"
+                    )
                 }
             }
-        } catch (e: retrofit2.HttpException){
-            val message = when (e.code()) {
-               400 -> "Música não encontrada"
-               404 -> "Parâmetros incorretos"
-               else -> "Erro desconhecido"
-            }
-            isError.value = true
-            errorMessage.value = message
-            isLoading.value = false
-        } catch (e: Exception) {
-            isError.value = true
-            errorMessage.value = e.message
-            isLoading.value = false
         }
         // O viewModelScope atrela o código ao escopo da viewModel atual, ele morre ao fim da view model
-    }
+
 }
